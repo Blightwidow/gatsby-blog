@@ -32,7 +32,7 @@ export const query = graphql`
         }
       }
     }
-    allMediumPost(sort: { fields: [createdAt], order: DESC }, limit: 3) {
+    allMediumPost(sort: { fields: [firstPublishedAt], order: DESC }, limit: 3) {
       edges {
         node {
           firstPublishedAt
