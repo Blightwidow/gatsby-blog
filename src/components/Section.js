@@ -3,9 +3,13 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   display: grid;
-  grid-template-columns: [left-column] 25% [right-column] 75%;
+
+  @media (min-width: 450px) {
+    grid-template-columns: [left-column] 25% [right-column] 75%;
+    margin-bottom: 120px;
+  }
 `
 
 const Header = styled.div`
@@ -13,12 +17,19 @@ const Header = styled.div`
 `
 
 const Content = styled.div`
-  padding-left: 24px;
+  @media (min-width: 450px) {
+    padding-left: 24px;
+  }
 `
 
 const Title = styled.h2`
-  font-size: 64px;
+  font-size: 40px;
   color: ${props => props.color};
+  margin-bottom: 40px;
+
+  @media (min-width: 1200px) {
+    font-size: 64px;
+  }
 `
 
 const Section = ({ children, title, color, ...rest }) => (

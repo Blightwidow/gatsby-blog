@@ -17,7 +17,11 @@ const Nav = styled.nav`
 `
 
 const LinkList = styled.ul`
-  display: flex;
+  display: none;
+
+  @media (min-width: 900px) {
+    display: flex;
+  }
 `
 
 const ListItem = styled.li`
@@ -30,7 +34,11 @@ const ListItem = styled.li`
 
 const Intro = styled.p`
   line-height: 26px;
-  width: ${300 - 24}px;
+  width: 75%;
+
+  @media (min-width: 450px) {
+    width: 25%;
+  }
 `
 
 const links = [{ to: '/#blog', label: 'Blog' }, { to: '/#about', label: 'About' }, { to: '/#contact', label: 'Contact' }]

@@ -12,9 +12,18 @@ const Wrapper = styled(Section)`
 
 const ColumnWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 48px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 40px;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    row-gap: 0;
+    font-size: 16px;
+  }
 `
 const AboutTitle = styled.h3`
   font-size: 18px;

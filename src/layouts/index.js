@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
-import Particles from 'react-particles-js'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Head from '../components/Head'
 
 import theme from '../utils/theme'
+import Background from '../components/Background'
 
 const Wrapper = styled.div`
   color: ${props => props.theme.darkText};
@@ -59,9 +59,9 @@ injectGlobal`
 
   #wrapper {
     display: grid;
-    grid-template-columns: auto [left-column] 300px [right-column] 900px auto;
     grid-template-rows: 250px 1fr 100px;
-    grid-template-areas: '. header header .' '. content content .' '. . footer .';
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'content' 'footer';
     -webkit-font-smoothing: antialiased;
   }
 
@@ -78,6 +78,20 @@ injectGlobal`
   #footer {
     grid-area: footer;
     padding: 0 24px;
+  }
+
+  @media (min-width: 1200px) {
+    #wrapper {
+      grid-template-columns: auto 300px 900px auto;
+      grid-template-areas: '. header header .' '. content content .' '. . footer .';
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 1199px) {
+    #wrapper {
+      grid-template-columns: auto 150px 450px auto;
+      grid-template-areas: '. header header .' '. content content .' '. . footer .';
+    }
   }
 
   /* Fonts */
@@ -119,97 +133,15 @@ const Layout = ({ children, data }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Wrapper id="wrapper">
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 4,
-                density: {
-                  enable: false,
-                },
-              },
-              color: {
-                value: '#ef476f',
-              },
-              shape: {
-                type: 'circle',
-                stroke: {
-                  width: 0,
-                  color: '#ef476f',
-                },
-                polygon: {
-                  nb_sides: 4,
-                },
-                image: {
-                  src: 'img/github.svg',
-                  width: 1000,
-                  height: 1000,
-                },
-              },
-              opacity: {
-                value: 0.03,
-                random: false,
-                anim: {
-                  enable: false,
-                  speed: 1,
-                  opacity_min: 0.1,
-                  sync: false,
-                },
-              },
-              size: {
-                value: 435,
-                random: true,
-                anim: {
-                  enable: false,
-                  speed: 40,
-                  size_min: 0.1,
-                  sync: false,
-                },
-              },
-              line_linked: {
-                enable: false,
-              },
-              move: {
-                enable: true,
-                speed: 2,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false,
-                attract: {
-                  enable: false,
-                  rotateX: 600,
-                  rotateY: 1200,
-                },
-              },
-            },
-            interactivity: {
-              detect_on: 'canvas',
-              events: {
-                onhover: {
-                  enable: false,
-                },
-                onclick: {
-                  enable: false,
-                },
-                resize: true,
-              },
-            },
-            retina_detect: true,
-          }}
-          style={{
-            width: '100%',
-            position: 'absolute',
-            zIndex: "-1",
-          }}
-        />
-        <Head data={data} />
-        <Header fullName={author.fullName} />
-        <div id="content">{children()}</div>
-        <Footer fullName={author.fullName} email={author.email} />
-      </Wrapper>
+      <div>
+        <Background />
+        <Wrapper id="wrapper">
+          <Head data={data} />
+          <Header fullName={author.fullName} />
+          <div id="content">{children()}</div>
+          <Footer fullName={author.fullName} email={author.email} />
+        </Wrapper>
+      </div>
     </ThemeProvider>
   )
 }

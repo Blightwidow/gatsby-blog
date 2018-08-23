@@ -6,7 +6,11 @@ import Section from '../../components/Section'
 import BlogPost from './BlogPost'
 
 const Wrapper = styled(Section)`
-  font-size: 16px;
+  font-size: 14px;
+  
+  @media (min-width: 450px) {
+    font-size: inherit;
+  }
 `
 
 const BlogSection = ({ color, posts }) => (
