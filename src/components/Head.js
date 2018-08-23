@@ -37,6 +37,7 @@ const Head = ({ data }) => (
     <meta property="og:site_name" content="Theo Dammaretz, Full Stack Engineer"/>
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/xicon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
   </Helmet>
 )
 
