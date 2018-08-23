@@ -83,7 +83,7 @@ const Background = () => (
     }}
     style={{
       width: '100%',
-      position: 'absolute',
+      position: 'fixed',
       zIndex: '-1',
       left: '0',
       top: '0',
