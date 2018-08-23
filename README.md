@@ -2,8 +2,6 @@
 
 ## Introduction
 
-![Preview](./src/images/load-video.gif)
-
 This is a simple web page for an online business card. Featuring awesome tech like:
 - :rocket: React
 - :clipboard: Styled-components
