@@ -6,7 +6,7 @@
 
 # The following show an example redirects rule with all the supported properties.
 [[redirects]]
-  from = "https://infallible-ptolemy-ff63cf.netlify.com/*"
+  from = "https://dammaretz.netlify.com/*"
   to = "https://www.dammaretz.fr/:splat"
   status = 301
   force = true
