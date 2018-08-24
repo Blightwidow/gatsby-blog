@@ -1,7 +1,7 @@
 [Settings]
 
 [build]
-  publish = "public"
+  publish = "public/"
   command = "gatsby build"
 
 # The following show an example redirects rule with all the supported properties.
