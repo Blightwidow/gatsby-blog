@@ -28,6 +28,10 @@ module.exports = {
       options: {},
     },
     {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {},
+    },
+    {
       resolve: `gatsby-source-medium`,
       options: {
         username: `@theo.dammaretz`,

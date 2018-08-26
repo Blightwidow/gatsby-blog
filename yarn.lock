@@ -3166,6 +3166,12 @@ gatsby-plugin-react-helmet@^2.0.11:
   dependencies:
     babel-runtime "^6.26.0"
 
+gatsby-plugin-styled-components@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-2.0.11.tgz#c3d3438c7970bbcc116e821fb966687098bdaf57"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-workbox@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-workbox/-/gatsby-plugin-workbox-0.1.6.tgz#d4b7cb4b6fb85e2a6b392b9aaef4d8dd374c3ee7"
