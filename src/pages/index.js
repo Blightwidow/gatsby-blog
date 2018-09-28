@@ -1,17 +1,19 @@
 import React from 'react'
-import { withTheme} from 'styled-components'
+import { graphql } from 'gatsby'
 
 import AboutSection from '../sections/AboutSection'
 import BlogSection from '../sections/BlogSection'
+import Layout from '../components/Layout'
+import theme from '../utils/theme'
 
-const IndexPage = ({ data, theme }) => (
-  <div>
+const IndexPage = ({ data }) => (
+  <Layout data={data}>
     <BlogSection color={theme.primary} posts={data.allMediumPost.edges.map(x => x.node)} />
     <AboutSection color={theme.secondary} author={data.site.siteMetadata.author} />
-  </div>
+  </Layout>
 )
 
-export default withTheme(IndexPage)
+export default IndexPage
 
 export const query = graphql`
   query indexQuery {
@@ -20,6 +22,8 @@ export const query = graphql`
         author {
           skills
           introduction
+          fullName
+          email
           experiences {
             period
             company

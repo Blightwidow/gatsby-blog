@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import PropTypes from 'prop-types'
 
 import Section from '../../components/Section'
@@ -13,14 +13,14 @@ const Wrapper = styled(Section)`
   }
 `
 
-const BlogSection = ({ color, posts }) => (
+const BlogSection = ({ color, theme, posts }) => (
   <Wrapper title="Blog" id="blog" color={color}>
     <h3>Latest Posts</h3>
     <ul>
       {posts.map((post, i) => (
         <BlogPost
           key={i}
-          color={color}
+          color={theme.primary}
           url={`https://medium.com/@${post.author.username}/${post.uniqueSlug}`}
           title={post.title}
           tags={post.virtuals.tags.map(x => x.name)}
@@ -32,7 +32,6 @@ const BlogSection = ({ color, posts }) => (
 )
 
 BlogPost.propTypes = {
-  color: PropTypes.string.isRequired,
   posts: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -44,4 +43,4 @@ BlogPost.propTypes = {
   ).isRequired,
 }
 
-export default BlogSection
+export default withTheme(BlogSection)

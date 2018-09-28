@@ -129,7 +129,7 @@ injectGlobal`
 `
 
 const Layout = ({ children, data }) => {
-  const author = data.site.siteMetadata.author
+  const author = data && data.site.siteMetadata.author
 
   return (
     <ThemeProvider theme={theme}>
@@ -138,7 +138,7 @@ const Layout = ({ children, data }) => {
         <Wrapper id="wrapper">
           <Head data={data} />
           <Header fullName={author.fullName} />
-          <div id="content">{children()}</div>
+          <div id="content">{children}</div>
           <Footer fullName={author.fullName} email={author.email} />
         </Wrapper>
       </div>
@@ -147,21 +147,8 @@ const Layout = ({ children, data }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  data: PropTypes.object,
 }
 
 export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-        author {
-          fullName
-          email
-        }
-      }
-    }
-  }
-`

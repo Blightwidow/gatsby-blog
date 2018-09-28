@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 
 import Link from '../components/Link'
 import Section from '../components/Section'
@@ -38,9 +38,9 @@ const ListItem = styled.li`
   margin-top: ${props => (props.spaced ? '16px' : 0)};
 `
 
-const AboutSection = ({ color, author }) => {
+const AboutSection = ({ theme, author }) => {
   return (
-    <Wrapper title="About" id="about" color={color}>
+    <Wrapper title="About" id="about" color={theme.secondary}>
       <p>{author.introduction}</p>
       <ColumnWrapper>
         <div>
@@ -58,7 +58,7 @@ const AboutSection = ({ color, author }) => {
               <ListItem key={i} spaced={i !== 0}>
                 <p>{exp.period}</p>
                 <p>
-                  <Accent color={color}>{exp.company}</Accent>
+                  <Accent color={theme.secondary}>{exp.company}</Accent>
                 </p>
                 <p>{exp.title}</p>
               </ListItem>
@@ -70,7 +70,7 @@ const AboutSection = ({ color, author }) => {
           {author.socialLinks.map((link, i) => (
             <List key={i}>
               <ListItem>
-                <Link to={link.to} color={color}>
+                <Link to={link.to} color={theme.secondary}>
                   {link.label}
                 </Link>
               </ListItem>
@@ -82,4 +82,4 @@ const AboutSection = ({ color, author }) => {
   )
 }
 
-export default AboutSection
+export default withTheme(AboutSection)
