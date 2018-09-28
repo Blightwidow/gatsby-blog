@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 
 const Head = ({ siteMetadata }) => (
   <Helmet
-    siteMetadata={siteMetadata.title}
+    title={siteMetadata.title}
   >
     <html lang="en" />
     <script type="application/ld+json">{`
