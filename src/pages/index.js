@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
 
 export default IndexPage
 
-export const query = graphql`
+const query = graphql`
   query indexQuery {
     site {
       siteMetadata {
