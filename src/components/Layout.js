@@ -129,7 +129,7 @@ injectGlobal`
 `
 
 const Layout = ({ children, data }) => {
-  const author = data && data.site.siteMetadata.author
+  const author = data.site.siteMetadata.author
 
   return (
     <ThemeProvider theme={theme}>
@@ -149,6 +149,16 @@ const Layout = ({ children, data }) => {
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   data: PropTypes.object,
+}
+
+Layout.defaultProps = {
+  data: {
+    site: {
+      siteMetadata: {
+        author: {},
+      },
+    },
+  },
 }
 
 export default Layout

@@ -7,7 +7,7 @@ const Accent = styled.span`
 
 Accent.propTypes = {
   children: PropTypes.oneOfType([PropTypes.func, PropTypes.string]).isRequired,
-  color: PropTypes.string
+  color: PropTypes.string,
 }
 
 export default Accent
