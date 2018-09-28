@@ -1,9 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const Head = ({ data }) => (
+const Head = ({ siteMetadata }) => (
   <Helmet
-    title={data.site.siteMetadata.title}
+    siteMetadata={siteMetadata.title}
   >
     <html lang="en" />
     <script type="application/ld+json">{`

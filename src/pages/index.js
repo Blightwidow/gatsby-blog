@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import AboutSection from '../sections/AboutSection'
 import BlogSection from '../sections/BlogSection'
@@ -7,10 +7,15 @@ import Layout from '../components/Layout'
 import theme from '../utils/theme'
 
 const IndexPage = ({ data }) => (
-  <Layout data={data}>
-    <BlogSection color={theme.primary} posts={data.allMediumPost.edges.map(x => x.node)} />
-    <AboutSection color={theme.secondary} author={data.site.siteMetadata.author} />
-  </Layout>
+  <StaticQuery
+    query={query}
+    render={data => (
+      <Layout siteMetadata={data.site.siteMetadata}>
+        <BlogSection color={theme.primary} posts={data.allMediumPost.edges.map(x => x.node)} />
+        <AboutSection color={theme.secondary} author={data.site.siteMetadata.author} />
+      </Layout>
+    )}
+  />
 )
 
 export default IndexPage
@@ -19,6 +24,7 @@ export const query = graphql`
   query indexQuery {
     site {
       siteMetadata {
+        title
         author {
           skills
           introduction

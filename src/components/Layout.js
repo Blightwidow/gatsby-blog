@@ -128,37 +128,27 @@ injectGlobal`
   }
 `
 
-const Layout = ({ children, data }) => {
-  const author = data.site.siteMetadata.author
-
-  return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Background />
-        <Wrapper id="wrapper">
-          <Head data={data} />
-          <Header fullName={author.fullName} />
-          <div id="content">{children}</div>
-          <Footer fullName={author.fullName} email={author.email} />
-        </Wrapper>
-      </div>
-    </ThemeProvider>
-  )
-}
+const Layout = ({ children, siteMetadata }) => (
+  <ThemeProvider theme={theme}>
+    <div>
+      <Background />
+      <Wrapper id="wrapper">
+        <Head siteMetadata={siteMetadata} />
+        <Header fullName={siteMetadata.author.fullName} />
+        <div id="content">{children}</div>
+        <Footer fullName={siteMetadata.author.fullName} email={siteMetadata.author.email} />
+      </Wrapper>
+    </div>
+  </ThemeProvider>
+)
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
-  data: PropTypes.object,
+  siteMetadata: PropTypes.object,
 }
 
 Layout.defaultProps = {
-  data: {
-    site: {
-      siteMetadata: {
-        author: {},
-      },
-    },
-  },
+  siteMetadata: { author: {} },
 }
 
 export default Layout
