@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-// import moment from 'moment'
 import dayjs from 'dayjs'
 import PropTypes from 'prop-types'
 

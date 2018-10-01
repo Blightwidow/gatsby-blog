@@ -12,6 +12,7 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-plugin-workbox": "^0.1.7",
     "gatsby-source-medium": "^2.0.0",
+    "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-particles-js": "^2.3.0",
