@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import moment from 'moment'
+// import moment from 'moment'
+import dayjs from 'dayjs'
 import PropTypes from 'prop-types'
 
 import Link from '../../components/Link'
@@ -30,7 +31,7 @@ const Tags = styled.p`
 
 const BlogPost = ({ date, title, url, color, last, tags }) => (
   <Wrapper last={last}>
-    <Timestamp color={color}>— {moment(date).format('DD MMM, YYYY')}</Timestamp>
+    <Timestamp color={color}>— {dayjs(date).format('DD MMM, YYYY')}</Timestamp>
     <Anchor thick to={url} color={color}>
       {title}
     </Anchor>

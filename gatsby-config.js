@@ -37,5 +37,11 @@ module.exports = {
         username: `@theo.dammaretz`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        production: true,
+      },
+    },
   ],
 }
