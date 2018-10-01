@@ -1,11 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import dayjs from 'dayjs'
 import PropTypes from 'prop-types'
 
 import Link from '../../components/Link'
-
-import theme from '../../utils/theme'
 
 const Wrapper = styled.li`
   margin-bottom: ${props => (props.last ? 0 : '48px')};
@@ -25,16 +23,16 @@ const Anchor = styled(Link)`
 
 const Tags = styled.p`
   margin-top: 10px;
-  color: ${theme.lightText};
+  color: ${props => props.color};
 `
 
-const BlogPost = ({ date, title, url, color, last, tags }) => (
+const BlogPost = ({ date, title, url, color, last, tags, theme }) => (
   <Wrapper last={last}>
     <Timestamp color={color}>— {dayjs(date).format('DD MMM, YYYY')}</Timestamp>
     <Anchor thick to={url} color={color}>
       {title}
     </Anchor>
-    <Tags>{tags.reduce((acc, x) => acc.concat(`, ${x}`))}</Tags>
+    <Tags color={theme.lightText}>{tags.reduce((acc, x) => acc.concat(`, ${x}`))}</Tags>
   </Wrapper>
 )
 
@@ -47,4 +45,4 @@ BlogPost.propTypes = {
   last: PropTypes.bool,
 }
 
-export default BlogPost
+export default withTheme(BlogPost)
