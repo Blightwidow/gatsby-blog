@@ -31,7 +31,7 @@ const BlogSection = ({ color, theme, posts }) => (
   </Wrapper>
 )
 
-BlogPost.propTypes = {
+BlogSection.propTypes = {
   posts: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
