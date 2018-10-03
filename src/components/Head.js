@@ -39,6 +39,10 @@ const Head = ({ siteMetadata, children }) => (
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/xicon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Fqj2md8WA.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="https://fonts.gstatic.com/s/rubik/v7/iJWKBXyIfDnIV7nBrXw.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhp.woff2" as="font" type="font/woff2" crossorigin/>
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0b.woff2" as="font" type="font/woff2" crossorigin/>
     {children}
   </Helmet>
 )
