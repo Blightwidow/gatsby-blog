@@ -36,7 +36,7 @@ const Intro = styled.p`
   line-height: 26px;
   width: 75%;
 
-  @media (min-width: 450px) {
+  @media (min-width: 500px) {
     width: 25%;
   }
 `

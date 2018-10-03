@@ -8,7 +8,7 @@ import BlogPost from './BlogPost'
 const Wrapper = styled(Section)`
   font-size: 14px;
   
-  @media (min-width: 450px) {
+  @media (min-width: 500px) {
     font-size: inherit;
   }
 `

@@ -6,7 +6,7 @@ const Wrapper = styled.section`
   margin-bottom: 60px;
   display: grid;
 
-  @media (min-width: 450px) {
+  @media (min-width: 500px) {
     grid-template-columns: [left-column] 25% [right-column] 75%;
     margin-bottom: 120px;
   }
@@ -17,7 +17,7 @@ const Header = styled.div`
 `
 
 const Content = styled.div`
-  @media (min-width: 450px) {
+  @media (min-width: 500px) {
     padding-left: 24px;
   }
 `

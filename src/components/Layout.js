@@ -89,7 +89,7 @@ injectGlobal`
 
   @media (min-width: 600px) and (max-width: 1199px) {
     #wrapper {
-      grid-template-columns: auto 150px 450px auto;
+      grid-template-columns: auto 150px 500px auto;
       grid-template-areas: '. header header .' '. content content .' '. . footer .';
     }
   }
