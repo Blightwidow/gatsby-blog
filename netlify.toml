@@ -3,16 +3,3 @@
 [build]
   publish = "public/"
   command = "gatsby build"
-
-# The following show an example redirects rule with all the supported properties.
-[[redirects]]
-  from = "https://dammaretz.netlify.com/*"
-  to = "https://www.dammaretz.fr/:splat"
-  status = 301
-  force = true
-
-# The following redirect is intended for use with most SPA's that handles routing internally.
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
