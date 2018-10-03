@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-const Head = ({ siteMetadata }) => (
+const Head = ({ siteMetadata, children }) => (
   <Helmet
     title={siteMetadata.title}
   >
@@ -39,6 +39,7 @@ const Head = ({ siteMetadata }) => (
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/xicon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    {children}
   </Helmet>
 )
 
