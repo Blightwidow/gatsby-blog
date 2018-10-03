@@ -6,7 +6,7 @@ import BlogSection from '../sections/BlogSection'
 import Layout from '../components/Layout'
 import theme from '../utils/theme'
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <StaticQuery
     query={query}
     render={data => (
