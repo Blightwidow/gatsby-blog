@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import amplitude from 'amplitude-js'
+import { AmplitudeProvider } from '@amplitude/react-amplitude'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -130,15 +132,17 @@ injectGlobal`
 
 const Layout = ({ children, siteMetadata }) => (
   <ThemeProvider theme={theme}>
-    <div>
-      <Background />
-      <Wrapper id="wrapper">
-        <Head siteMetadata={siteMetadata} />
-        <Header fullName={siteMetadata.author.fullName} />
-        <div id="content">{children}</div>
-        <Footer fullName={siteMetadata.author.fullName} email={siteMetadata.author.email} />
-      </Wrapper>
-    </div>
+    <AmplitudeProvider amplitudeInstance={amplitude.getInstance()} apiKey={process.env.AMPLITUDE_API_KEY}>
+      <div>
+        <Background />
+        <Wrapper id="wrapper">
+          <Head siteMetadata={siteMetadata} />
+          <Header fullName={siteMetadata.author.fullName} />
+          <div id="content">{children}</div>
+          <Footer fullName={siteMetadata.author.fullName} email={siteMetadata.author.email} />
+        </Wrapper>
+      </div>
+    </AmplitudeProvider>
   </ThemeProvider>
 )
 

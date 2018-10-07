@@ -1,5 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import { LogOnMount } from '@amplitude/react-amplitude'
 
 import AboutSection from '../sections/AboutSection'
 import BlogSection from '../sections/BlogSection'
@@ -11,6 +12,12 @@ const IndexPage = () => (
     query={query}
     render={data => (
       <Layout siteMetadata={data.site.siteMetadata}>
+        <LogOnMount
+          eventType="pageLoad"
+          eventProperties={{
+            page: '/',
+          }}
+        />
         <BlogSection color={theme.primary} posts={data.allMediumPost.edges.map(x => x.node)} />
         <AboutSection color={theme.secondary} author={data.site.siteMetadata.author} />
       </Layout>
