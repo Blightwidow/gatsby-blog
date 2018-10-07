@@ -3,7 +3,7 @@ const author = require('./src/data/owner.json')
 module.exports = {
   siteMetadata: {
     title: 'Theo Dammaretz',
-    author
+    author,
   },
   plugins: [
     {
@@ -28,6 +28,15 @@ module.exports = {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
         production: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-56224063-2',
+        head: false,
+        anonymize: true,
+        respectDNT: true,
       },
     },
   ],
