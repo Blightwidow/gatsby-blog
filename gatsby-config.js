@@ -1,4 +1,4 @@
-const author = require('./src/data/owner.json')
+const author = require('./data/owner.json')
 
 module.exports = {
   siteMetadata: {
@@ -26,6 +26,12 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        production: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-typescript',
       options: {
         production: true,
       },
