@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "gatsby-blog",
+  "description": "Gatsby medium blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Theo Dammaretz <theo@dammaretz.fr>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.7.1",
     "dayjs": "^1.7.7",
@@ -10,6 +10,7 @@
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-styled-components": "^3.0.0",
+    "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-plugin-workbox": "^0.1.7",
     "gatsby-source-medium": "^2.0.0",
@@ -24,20 +25,26 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "rm -rf public",
+    "prebuild": "yarn lint && yarn type-check",
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "serve public",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint --project .",
+    "type-check": "tsc --noEmit",
+    "test": "yarn run lint && yarn run type-check"
   },
   "devDependencies": {
-    "opentracing": "^0.14.3",
+    "@types/react-helmet": "^5.0.7",
     "prettier": "^1.14.3",
-    "serve": "^10.0.2"
+    "serve": "^10.0.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.1.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Blightwidow/gatsby-blog"
   }
 }
