@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "yarn lint && yarn type-check",
+    "prebuild": "yarn run test",
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "serve public",
