@@ -1,8 +1,6 @@
 import * as React from "react"
 import Helmet from "react-helmet"
 
-import { SiteMeta } from "../types/siteMeta"
-
 export interface HeadProps {
   title: string
   children?: React.ReactChild
