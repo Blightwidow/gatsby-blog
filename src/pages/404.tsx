@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { Head } from "../components/Head"
 
-export class NotFoundPage extends React.PureComponent<null, null> {
+class NotFoundPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
       <Wrapper>
@@ -17,6 +17,8 @@ export class NotFoundPage extends React.PureComponent<null, null> {
     )
   }
 }
+
+export default NotFoundPage
 
 const Wrapper = styled.div`
   padding: 50px 20px;

@@ -2,13 +2,13 @@ import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 
 import { Layout } from "../components/Layout"
-import { AboutSection } from "../templates/AboutSection"
-import { BlogSection } from "../templates/BlogSection"
+import { AboutSection } from "../sections/AboutSection"
+import { BlogSection } from "../sections/BlogSection"
 
 import { MediumPost } from "../types/MediumPost"
 import { StaticQueryResult } from "../types/StaticQuery"
 
-export class IndexPage extends React.PureComponent {
+class IndexPage extends React.PureComponent {
   renderChildren(data: StaticQueryResult): React.ReactNode {
     return (
       <Layout siteMetadata={data.site.siteMetadata}>
