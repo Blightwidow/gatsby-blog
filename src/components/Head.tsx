@@ -44,6 +44,7 @@ export class Head extends React.PureComponent<HeadProps> {
         <meta property="og:description" content="Theo Dammaretz online business card and resume" />
         <meta property="og:site_name" content="Theo Dammaretz, Full Stack Engineer" />
         <meta name="robots" content="index, follow" />
+        <meta name="humans" content="/humans.txt" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/xicon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
