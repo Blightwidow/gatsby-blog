@@ -27,7 +27,7 @@ export class Layout extends React.PureComponent<LayoutProps> {
           <Wrapper id="wrapper">
             <Head title={siteMetadata.title} />
             <Header fullName={siteMetadata.author.fullName} />
-            <div id="content">{children}</div>
+            <main role="main" id="content">{children}</main>
             <Footer fullName={siteMetadata.author.fullName} email={siteMetadata.author.email} />
           </Wrapper>
         </div>

@@ -13,7 +13,7 @@ export class Footer extends React.PureComponent<FooterProps> {
     const { fullName, email } = this.props
 
     return (
-      <Wrapper id="footer">
+      <Wrapper id="footer" role="contentinfo">
         <hr />
         <p>
           Email: <Link to={`mailto:${email}`} primary={false} secondary={false}>{email}</Link>
@@ -24,6 +24,6 @@ export class Footer extends React.PureComponent<FooterProps> {
   }
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   color: ${props => props.theme.lightText};
 `

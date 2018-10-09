@@ -16,8 +16,8 @@ export class Header extends React.PureComponent<HeaderProps> {
   render(): React.ReactNode {
     const { fullName, className } = this.props
     return (
-      <Wrapper id="header" className={className}>
-        <Nav>
+      <Wrapper id="header" className={className} role="banner">
+        <Nav role="navigation">
           <Logo />
           <LinkList>
             {links.map((link, i) => (
@@ -42,7 +42,7 @@ export class Header extends React.PureComponent<HeaderProps> {
   }
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   color: ${props => props.theme.lightText};
 `
 
