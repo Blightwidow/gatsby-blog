@@ -1,5 +1,7 @@
 # Personal Webpage of Theo Dammaretz
 
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+
 This is the code that my [personnal website](https://dammaretz.fr) is running on.
 
 ## Getting Started
