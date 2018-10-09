@@ -47,7 +47,6 @@ export class Head extends React.PureComponent<HeadProps> {
         <meta name="humans" content="/humans.txt" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/xicon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
         {children}
       </Helmet>
     )
