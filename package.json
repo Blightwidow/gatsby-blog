@@ -31,15 +31,18 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "serve public",
-    "format": "prettier --write 'src/**/*.js'",
-    "lint": "tslint --project .",
-    "type-check": "tsc --noEmit",
-    "test": "yarn run lint && yarn run type-check"
+    "format": "prettier --write 'src/**/*.tsx'",
+    "test": "yarn run test:type && yarn run test:type && yarn run test:e2e",
+    "test:type": "tsc --noEmit",
+    "test:style": "tslint --project .",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.7",
+    "cypress": "^3.1.0",
     "prettier": "^1.14.3",
     "serve": "^10.0.2",
+    "start-server-and-test": "^1.7.4",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
