@@ -17,7 +17,7 @@ export class BlogPost extends React.PureComponent<BlogPostProps> {
     const { date, title, url, last, tags } = this.props
     return (
       <Wrapper last={last}>
-        <Timestamp >— {dayjs(date).format("DD MMM, YYYY")}</Timestamp>
+        <Timestamp>— {dayjs(date).format("DD MMM, YYYY")}</Timestamp>
         <Anchor thick={true} to={url} primary={true} secondary={false}>
           {title}
         </Anchor>

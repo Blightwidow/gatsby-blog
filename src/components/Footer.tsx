@@ -16,7 +16,10 @@ export class Footer extends React.PureComponent<FooterProps> {
       <Wrapper id="footer" role="contentinfo">
         <hr />
         <p>
-          Email: <Link to={`mailto:${email}`} primary={false} secondary={false}>{email}</Link>
+          Email:{" "}
+          <Link to={`mailto:${email}`} primary={false} secondary={false}>
+            {email}
+          </Link>
         </p>
         <p>©2018 {fullName}</p>
       </Wrapper>
