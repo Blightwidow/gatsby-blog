@@ -32,10 +32,12 @@
     "start": "gatsby develop",
     "serve": "serve public",
     "format": "prettier --write 'src/**/*.tsx'",
-    "test": "yarn run test:type && yarn run test:type && yarn run test:e2e",
+    "test": "yarn run test:type && yarn run test:style && yarn run test:e2e",
     "test:type": "tsc --noEmit",
     "test:style": "tslint --project .",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
+    "test:e2e": "start-server-and-test start http://localhost:8000 cy:run",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.7",
