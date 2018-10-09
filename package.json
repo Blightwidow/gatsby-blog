@@ -27,7 +27,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "prebuild": "yarn run test:ci",
     "build": "gatsby build",
     "start": "gatsby develop",
     "serve": "serve public",
@@ -38,7 +37,9 @@
     "test:style": "tslint --project .",
     "test:e2e": "start-server-and-test start http://localhost:8000 cy:run",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "predeploy": "CI=1; yarn add cypress; yarn run test:ci",
+    "deploy": "yarn run build"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.7",

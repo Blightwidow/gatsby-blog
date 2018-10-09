@@ -2,4 +2,4 @@
 
 [build]
   publish = "public/"
-  command = "yarn build"
+  command = "yarn run deploy"
