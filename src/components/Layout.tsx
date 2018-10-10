@@ -14,23 +14,23 @@ import "typeface-rubik"
 
 export interface LayoutProps {
   children: React.ReactChild | React.ReactChild[]
-  siteMetadata: SiteMeta
+  title?: string
 }
 
 export class Layout extends React.PureComponent<LayoutProps> {
   render(): React.ReactNode {
-    const { children, siteMetadata } = this.props
+    const { children, title } = this.props
     return (
       <ThemeProvider theme={defaultTheme}>
         <div>
           <Background />
           <Wrapper id="wrapper">
-            <Head title={siteMetadata.title} />
-            <Header fullName={siteMetadata.author.fullName} />
+            <Head title={title} />
+            <Header />
             <main role="main" id="content">
               {children}
             </main>
-            <Footer fullName={siteMetadata.author.fullName} email={siteMetadata.author.email} />
+            <Footer />
           </Wrapper>
         </div>
       </ThemeProvider>

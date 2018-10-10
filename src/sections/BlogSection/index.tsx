@@ -1,17 +1,18 @@
+
+import { graphql, StaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
 import { Section } from "../../components/Section"
 import { MediumPost } from "../../types/MediumPost"
+import { StaticQueryResult } from "../../types/StaticQuery"
 import { BlogPost } from "./BlogPost"
 
-export interface BlogSectionProps {
-  posts: MediumPost[]
-}
 
-export class BlogSection extends React.PureComponent<BlogSectionProps> {
-  render(): React.ReactNode {
-    const { posts } = this.props
+export class BlogSection extends React.PureComponent {
+  renderChildren = (data: StaticQueryResult): React.ReactNode => {
+    const posts  = data.allMediumPost.edges.map((x: { node: MediumPost }) => x.node)
+
     return (
       <Wrapper title="Blog" id="blog" primary={true} secondary={false}>
         <h3>Latest Posts</h3>
@@ -30,6 +31,10 @@ export class BlogSection extends React.PureComponent<BlogSectionProps> {
       </Wrapper>
     )
   }
+
+  render(): React.ReactNode {
+    return <StaticQuery query={query} render={this.renderChildren} />
+  }
 }
 
 const Wrapper = styled(Section)`
@@ -37,5 +42,27 @@ const Wrapper = styled(Section)`
 
   @media (min-width: 500px) {
     font-size: inherit;
+  }
+`
+
+const query = graphql`
+  query blogSectionQuery {
+    allMediumPost(sort: { fields: [firstPublishedAt], order: DESC }, limit: 3) {
+      edges {
+        node {
+          firstPublishedAt
+          title
+          virtuals {
+            tags {
+              name
+            }
+          }
+          uniqueSlug
+          author {
+            username
+          }
+        }
+      }
+    }
   }
 `

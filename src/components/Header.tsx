@@ -1,6 +1,8 @@
+import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import styled, { withTheme } from "../utils/styled-components"
 
+import { StaticQueryResult } from "../types/StaticQuery"
 import { Accent } from "./Accent"
 import { Link } from "./Link"
 import { Logo } from "./Logo"
@@ -8,13 +10,12 @@ import { Logo } from "./Logo"
 const links = [{ to: "/#blog", label: "Blog" }, { to: "/#about", label: "About" }, { to: "/#contact", label: "Contact" }]
 
 export interface HeaderProps {
-  fullName: string
   className?: string
 }
 
 export class Header extends React.PureComponent<HeaderProps> {
-  render(): React.ReactNode {
-    const { fullName, className } = this.props
+  renderChildren = (data: StaticQueryResult): React.ReactNode => {
+    const { className } = this.props
     return (
       <Wrapper id="header" className={className} role="banner">
         <Nav role="navigation">
@@ -33,12 +34,16 @@ export class Header extends React.PureComponent<HeaderProps> {
         <Intro className="header-intro">
           Personal Blog of{" "}
           <Accent primary={false} secondary={false}>
-            {fullName}
+            {data.site.siteMetadata.author.fullName}
           </Accent>
           , Full Stack Engineer.
         </Intro>
       </Wrapper>
     )
+  }
+
+  render(): React.ReactNode {
+    return <StaticQuery query={query} render={this.renderChildren} />
   }
 }
 
@@ -74,5 +79,18 @@ const Intro = styled.p`
 
   @media (min-width: 500px) {
     width: 25%;
+  }
+`
+
+const query = graphql`
+  query headerQuery {
+    site {
+      siteMetadata {
+        author {
+          fullName
+          email
+        }
+      }
+    }
   }
 `

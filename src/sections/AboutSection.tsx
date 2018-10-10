@@ -1,3 +1,4 @@
+import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "../utils/styled-components"
 
@@ -6,14 +7,11 @@ import { Section } from "../components/Section"
 
 import { Accent } from "../components/Accent"
 import { Author } from "../types/siteMeta"
+import { StaticQueryResult } from "../types/StaticQuery"
 
-export interface AboutSectionProps {
-  author: Author
-}
-
-export class AboutSection extends React.PureComponent<AboutSectionProps> {
-  render(): React.ReactNode {
-    const { author } = this.props
+export class AboutSection extends React.PureComponent {
+  renderChildren = (data: StaticQueryResult): React.ReactNode => {
+    const { author } = data.site.siteMetadata
 
     return (
       <Wrapper title="About" id="about" primary={false} secondary={true}>
@@ -61,6 +59,10 @@ export class AboutSection extends React.PureComponent<AboutSectionProps> {
       </Wrapper>
     )
   }
+
+  render(): React.ReactNode {
+    return <StaticQuery query={query} render={this.renderChildren} />
+  }
 }
 
 const Wrapper = styled(Section)`
@@ -93,4 +95,28 @@ const List = styled.ul`
 
 const ListItem = styled<{ spaced: boolean }, "li">("li")`
   margin-top: ${props => (props.spaced ? "16px" : 0)};
+`
+
+const query = graphql`
+  query aboutSectionQuery {
+    site {
+      siteMetadata {
+        author {
+          skills
+          introduction
+          fullName
+          email
+          experiences {
+            period
+            company
+            title
+          }
+          socialLinks {
+            to
+            label
+          }
+        }
+      }
+    }
+  }
 `
