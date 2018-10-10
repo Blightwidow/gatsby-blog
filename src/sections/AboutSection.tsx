@@ -6,7 +6,6 @@ import { Link } from "../components/Link"
 import { Section } from "../components/Section"
 
 import { Accent } from "../components/Accent"
-import { Author } from "../types/siteMeta"
 import { StaticQueryResult } from "../types/StaticQuery"
 
 export class AboutSection extends React.PureComponent {
