@@ -1,21 +1,17 @@
-const author = require('./data/owner.json')
+const author = require("./data/owner.json")
 
 module.exports = {
   siteMetadata: {
-    title: 'Theo Dammaretz',
+    title: "Theo Dammaretz",
     author,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-react-helmet',
+      resolve: "gatsby-plugin-react-helmet",
       options: {},
     },
     {
-      resolve: 'gatsby-plugin-workbox',
-      options: {},
-    },
-    {
-      resolve: 'gatsby-plugin-styled-components',
+      resolve: "gatsby-plugin-styled-components",
       options: {},
     },
     {
@@ -25,13 +21,13 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      resolve: "gatsby-plugin-webpack-bundle-analyzer",
       options: {
         production: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-typescript',
+      resolve: "gatsby-plugin-typescript",
       options: {
         production: true,
       },
@@ -39,11 +35,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-56224063-2',
+        trackingId: "UA-56224063-2",
         head: false,
         anonymize: true,
         respectDNT: true,
       },
+    },
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {},
     },
   ],
 }

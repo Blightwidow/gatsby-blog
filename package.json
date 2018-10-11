@@ -4,21 +4,21 @@
   "version": "1.0.0",
   "author": "Theo Dammaretz <theo@dammaretz.fr>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.7.1",
+    "babel-plugin-styled-components": "^1.8.0",
     "dayjs": "^1.7.7",
-    "gatsby": "^2.0.11",
+    "gatsby": "^2.0.21",
     "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-offline": "^2.0.6",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-plugin-typescript": "^2.0.0",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
-    "gatsby-plugin-workbox": "^0.1.7",
     "gatsby-source-medium": "^2.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-particles-js": "^2.3.0",
-    "styled-components": "^3.4.4",
+    "styled-components": "^3.4.10",
     "typeface-open-sans": "^0.0.54",
     "typeface-rubik": "^0.0.54"
   },
@@ -51,7 +51,7 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.2"
   },
   "repository": {
     "type": "git",
