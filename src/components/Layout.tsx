@@ -1,5 +1,5 @@
 import * as React from "react"
-import { default as styled, injectGlobal, ThemeProvider } from "../utils/styled-components"
+import { createGlobalStyle, default as styled, ThemeProvider } from "../utils/styled-components"
 
 import { Background } from "../components/Background"
 import { Footer } from "../components/Footer"
@@ -22,7 +22,8 @@ export class Layout extends React.PureComponent<LayoutProps> {
     const { children, title } = this.props
     return (
       <ThemeProvider theme={defaultTheme}>
-        <div>
+        <>
+          <GlobalStyle />
           <Background />
           <Wrapper id="wrapper">
             <Head title={title} />
@@ -32,13 +33,13 @@ export class Layout extends React.PureComponent<LayoutProps> {
             </main>
             <Footer />
           </Wrapper>
-        </div>
+        </>
       </ThemeProvider>
     )
   }
 }
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
