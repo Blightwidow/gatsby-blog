@@ -50,7 +50,7 @@ const Content = styled.div`
 
 const Title = styled<{ primary: boolean; secondary: boolean }, "h2">("h2")`
   font-size: 40px;
-  color: ${props => (props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : props.theme.darkText)};
+  color: ${props => (props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : props.theme.primaryText)};
   margin-bottom: 40px;
 
   @media (min-width: 1200px) {

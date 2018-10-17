@@ -45,5 +45,5 @@ const Anchor = styled(Link)`
 
 const Tags = styled.p`
   margin-top: 10px;
-  color: ${props => props.theme.lightText};
+  color: ${props => props.theme.secondaryText};
 `

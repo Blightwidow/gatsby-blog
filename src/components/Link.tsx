@@ -29,7 +29,7 @@ export class Link extends React.PureComponent<LinkProps> {
 }
 
 const Anchor = styled<{ thick: boolean; primary: boolean; secondary: boolean }, "a">("a")`
-  color: ${props => props.theme.darkText};
+  color: ${props => props.theme.primaryText};
   text-decoration: none;
   transition: border-bottom 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   font-weight: 600;

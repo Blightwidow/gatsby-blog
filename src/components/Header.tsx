@@ -48,7 +48,7 @@ export class Header extends React.PureComponent<HeaderProps> {
 }
 
 const Wrapper = styled.header`
-  color: ${props => props.theme.lightText};
+  color: ${props => props.theme.secondaryText};
 `
 
 const Nav = styled.nav`

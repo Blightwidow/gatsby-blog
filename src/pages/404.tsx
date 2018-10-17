@@ -1,19 +1,25 @@
 import * as React from "react"
 import styled from "styled-components"
+import { ThemeProvider } from "../utils/styled-components"
 
 import { Head } from "../components/Head"
+import { StyleBase } from "../components/StyleBase"
 
+import { defaultTheme } from "../utils/theme"
 class NotFoundPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
-      <Wrapper>
-        <Head title="Page not found">
-          <meta name="robots" content="noindex, nofolllow" />
-        </Head>
-        <h1>The page not accessible</h1>
-        <p>The page you requested doesn't exists, or your connectivity doesn't allow you to view it.</p>
-        <Smiley>:(</Smiley>
-      </Wrapper>
+      <ThemeProvider theme={defaultTheme}>
+        <Wrapper>
+          <StyleBase />
+          <Head title="Page not found">
+            <meta name="robots" content="noindex, nofolllow" />
+          </Head>
+          <h1>The page not accessible</h1>
+          <p>The page you requested doesn't exists, or your connectivity doesn't allow you to view it.</p>
+          <Smiley>:(</Smiley>
+        </Wrapper>
+      </ThemeProvider>
     )
   }
 }

@@ -29,7 +29,7 @@ export class Footer extends React.PureComponent {
 }
 
 const Wrapper = styled.footer`
-  color: ${props => props.theme.lightText};
+  color: ${props => props.theme.secondaryText};
 `
 
 const query = graphql`

@@ -8,5 +8,5 @@ export interface AccentProps {
 }
 
 export const Accent = styled<AccentProps, "span">("span")`
-  color: ${props => (props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : props.theme.darkText)};
+  color: ${props => (props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : props.theme.primaryText)};
 `
