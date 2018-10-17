@@ -1,7 +1,10 @@
 
 import { createGlobalStyle } from "../utils/styled-components"
 
-export const StyleBase = createGlobalStyle`
+import "typeface-open-sans"
+import "typeface-rubik"
+
+export const styleSheet = (childrenStyle: TemplateStringsArray) => createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -34,11 +37,14 @@ export const StyleBase = createGlobalStyle`
   hr {
     width: 64px;
     border: 0;
-    border-bottom: 8px solid rgba(51, 51, 51, 0.16);
+    border-bottom: 8px solid ${props => props.theme.secondaryText};
     margin: 0 0 24px;
+    opacity: 0.5;
   }
 
   ul {
     list-style-type: none;
   }
+
+  ${childrenStyle}
 `

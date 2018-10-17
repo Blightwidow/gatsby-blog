@@ -5,7 +5,7 @@ import { Background } from "../components/Background"
 import { Footer } from "../components/Footer"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
-import { StyleBase } from "../components/StyleBase"
+import { styleSheet } from "../components/StyleBase"
 import { AboutSection } from "../sections/AboutSection"
 import { BlogSection } from "../sections/BlogSection"
 
@@ -16,8 +16,7 @@ class IndexPage extends React.PureComponent {
     return (
       <ThemeProvider theme={defaultTheme}>
         <div id="wrapper">
-          <StyleBase />
-          <LayoutStyle />
+          <Style />
           <Background />
           <Head />
           <Header />
@@ -34,7 +33,7 @@ class IndexPage extends React.PureComponent {
 
 export default IndexPage
 
-const LayoutStyle = createGlobalStyle`
+const Style = styleSheet`
   #wrapper {
     display: grid;
     grid-template-rows: 250px 1fr 100px;
