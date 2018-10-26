@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://dammaretz.netlify.com/* https://dammaretz.fr/:splat 301!

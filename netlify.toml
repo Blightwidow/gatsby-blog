@@ -3,3 +3,8 @@
 [build]
   publish = "public/"
   command = "yarn run deploy"
+
+[[redirects]]
+  from = "https://dammaretz.netlify.com/*"
+  to = "/:splat"
+  status = 301
