@@ -1,8 +1,8 @@
 import dayjs from "dayjs"
 import React from "react"
-import styled from "../../utils/styled-components"
+import styled from "../../../utils/styled-components"
 
-import { Link } from "../../components/Link"
+import { Link } from "../../../components/Link"
 
 export interface BlogPostProps {
   title: string

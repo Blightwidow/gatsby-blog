@@ -1,19 +1,21 @@
 import * as React from "react"
-import { createGlobalStyle, ThemeProvider } from "../utils/styled-components"
+import { ThemeProvider } from "../utils/styled-components"
 
+import { Head } from "../components/Head"
 import { styleSheet } from "../components/StyleBase"
+// import { Graph } from "../modules/data-leaks/graph"
 
 import { darkTheme } from "../utils/theme"
 
-class IndexPage extends React.PureComponent {
+class TTFEPage extends React.PureComponent {
   render() {
     return (
       <ThemeProvider theme={darkTheme}>
         <div id="wrapper">
           <Style />
-          <LayoutStyle />
+          <Head title="Evolution of data leaks" />
           <main role="main" id="content">
-            {/* Content */}
+            <p>Hello world</p>
           </main>
         </div>
       </ThemeProvider>
@@ -21,12 +23,9 @@ class IndexPage extends React.PureComponent {
   }
 }
 
-export default IndexPage
+export default TTFEPage
 
 const Style = styleSheet`
-`
-
-const LayoutStyle = createGlobalStyle`
   body {
     min-height: 100vh;
     min-width: 100%;

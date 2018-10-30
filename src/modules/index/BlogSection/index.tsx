@@ -3,14 +3,18 @@ import { graphql, StaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 
-import { Section } from "../../components/Section"
-import { MediumPost } from "../../types/MediumPost"
-import { StaticQueryResult } from "../../types/StaticQuery"
+import { Section } from "../../../components/Section"
+import { MediumPost } from "../../../types/MediumPost"
+import { StaticQueryResult } from "../../../types/StaticQuery"
 import { BlogPost } from "./BlogPost"
 
 
 export class BlogSection extends React.PureComponent {
-  renderChildren = (data: StaticQueryResult): React.ReactNode => {
+  render(): React.ReactNode {
+    return <StaticQuery query={query} render={this.renderChildren} />
+  }
+
+  private renderChildren = (data: StaticQueryResult): React.ReactNode => {
     const posts  = data.allMediumPost.edges.map((x: { node: MediumPost }) => x.node)
 
     return (
@@ -31,10 +35,6 @@ export class BlogSection extends React.PureComponent {
       </Wrapper>
     )
   }
-
-  render(): React.ReactNode {
-    return <StaticQuery query={query} render={this.renderChildren} />
-  }
 }
 
 const Wrapper = styled(Section)`
@@ -46,7 +46,7 @@ const Wrapper = styled(Section)`
 `
 
 const query = graphql`
-  query blogSectionQuery {
+  query indexBlogSectionQuery {
     allMediumPost(sort: { fields: [firstPublishedAt], order: DESC }, limit: 3) {
       edges {
         node {

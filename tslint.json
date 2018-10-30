@@ -10,7 +10,8 @@
     "no-console": [false],
     "no-var-requires": true,
     "no-unused-expression": false,
-    "quotemark": [true, "double", "jsx-double"]
+    "quotemark": [true, "double", "jsx-double"],
+    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case"]
   },
   "rulesDirectory": []
 }

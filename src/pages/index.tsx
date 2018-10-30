@@ -1,13 +1,13 @@
 import * as React from "react"
-import { createGlobalStyle, ThemeProvider } from "../utils/styled-components"
+import { ThemeProvider } from "../utils/styled-components"
 
 import { Background } from "../components/Background"
 import { Footer } from "../components/Footer"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
 import { styleSheet } from "../components/StyleBase"
-import { AboutSection } from "../sections/AboutSection"
-import { BlogSection } from "../sections/BlogSection"
+import { AboutSection } from "../modules/index/AboutSection"
+import { BlogSection } from "../modules/index/BlogSection"
 
 import { defaultTheme } from "../utils/theme"
 
