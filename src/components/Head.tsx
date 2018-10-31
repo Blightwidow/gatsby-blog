@@ -15,7 +15,6 @@ export class Head extends React.PureComponent<HeadProps> {
     return (
       <Helmet title={title || data.site.siteMetadata.title}>
         <html lang="en" />
-        <meta charSet="utf-8" />
         <script type="application/ld+json" data-test="jsonld">
         {`
           {
