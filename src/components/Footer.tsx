@@ -18,7 +18,7 @@ export class Footer extends React.PureComponent {
             {email}
           </Link>
         </p>
-        <p>©2018 {fullName}</p>
+        <p>2018 {fullName}</p>
       </Wrapper>
     )
   }
