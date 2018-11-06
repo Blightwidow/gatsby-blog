@@ -6,7 +6,6 @@ import { Footer } from "../components/Footer"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
 import { styleSheet } from "../components/StyleBase"
-import { ThemeSwitcher } from "../components/ThemeSwitcher"
 import { AboutSection } from "../modules/index/AboutSection"
 import { BlogSection } from "../modules/index/BlogSection"
 
@@ -39,7 +38,6 @@ class IndexPage extends React.PureComponent<{}, IndexPageState> {
           <main role="main" id="content">
             <BlogSection />
             <AboutSection />
-            <ThemeSwitcher handleSwitch={this.handleThemeSwitch}/>
           </main>
           <Footer />
         </div>
