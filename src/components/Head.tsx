@@ -16,19 +16,18 @@ export class Head extends React.PureComponent<HeadProps> {
       <Helmet title={title || data.site.siteMetadata.title}>
         <html lang="en" />
         <script type="application/ld+json" data-test="jsonld">
-        {`
-          {
-              "@context": "http://schema.org",
-              "@type": "Person",
-              "name": "Theo Dammaretz",
-              "email": "theo@dammaretz.fr",
-              "sameAs": [
-                  "https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;theodammaretz&#x2F;",
-                  "https:&#x2F;&#x2F;gitlab.com&#x2F;Blightwidow",
-                  "https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;story&#x2F;8725059"
-              ]
-          }
-      `}</script>
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Person",
+            email: "theo@dammaretz.fr",
+            name: "Theo Dammaretz",
+            sameAs: [
+              "https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;theodammaretz&#x2F;",
+              "https:&#x2F;&#x2F;gitlab.com&#x2F;Blightwidow",
+              "https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;story&#x2F;8725059",
+            ],
+          })}
+        </script>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Theo Dammaretz online business card and resume homemade website and portfolio" />
         <meta name="keywords" content="resume, CV, Theo, Dammaretz, software, engineer, international, developper, developer" />
