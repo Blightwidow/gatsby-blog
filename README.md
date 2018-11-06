@@ -4,7 +4,6 @@
 [![dependencies](https://img.shields.io/david/fabe/gatsby-universal.svg)](./package.json) 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) 
 [![deploys by netlify](https://img.shields.io/badge/deploys%20by-netlify-00c7b7.svg)](https://www.netlify.com) 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blightwidow/gatsby-blog)
 
 This is the code that my [personnal website](https://dammaretz.fr) is running on.
 
@@ -13,6 +12,10 @@ This is the code that my [personnal website](https://dammaretz.fr) is running on
 1. `git clone` to get the repo
 2. install dependencies with `yarn`
 3. Launch development with `yarn start`
+
+You can also deploy this website directly to netlify by clicking the button below.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Blightwidow/gatsby-blog)
 
 ### Prerequisites
 
