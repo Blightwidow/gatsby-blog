@@ -800,6 +800,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@ctrl/tinycolor@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-2.2.1.tgz#4aae678391bb65ce12c39c0fed5159273709dd81"
+  integrity sha512-HFYW2zo5H9L61it865F/6fMOphYRVxdSztcB3DHn9AoaNOO9G+uIBuNXwkt+BwT7CbjQoJ6N5L6VjF5Mumztkw==
+
 "@cypress/listr-verbose-renderer@0.4.1":
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/@cypress/listr-verbose-renderer/-/listr-verbose-renderer-0.4.1.tgz#a77492f4b11dcc7c446a34b3e28721afd33c642a"
@@ -1016,6 +1021,11 @@
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
+
+"@types/tinycolor2@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@types/tinycolor2/-/tinycolor2-1.4.1.tgz#2f5670c9d1d6e558897a810ed284b44918fc1253"
+  integrity sha512-25L/RL5tqZkquKXVHM1fM2bd23qjfbcPpAZ2N/H05Y45g3UEi+Hw8CbDV28shKY8gH1SHiLpZSxPI1lacqdpGg==
 
 "@types/tmp@^0.0.32":
   version "0.0.32"
@@ -10059,6 +10069,11 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
+
+tinycolor@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/tinycolor/-/tinycolor-0.0.1.tgz#320b5a52d83abb5978d81a3e887d4aefb15a6164"
+  integrity sha1-MgtaUtg6u1l42Bo+iH1K77FaYWQ=
 
 tmp@0.0.31, tmp@^0.0.31:
   version "0.0.31"

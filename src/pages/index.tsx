@@ -6,23 +6,40 @@ import { Footer } from "../components/Footer"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
 import { styleSheet } from "../components/StyleBase"
+import { ThemeSwitcher } from "../components/ThemeSwitcher"
 import { AboutSection } from "../modules/index/AboutSection"
 import { BlogSection } from "../modules/index/BlogSection"
 
-import { defaultTheme } from "../utils/theme"
+import { darkTheme, defaultTheme, Theme } from "../utils/theme"
 
-class IndexPage extends React.PureComponent {
-  render() {
+interface IndexPageState {
+  theme: Theme
+}
+
+class IndexPage extends React.PureComponent<{}, IndexPageState> {
+  constructor(props: {}) {
+    super(props)
+    this.state = { theme: defaultTheme }
+  }
+
+  handleThemeSwitch = () => {
+    this.setState((prevState) => ({
+      theme: prevState.theme === defaultTheme ? darkTheme : defaultTheme
+    }))
+  }
+
+  render(): React.ReactNode {
     return (
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={this.state.theme}>
         <div id="wrapper">
           <Style />
-          <Background />
+          <Background primaryColor={this.state.theme.primary}/>
           <Head />
           <Header />
           <main role="main" id="content">
             <BlogSection />
             <AboutSection />
+            <ThemeSwitcher handleSwitch={this.handleThemeSwitch}/>
           </main>
           <Footer />
         </div>

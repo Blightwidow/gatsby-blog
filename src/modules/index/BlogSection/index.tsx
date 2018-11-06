@@ -18,7 +18,7 @@ export class BlogSection extends React.PureComponent {
     const posts  = data.allMediumPost.edges.map((x: { node: MediumPost }) => x.node)
 
     return (
-      <Wrapper title="Blog" id="blog" primary={true} secondary={false}>
+      <Wrapper title="Blog" id="blog" primary={true} >
         <h3>Latest Posts</h3>
         <ul>
           {posts.map((post, i) => (

@@ -14,7 +14,7 @@ export class Footer extends React.PureComponent {
         <hr />
         <p>
           Email:{" "}
-          <Link to={`mailto:${email}`} primary={false} secondary={false}>
+          <Link to={`mailto:${email}`} primary={false} >
             {email}
           </Link>
         </p>

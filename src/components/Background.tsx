@@ -1,8 +1,15 @@
+import { TinyColor } from "@ctrl/tinycolor"
 import * as React from "react"
 import Particles from "react-particles-js"
 
-export class Background extends React.PureComponent {
+export interface BackgroundProps {
+  primaryColor: string
+}
+
+export class Background extends React.PureComponent<BackgroundProps> {
   render(): React.ReactNode {
+    const backgroundColor = new TinyColor(this.props.primaryColor).toHexString()
+
     return (
       <Particles
         params={{
@@ -20,7 +27,7 @@ export class Background extends React.PureComponent {
           },
           particles: {
             color: {
-              value: "#ef476f",
+              value: backgroundColor,
             },
             line_linked: {
               enable: false,

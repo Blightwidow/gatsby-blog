@@ -23,7 +23,7 @@ export class Header extends React.PureComponent<HeaderProps> {
           <LinkList>
             {links.map((link, i) => (
               <ListItem key={i} last={i + 1 === links.length}>
-                <Link to={link.to} primary={true} secondary={false}>
+                <Link to={link.to} primary={true}>
                   {link.label}
                 </Link>
               </ListItem>
@@ -33,7 +33,7 @@ export class Header extends React.PureComponent<HeaderProps> {
         <hr />
         <Intro className="header-intro">
           Personal Blog of{" "}
-          <Accent primary={false} secondary={false}>
+          <Accent primary={false} >
             {data.site.siteMetadata.author.fullName}
           </Accent>
           , Full Stack Engineer.

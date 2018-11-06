@@ -7,20 +7,17 @@ export interface SectionProps {
   id?: string
   title: string
   primary: boolean
-  secondary: boolean
 }
 
 export class Section extends React.PureComponent<SectionProps> {
   render(): React.ReactChild {
-    const { children, title, primary, secondary, id, className } = this.props
+    const { children, title, primary, id, className } = this.props
 
     return (
       <Wrapper id={id} className={className}>
         <Header>
           <hr />
-          <Title primary={primary} secondary={secondary}>
-            {title}
-          </Title>
+          <Title primary={primary}>{title}</Title>
         </Header>
         <Content>{children}</Content>
       </Wrapper>
@@ -48,9 +45,9 @@ const Content = styled.div`
   }
 `
 
-const Title = styled<{ primary: boolean; secondary: boolean }, "h2">("h2")`
+const Title = styled<{ primary: boolean }, "h2">("h2")`
   font-size: 40px;
-  color: ${props => (props.primary ? props.theme.primary : props.secondary ? props.theme.secondary : props.theme.primaryText)};
+  color: ${props => (props.primary ? props.theme.primary : props.theme.primaryText)};
   margin-bottom: 40px;
 
   @media (min-width: 1200px) {

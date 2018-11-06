@@ -17,7 +17,7 @@ export class AboutSection extends React.PureComponent {
     const { author } = data.site.siteMetadata
 
     return (
-      <Wrapper title="About" id="about" primary={false} secondary={true}>
+      <Wrapper title="About" id="about" primary={true} >
         <p>{author.introduction}</p>
         <ColumnWrapper>
           <div>
@@ -37,7 +37,7 @@ export class AboutSection extends React.PureComponent {
                 <ListItem key={i} spaced={i !== 0}>
                   <p>{exp.period}</p>
                   <p>
-                    <Accent primary={false} secondary={true}>
+                    <Accent primary={true} >
                       {exp.company}
                     </Accent>
                   </p>
@@ -51,7 +51,7 @@ export class AboutSection extends React.PureComponent {
             {author.socialLinks.map((link, i) => (
               <List key={i}>
                 <ListItem spaced={false}>
-                  <Link to={link.to} primary={false} secondary={true}>
+                  <Link to={link.to} primary={true} >
                     {link.label}
                   </Link>
                 </ListItem>
