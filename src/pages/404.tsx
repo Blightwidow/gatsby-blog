@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { ThemeProvider } from "../utils/styled-components"
 
 import { Head } from "../components/Head"
+import { styleSheet } from "../components/StyleBase"
 
 import { defaultTheme } from "../utils/theme"
 class NotFoundPage extends React.PureComponent {
@@ -10,6 +11,7 @@ class NotFoundPage extends React.PureComponent {
     return (
       <ThemeProvider theme={defaultTheme}>
         <Wrapper>
+          <Style />
           <Head title="Page not found">
             <meta name="robots" content="noindex, nofolllow" />
           </Head>
@@ -23,6 +25,9 @@ class NotFoundPage extends React.PureComponent {
 }
 
 export default NotFoundPage
+
+const Style = styleSheet`
+`
 
 const Wrapper = styled.div`
   padding: 50px 20px;

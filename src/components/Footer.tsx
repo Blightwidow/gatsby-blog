@@ -10,11 +10,11 @@ export class Footer extends React.PureComponent {
     const { email, fullName } = data.site.siteMetadata.author
 
     return (
-      <Wrapper role="contentinfo">
+      <Wrapper id="footer" role="contentinfo">
         <hr />
         <p>
           Email:{" "}
-          <Link to={`mailto:${email}`} primary={false}>
+          <Link to={`mailto:${email}`} primary={false} >
             {email}
           </Link>
         </p>
@@ -30,8 +30,6 @@ export class Footer extends React.PureComponent {
 
 const Wrapper = styled.footer`
   color: ${props => props.theme.secondaryText};
-  grid-area: footer;
-  padding: 0 24px;
 `
 
 const query = graphql`

@@ -1,10 +1,11 @@
 import * as React from "react"
-import { default as styled, ThemeProvider } from "../utils/styled-components"
+import { ThemeProvider } from "../utils/styled-components"
 
 import { Background } from "../components/Background"
 import { Footer } from "../components/Footer"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
+import { styleSheet } from "../components/StyleBase"
 import { AboutSection } from "../modules/index/AboutSection"
 import { BlogSection } from "../modules/index/BlogSection"
 
@@ -21,24 +22,25 @@ class IndexPage extends React.PureComponent<{}, IndexPageState> {
   }
 
   handleThemeSwitch = () => {
-    this.setState(prevState => ({
-      theme: prevState.theme === defaultTheme ? darkTheme : defaultTheme,
+    this.setState((prevState) => ({
+      theme: prevState.theme === defaultTheme ? darkTheme : defaultTheme
     }))
   }
 
   render(): React.ReactNode {
     return (
       <ThemeProvider theme={this.state.theme}>
-        <Wrapper>
-          <Background primaryColor={this.state.theme.primary} />
+        <div id="wrapper">
+          <Style />
+          <Background primaryColor={this.state.theme.primary}/>
           <Head />
           <Header />
-          <ContentWrapper role="main">
+          <main role="main" id="content">
             <BlogSection />
             <AboutSection />
-          </ContentWrapper>
+          </main>
           <Footer />
-        </Wrapper>
+        </div>
       </ThemeProvider>
     )
   }
@@ -46,25 +48,41 @@ class IndexPage extends React.PureComponent<{}, IndexPageState> {
 
 export default IndexPage
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-rows: 250px 1fr 100px;
-  grid-template-columns: 1fr;
-  grid-template-areas: "header" "content" "footer";
-  -webkit-font-smoothing: antialiased;
+const Style = styleSheet`
+  #wrapper {
+    display: grid;
+    grid-template-rows: 250px 1fr 100px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "content" "footer";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #header {
+    grid-area: header;
+    padding: 40px 24px 0;
+  }
+
+  #content {
+    grid-area: content;
+    padding: 0 24px;
+  }
+
+  #footer {
+    grid-area: footer;
+    padding: 0 24px;
+  }
 
   @media (min-width: 1200px) {
-    grid-template-columns: auto 300px 900px auto;
-    grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    #wrapper {
+      grid-template-columns: auto 300px 900px auto;
+      grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    }
   }
 
   @media (min-width: 600px) and (max-width: 1199px) {
-    grid-template-columns: auto 150px 500px auto;
-    grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    #wrapper {
+      grid-template-columns: auto 150px 500px auto;
+      grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    }
   }
-`
-
-const ContentWrapper = styled.div`
-  grid-area: content;
-  padding: 0 24px;
 `
