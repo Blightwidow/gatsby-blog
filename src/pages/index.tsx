@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   }
 `
 
-const ContentWrapper = styled.main`
+const ContentWrapper = styled.div`
   grid-area: content;
   padding: 0 24px;
 `
