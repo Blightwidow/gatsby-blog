@@ -17,7 +17,7 @@ export class Header extends React.PureComponent<HeaderProps> {
   renderChildren = (data: StaticQueryResult): React.ReactNode => {
     const { className } = this.props
     return (
-      <Wrapper id="header" className={className} role="banner">
+      <Wrapper className={className} role="banner">
         <Nav role="navigation">
           <Logo />
           <LinkList>
@@ -32,11 +32,7 @@ export class Header extends React.PureComponent<HeaderProps> {
         </Nav>
         <hr />
         <Intro className="header-intro">
-          Personal Blog of{" "}
-          <Accent primary={false} >
-            {data.site.siteMetadata.author.fullName}
-          </Accent>
-          , Full Stack Engineer.
+          Personal Blog of <Accent primary={false}>{data.site.siteMetadata.author.fullName}</Accent>, Full Stack Engineer.
         </Intro>
       </Wrapper>
     )
@@ -49,6 +45,8 @@ export class Header extends React.PureComponent<HeaderProps> {
 
 const Wrapper = styled.header`
   color: ${props => props.theme.secondaryText};
+  grid-area: header;
+  padding: 40px 24px 0;
 `
 
 const Nav = styled.nav`
