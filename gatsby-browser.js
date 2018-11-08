@@ -1,16 +1,11 @@
 import React from "react"
-
-import { StyleBase } from "./src/components/StyleBase"
-import { ThemeProvider } from "./src/utils/styled-components"
-import { defaultTheme } from "./src/utils/theme"
+import StyleBase from "./src/components/StyleBase"
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <React.Fragment>
-        <StyleBase />
-        {element}
-      </React.Fragment>
-    </ThemeProvider>
+    <React.Fragment>
+      {element}
+      <StyleBase />
+    </React.Fragment>
   )
 }

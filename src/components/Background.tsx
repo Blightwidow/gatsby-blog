@@ -2,16 +2,13 @@ import { TinyColor } from "@ctrl/tinycolor"
 import * as React from "react"
 import Particles from "react-particles-js"
 
-import { withTheme } from "../utils/styled-components"
-import { Theme } from "../utils/theme"
-
-export interface BackgroundContainerProps {
-  theme: Theme
+export interface BackgroundProps {
+  primaryColor: string
 }
 
-class BackgroundContainer extends React.PureComponent<BackgroundContainerProps> {
+export class Background extends React.PureComponent<BackgroundProps> {
   render(): React.ReactNode {
-    const backgroundColor = new TinyColor(this.props.theme.primary).toHexString()
+    const backgroundColor = new TinyColor(this.props.primaryColor).toHexString()
 
     return (
       <Particles
@@ -103,5 +100,3 @@ class BackgroundContainer extends React.PureComponent<BackgroundContainerProps> 
     )
   }
 }
-
-export const Background = withTheme(BackgroundContainer)
