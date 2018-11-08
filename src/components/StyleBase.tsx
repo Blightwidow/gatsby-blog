@@ -4,7 +4,7 @@ import { createGlobalStyle } from "../utils/styled-components"
 import "typeface-open-sans"
 import "typeface-rubik"
 
-export const styleSheet = (childrenStyle: TemplateStringsArray) => createGlobalStyle`
+export const StyleBase = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -45,6 +45,4 @@ export const styleSheet = (childrenStyle: TemplateStringsArray) => createGlobalS
   ul {
     list-style-type: none;
   }
-
-  ${childrenStyle}
 `
