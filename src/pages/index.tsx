@@ -9,7 +9,7 @@ import { StyleBase } from "../components/StyleBase"
 import { AboutSection } from "../modules/index/AboutSection"
 import { BlogSection } from "../modules/index/BlogSection"
 
-import { defaultTheme, Theme } from "../utils/theme"
+import { defaultTheme } from "../utils/theme"
 
 class IndexPage extends React.PureComponent {
 
