@@ -24,7 +24,7 @@ export class LocaleProvider extends React.PureComponent<LocaleProviderProps, Loc
   constructor(props: LocaleProviderProps) {
     super(props)
     this.state = {
-      currentLocale: (typeof window !== "undefined" && window.localStorage.getItem("locale")) || props.defaultLocale,
+      currentLocale: this.getLocale(),
       locales: props.locales,
       setLocale: this.setLocale,
     }
@@ -40,4 +40,9 @@ export class LocaleProvider extends React.PureComponent<LocaleProviderProps, Loc
     const { children } = this.props
     return <LocaleContext.Provider value={this.state}>{children}</LocaleContext.Provider>
   }
+
+  private getLocale = (): string =>
+    (typeof window !== "undefined" && window.localStorage.getItem("locale")) ||
+    (typeof navigator !== "undefined" && navigator.language.slice(0, 2)) ||
+    this.props.defaultLocale
 }
