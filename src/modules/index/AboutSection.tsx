@@ -1,5 +1,6 @@
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
+import { FormattedMessage } from "react-intl"
 import styled from "../../utils/styled-components"
 
 import { Link } from "../../components/Link"
@@ -17,29 +18,31 @@ export class AboutSection extends React.PureComponent {
     const { author } = data.site.siteMetadata
 
     return (
-      <Wrapper title="About" id="about" primary={true} >
-        <p>{author.introduction}</p>
+      <Wrapper titleKey="about" id="about" primary={true}>
+        <FormattedMessage id="about.intro" tagName="p" />
         <ColumnWrapper>
           <div>
-            <AboutTitle>Technical interests</AboutTitle>
+            <FormattedMessage id="about.interests">{title => <AboutTitle>{title}</AboutTitle>}</FormattedMessage>
             <List>
-              {author.skills.map((skill, i) => (
-                <ListItem spaced={false} key={i}>
-                  {skill}
-                </ListItem>
+              {author.skills.map((skillKey, i) => (
+                <FormattedMessage id={`about.skills.${skillKey}`} key={i}>
+                  {skill => (
+                    <ListItem spaced={false}>
+                      {skill}
+                    </ListItem>
+                  )}
+                </FormattedMessage>
               ))}
             </List>
           </div>
           <div>
-            <AboutTitle>Experience</AboutTitle>
+            <FormattedMessage id="about.experience">{title => <AboutTitle>{title}</AboutTitle>}</FormattedMessage>
             <List>
               {author.experiences.map((exp, i) => (
                 <ListItem key={i} spaced={i !== 0}>
                   <p>{exp.period}</p>
                   <p>
-                    <Accent primary={true} >
-                      {exp.company}
-                    </Accent>
+                    <Accent primary={true}>{exp.company}</Accent>
                   </p>
                   <p>{exp.title}</p>
                 </ListItem>
@@ -47,11 +50,11 @@ export class AboutSection extends React.PureComponent {
             </List>
           </div>
           <div>
-            <AboutTitle id="contact">Links</AboutTitle>
+            <FormattedMessage id="about.links">{title => <AboutTitle>{title}</AboutTitle>}</FormattedMessage>
             {author.socialLinks.map((link, i) => (
               <List key={i}>
                 <ListItem spaced={false}>
-                  <Link to={link.to} primary={true} >
+                  <Link to={link.to} primary={true}>
                     {link.label}
                   </Link>
                 </ListItem>
@@ -102,7 +105,6 @@ const query = graphql`
       siteMetadata {
         author {
           skills
-          introduction
           fullName
           email
           experiences {

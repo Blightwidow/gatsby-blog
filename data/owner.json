@@ -1,11 +1,10 @@
 {
   "fullName": "Theo Dammaretz",
   "email": "theo@dammaretz.fr",
-  "introduction": "I am a profesionnal Software and Front End Enginner. Loves the Web and its capabilities. Build keyboards for fun. Dream about mountains.",
-  "skills": ["React", "SEO", "Front End", " Functionnal Programming", "Progressive Web Apps", "Conferences / Articles"],
+  "skills": ["react", "seo", "frontEnd", "functionnalProgramming", "pwa", "conferences"],
   "experiences": [
-    { "period": "Sep 2018 - Today", "company": "TheFork", "title": "Front End Engineer" },
-    { "period": "Sep 2017 - Sep 2018", "company": "Boston Consulting Group", "title": "Software Engineer" }
+    { "period": "2018 - 2019", "company": "TheFork", "title": "Front End Engineer" },
+    { "period": "2017 - 2018", "company": "Boston Consulting Group", "title": "Software Engineer" }
   ],
   "socialLinks": [
     { "to": "https://github.com/Blightwidow", "label": "Github" },

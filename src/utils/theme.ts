@@ -1,5 +1,3 @@
-import { TinyColor } from "@ctrl/tinycolor"
-
 export interface Theme {
   background: string
   primary: string

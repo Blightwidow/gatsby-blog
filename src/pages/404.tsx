@@ -1,4 +1,5 @@
 import * as React from "react"
+import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 import { ThemeProvider } from "../utils/styled-components"
 
@@ -15,8 +16,8 @@ class NotFoundPage extends React.PureComponent {
           <Head title="Page not found">
             <meta name="robots" content="noindex, nofolllow" />
           </Head>
-          <h1>The page not accessible</h1>
-          <p>The page you requested doesn't exists, or your connectivity doesn't allow you to view it.</p>
+          <FormattedMessage id="404.title" tagName="h1" />
+          <FormattedMessage id="404.subtitle" tagName="p" />
           <Smiley>:(</Smiley>
         </Wrapper>
       </ThemeProvider>

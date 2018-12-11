@@ -1,6 +1,6 @@
-
 import { graphql, StaticQuery } from "gatsby"
 import React from "react"
+import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 
 import { Section } from "../../../components/Section"
@@ -8,18 +8,17 @@ import { MediumPost } from "../../../types/MediumPost"
 import { StaticQueryResult } from "../../../types/StaticQuery"
 import { BlogPost } from "./BlogPost"
 
-
 export class BlogSection extends React.PureComponent {
   render(): React.ReactNode {
     return <StaticQuery query={query} render={this.renderChildren} />
   }
 
   private renderChildren = (data: StaticQueryResult): React.ReactNode => {
-    const posts  = data.allMediumPost.edges.map((x: { node: MediumPost }) => x.node)
+    const posts = data.allMediumPost.edges.map((x: { node: MediumPost }) => x.node)
 
     return (
-      <Wrapper title="Blog" id="blog" primary={true} >
-        <h3>Latest Posts</h3>
+      <Wrapper titleKey="blog" id="blog" primary={true}>
+        <FormattedMessage id="blog.listHeader" tagName="h3" />
         <ul>
           {posts.map((post, i) => (
             <BlogPost

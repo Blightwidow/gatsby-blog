@@ -1,5 +1,5 @@
-import dayjs from "dayjs"
 import React from "react"
+import { FormattedDate } from "react-intl"
 import styled from "../../../utils/styled-components"
 
 import { Link } from "../../../components/Link"
@@ -17,8 +17,10 @@ export class BlogPost extends React.PureComponent<BlogPostProps> {
     const { date, title, url, last, tags } = this.props
     return (
       <Wrapper last={last}>
-        <Timestamp>— {dayjs(date).format("DD MMM, YYYY")}</Timestamp>
-        <Anchor thick={true} to={url} primary={true} >
+        <Timestamp>
+          — <FormattedDate value={date} year="numeric" month="long" day="numeric" />
+        </Timestamp>
+        <Anchor thick={true} to={url} primary={true}>
           {title}
         </Anchor>
         <Tags>{tags.reduce((acc, x) => acc.concat(`, ${x}`))}</Tags>

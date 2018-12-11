@@ -1,13 +1,14 @@
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
-import styled, { withTheme } from "../utils/styled-components"
+import { FormattedMessage } from "react-intl"
+import styled from "../utils/styled-components"
 
 import { StaticQueryResult } from "../types/StaticQuery"
 import { Accent } from "./Accent"
 import { Link } from "./Link"
 import { Logo } from "./Logo"
 
-const links = [{ to: "/#blog", label: "Blog" }, { to: "/#about", label: "About" }, { to: "/#contact", label: "Contact" }]
+const links = [{ to: "/#blog", key: "blog" }, { to: "/#about", key: "about" }, { to: "/#contact", key: "contact" }]
 
 export interface HeaderProps {
   className?: string
@@ -24,7 +25,7 @@ export class Header extends React.PureComponent<HeaderProps> {
             {links.map((link, i) => (
               <ListItem key={i} last={i + 1 === links.length}>
                 <Link to={link.to} primary={true}>
-                  {link.label}
+                  <FormattedMessage id={link.key} />
                 </Link>
               </ListItem>
             ))}
@@ -32,7 +33,12 @@ export class Header extends React.PureComponent<HeaderProps> {
         </Nav>
         <hr />
         <Intro className="header-intro">
-          Personal Blog of <Accent primary={false}>{data.site.siteMetadata.author.fullName}</Accent>, Full Stack Engineer.
+          <FormattedMessage 
+            id="header.intro"
+            values={{
+              name: <Accent primary={false}>{data.site.siteMetadata.author.fullName}</Accent>
+            }}
+          />
         </Intro>
       </Wrapper>
     )
