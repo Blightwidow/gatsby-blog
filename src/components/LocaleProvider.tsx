@@ -41,8 +41,17 @@ export class LocaleProvider extends React.PureComponent<LocaleProviderProps, Loc
     return <LocaleContext.Provider value={this.state}>{children}</LocaleContext.Provider>
   }
 
-  private getLocale = (): string =>
-    (typeof window !== "undefined" && window.localStorage.getItem("locale")) ||
-    (typeof navigator !== "undefined" && navigator.language.slice(0, 2)) ||
-    this.props.defaultLocale
+  private getLocale = (): string => {
+    const { locales, defaultLocale } = this.props
+
+    if (typeof window === "undefined" || typeof navigator === "undefined") {
+      return defaultLocale
+    }
+
+    return (
+      window.localStorage.getItem("locale") ||
+      (locales.includes(navigator.language.slice(0, 2)) && navigator.language.slice(0, 2)) ||
+      defaultLocale
+    )
+  }
 }
