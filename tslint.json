@@ -11,7 +11,8 @@
     "no-var-requires": true,
     "no-unused-expression": false,
     "quotemark": [true, "double", "jsx-double"],
-    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case"]
+    "variable-name": [true, "allow-leading-underscore", "allow-pascal-case"],
+    "jsx-no-lambda": false
   },
   "rulesDirectory": []
 }

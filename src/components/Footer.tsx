@@ -3,6 +3,7 @@ import * as React from "react"
 import styled from "../utils/styled-components"
 
 import { StaticQueryResult } from "../types/StaticQuery"
+import { LanguageSelector } from "./LanguageSelector"
 import { Link } from "./Link"
 
 export class Footer extends React.PureComponent {
@@ -12,13 +13,20 @@ export class Footer extends React.PureComponent {
     return (
       <Wrapper id="footer" role="contentinfo">
         <hr />
-        <p>
-          Email:{" "}
-          <Link to={`mailto:${email}`} primary={false}>
-            {email}
-          </Link>
-        </p>
-        <p>2018 {fullName}</p>
+        <FlexWrapper>
+          <div>
+            <p>
+              Email:{" "}
+              <Link to={`mailto:${email}`} primary={false}>
+                {email}
+              </Link>
+            </p>
+            <p>2018 {fullName}</p>
+          </div>
+          <div>
+            <LanguageSelector />
+          </div>
+        </FlexWrapper>
       </Wrapper>
     )
   }
@@ -32,6 +40,11 @@ const Wrapper = styled.footer`
   color: ${props => props.theme.secondaryText};
   grid-area: footer;
   padding: 0 24px;
+`
+
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `
 
 const query = graphql`

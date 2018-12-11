@@ -3,7 +3,8 @@
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT) 
 [![dependencies](https://img.shields.io/david/fabe/gatsby-universal.svg)](./package.json) 
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier) 
-[![deploys by netlify](https://img.shields.io/badge/deploys%20by-netlify-00c7b7.svg)](https://www.netlify.com) 
+[![deploys by netlify](https://img.shields.io/badge/deploys%20by-netlify-00c7b7.svg)](https://www.netlify.com)
+[![Maintainability](https://api.codeclimate.com/v1/badges/dd506940a019e30a5161/maintainability)](https://codeclimate.com/github/Blightwidow/gatsby-blog/maintainability)
 
 This is the code that my [personnal website](https://dammaretz.fr) is running on.
 

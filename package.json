@@ -5,8 +5,8 @@
   "author": "Theo Dammaretz <theo@dammaretz.fr>",
   "dependencies": {
     "@ctrl/tinycolor": "^2.2.1",
+    "@types/react-intl": "^2.3.14",
     "babel-plugin-styled-components": "^1.8.0",
-    "dayjs": "^1.7.7",
     "gatsby": "^2.0.25",
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-offline": "^2.0.7",
@@ -18,9 +18,9 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
+    "react-intl": "^2.7.2",
     "react-particles-js": "^2.3.0",
     "styled-components": "^4.0.0",
-    "tinycolor": "^0.0.1",
     "typeface-open-sans": "^0.0.54",
     "typeface-rubik": "^0.0.54"
   },

@@ -6,7 +6,6 @@ export interface SiteMeta {
 export interface Author {
   fullName: string
   email: string
-  introduction: string
   skills: string[]
   experiences: Experience[]
   socialLinks: SocialLink[]

@@ -1,23 +1,24 @@
 import * as React from "react"
+import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 
 export interface SectionProps {
   children?: React.ReactChild | React.ReactChild[]
   className?: string
   id?: string
-  title: string
+  titleKey: string
   primary: boolean
 }
 
 export class Section extends React.PureComponent<SectionProps> {
   render(): React.ReactChild {
-    const { children, title, primary, id, className } = this.props
+    const { children, titleKey, primary, id, className } = this.props
 
     return (
       <Wrapper id={id} className={className}>
         <Header>
           <hr />
-          <Title primary={primary}>{title}</Title>
+          <FormattedMessage id={titleKey}>{title => <Title primary={primary}>{title}</Title>}</FormattedMessage>
         </Header>
         <Content>{children}</Content>
       </Wrapper>
