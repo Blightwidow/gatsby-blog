@@ -1,8 +1,6 @@
 
 import { createGlobalStyle } from "../utils/styled-components"
 
-import "typeface-open-sans"
-import "typeface-rubik"
 
 export const StyleBase = createGlobalStyle`
   * {
