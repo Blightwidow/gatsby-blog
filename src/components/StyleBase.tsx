@@ -11,7 +11,7 @@ export const StyleBase = createGlobalStyle`
   /* Fonts */
 
   body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
     font-size: 14px;
     font-weight: normal;
     color: ${props => props.theme.primaryText};
