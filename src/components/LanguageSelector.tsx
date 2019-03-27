@@ -22,7 +22,7 @@ export class LanguageSelector extends React.PureComponent {
   }
 }
 
-const LocaleSpan = styled<{ selected: boolean }, "span">("span")`
+const LocaleSpan = styled.span<{ selected: boolean }>`
   font-weight: ${props => (props.selected ? "bold" : "normal")};
   display: inline-block;
   width: 1.2rem;

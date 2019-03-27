@@ -6,6 +6,6 @@ export interface AccentProps {
   primary: boolean
 }
 
-export const Accent = styled<AccentProps, "span">("span")`
+export const Accent = styled.span<AccentProps>`
   color: ${props => (props.primary ? props.theme.primary : props.theme.primaryText)};
 `

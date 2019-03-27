@@ -69,7 +69,7 @@ const LinkList = styled.ul`
   }
 `
 
-const ListItem = styled<{ last: boolean }, "li">("li")`
+const ListItem = styled.li<{ last: boolean }>`
   text-transform: uppercase;
   padding: 0 ${props => (props.last ? 0 : "40px")} 0 0;
   display: flex;

@@ -26,7 +26,7 @@ export class Link extends React.PureComponent<LinkProps> {
   }
 }
 
-const Anchor = styled<{ thick: boolean; primary: boolean }, "a">("a")`
+const Anchor = styled.a<{ thick: boolean; primary: boolean }>`
   color: ${props => props.theme.primaryText};
   text-decoration: none;
   transition: border-bottom 0.5s cubic-bezier(0.19, 1, 0.22, 1);

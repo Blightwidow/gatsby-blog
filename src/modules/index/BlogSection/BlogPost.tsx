@@ -29,7 +29,7 @@ export class BlogPost extends React.PureComponent<BlogPostProps> {
   }
 }
 
-const Wrapper = styled<{ last: boolean }, "li">("li")`
+const Wrapper = styled.li<{ last: boolean }>`
   margin-bottom: ${props => (props.last ? 0 : "48px")};
 `
 

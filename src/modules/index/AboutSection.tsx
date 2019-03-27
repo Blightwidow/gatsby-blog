@@ -95,7 +95,7 @@ const List = styled.ul`
   line-height: 26px;
 `
 
-const ListItem = styled<{ spaced: boolean }, "li">("li")`
+const ListItem = styled.li<{ spaced: boolean }>`
   margin-top: ${props => (props.spaced ? "16px" : 0)};
 `
 

@@ -46,7 +46,7 @@ const Content = styled.div`
   }
 `
 
-const Title = styled<{ primary: boolean }, "h2">("h2")`
+const Title = styled.h2<{ primary: boolean }>`
   font-size: 40px;
   color: ${props => (props.primary ? props.theme.primary : props.theme.primaryText)};
   margin-bottom: 40px;
