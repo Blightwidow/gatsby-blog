@@ -8,6 +8,11 @@ export const StyleBase = createGlobalStyle`
     padding: 0;
   }
 
+  /* Disable JS warning as it is shitily placed */
+  #gatsby-noscript {
+    display: none;
+  }
+
   /* Fonts */
 
   body {

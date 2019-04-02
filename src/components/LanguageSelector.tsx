@@ -3,8 +3,28 @@ import styled from "../utils/styled-components"
 
 import { LocaleContext, LocaleProviderState } from "./LocaleProvider"
 
-export class LanguageSelector extends React.PureComponent {
-  render(): React.ReactChild {
+export interface LanguageSelectorState {
+  isHydrated: boolean,
+}
+export class LanguageSelector extends React.PureComponent<{}, LanguageSelectorState> {
+  constructor(props: LanguageSelector) {
+    super(props)
+    this.state = {
+      isHydrated: false,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      isHydrated: true,
+    })
+  }
+
+  render(): React.ReactChild | null {
+    if (!this.state.isHydrated) {
+      return null
+    }
+
     return (
       <LocaleContext.Consumer>
         {(localeState: LocaleProviderState): React.ReactNode =>
