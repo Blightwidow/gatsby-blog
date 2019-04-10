@@ -20,7 +20,7 @@ class BackgroundContainer extends React.PureComponent<BackgroundContainerProps> 
 
   render(): React.ReactNode {
     const { theme } = this.props
-    const backgroundColor = theme ? new TinyColor(theme.primary).toHexString() : "#000000"
+    const backgroundColor = new TinyColor(theme.primary).toHexString()
 
     return <Particles params={this.particlesParams(backgroundColor)} style={this.particlesStyle} />
   }
