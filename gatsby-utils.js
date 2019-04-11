@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components"
 
 import { config, messages, localeData } from "./data/languages"
 import { LocaleProvider, LocaleContext } from "./src/components/LocaleProvider"
+import { StyleBase } from "./src/components/StyleBase"
 import { defaultTheme } from "./src/utils/theme"
 
 addLocaleData(localeData)
@@ -14,7 +15,10 @@ export const wrapWithLocaleProvier = ({ element }) => (
       <LocaleContext.Consumer>
         {localeState => (
           <IntlProvider key={localeState.currentLocale} locale={localeState.currentLocale} messages={messages[localeState.currentLocale]}>
-            {element}
+            <React.Fragment>
+              <StyleBase />
+              {element}
+            </React.Fragment>
           </IntlProvider>
         )}
       </LocaleContext.Consumer>

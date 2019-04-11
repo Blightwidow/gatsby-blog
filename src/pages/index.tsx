@@ -5,7 +5,6 @@ import { Background } from "../components/Background"
 import { Footer } from "../components/Footer"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
-import { StyleBase } from "../components/StyleBase"
 import { AboutSection } from "../modules/index/AboutSection"
 import { BlogSection } from "../modules/index/BlogSection"
 
@@ -13,7 +12,6 @@ class IndexPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
       <Wrapper>
-        <StyleBase />
         <Background />
         <Head />
         <Header />
