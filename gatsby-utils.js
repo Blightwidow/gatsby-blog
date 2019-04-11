@@ -9,7 +9,7 @@ import { defaultTheme } from "./src/utils/theme"
 
 addLocaleData(localeData)
 
-export const wrapWithLocaleProvier = ({ element }) => (
+export const wrapWithLocaleProvider = ({ element }) => (
   <ThemeProvider theme={defaultTheme}>
     <LocaleProvider defaultLocale={config.defaultLocale} locales={config.locales}>
       <LocaleContext.Consumer>
@@ -25,3 +25,8 @@ export const wrapWithLocaleProvier = ({ element }) => (
     </LocaleProvider>
   </ThemeProvider>
 )
+
+export const wrapContent = ({ element }) => (
+  <div id="root">{element}</div>
+)
+

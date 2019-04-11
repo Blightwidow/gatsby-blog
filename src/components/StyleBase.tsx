@@ -1,6 +1,4 @@
-
 import { createGlobalStyle } from "styled-components"
-
 
 export const StyleBase = createGlobalStyle`
   * {
@@ -11,6 +9,25 @@ export const StyleBase = createGlobalStyle`
   /* Disable JS warning as it is shitily placed */
   #gatsby-noscript {
     display: none;
+  }
+
+  #root {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 250px 1fr 100px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "content" "footer";
+    -webkit-font-smoothing: antialiased;
+
+    @media (min-width: 1200px) {
+      grid-template-columns: auto 300px 900px auto;
+      grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    }
+
+    @media (min-width: 600px) and (max-width: 1199px) {
+      grid-template-columns: auto 150px 500px auto;
+      grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    }
   }
 
   /* Fonts */

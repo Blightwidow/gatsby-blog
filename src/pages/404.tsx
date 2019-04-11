@@ -22,7 +22,7 @@ class NotFoundPage extends React.PureComponent {
 export default NotFoundPage
 
 const Wrapper = styled.div`
-  padding: 50px 20px;
+  grid-area: content;
 `
 
 const Smiley = styled.p`
