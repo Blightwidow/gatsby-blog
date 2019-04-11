@@ -1,5 +1,5 @@
 
-import { createGlobalStyle } from "../utils/styled-components"
+import { createGlobalStyle } from "styled-components"
 
 
 export const StyleBase = createGlobalStyle`
@@ -19,7 +19,7 @@ export const StyleBase = createGlobalStyle`
     font-family: "Open Sans", "Segoe UI", Tahoma, sans-serif;
     font-size: 14px;
     font-weight: normal;
-    color: ${props => props.theme.primaryText};
+    color: ${props => props.theme.base};
     background: ${props => props.theme.background};
   }
 
@@ -40,7 +40,7 @@ export const StyleBase = createGlobalStyle`
   hr {
     width: 64px;
     border: 0;
-    border-bottom: 8px solid ${props => props.theme.secondaryText};
+    border-bottom: 8px solid ${props => props.theme.light};
     margin: 0 0 24px;
     opacity: 0.5;
   }

@@ -1,6 +1,6 @@
 import React from "react"
 import { FormattedDate } from "react-intl"
-import styled from "../../../utils/styled-components"
+import styled from "styled-components"
 
 import { Link } from "../../../components/Link"
 
@@ -47,5 +47,5 @@ const Anchor = styled(Link)`
 
 const Tags = styled.p`
   margin-top: 10px;
-  color: ${props => props.theme.secondaryText};
+  color: ${props => props.theme.light};
 `

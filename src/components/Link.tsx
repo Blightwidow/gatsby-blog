@@ -1,5 +1,5 @@
 import * as React from "react"
-import styled from "../utils/styled-components"
+import styled from "styled-components"
 
 export interface LinkProps {
   to: string
@@ -27,7 +27,7 @@ export class Link extends React.PureComponent<LinkProps> {
 }
 
 const Anchor = styled.a<{ thick: boolean; primary: boolean }>`
-  color: ${props => props.theme.primaryText};
+  color: ${props => props.theme.base};
   text-decoration: none;
   transition: border-bottom 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   font-weight: 600;

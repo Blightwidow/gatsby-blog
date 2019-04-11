@@ -1,12 +1,10 @@
 import { TinyColor } from "@ctrl/tinycolor"
 import * as React from "react"
 import { default as Particles, ParticlesProps } from "react-particles-js"
-
-import { withTheme } from "../utils/styled-components"
-import { Theme } from "../utils/theme"
+import { DefaultTheme, withTheme } from "styled-components"
 
 interface BackgroundContainerProps {
-  theme: Theme
+  theme: DefaultTheme
 }
 
 class BackgroundContainer extends React.PureComponent<BackgroundContainerProps> {

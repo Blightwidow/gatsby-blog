@@ -1,7 +1,7 @@
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import { FormattedMessage } from "react-intl"
-import styled from "../utils/styled-components"
+import styled from "styled-components"
 
 import { StaticQueryResult } from "../types/StaticQuery"
 import { Accent } from "./Accent"
@@ -50,7 +50,7 @@ export class Header extends React.PureComponent<HeaderProps> {
 }
 
 const Wrapper = styled.header`
-  color: ${props => props.theme.secondaryText};
+  color: ${props => props.theme.light};
   grid-area: header;
   padding: 40px 24px 0;
 `

@@ -1,6 +1,6 @@
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
-import styled from "../utils/styled-components"
+import styled from "styled-components"
 
 import { StaticQueryResult } from "../types/StaticQuery"
 import { LanguageSelector } from "./LanguageSelector"
@@ -37,7 +37,7 @@ export class Footer extends React.PureComponent {
 }
 
 const Wrapper = styled.footer`
-  color: ${props => props.theme.secondaryText};
+  color: ${props => props.theme.light};
   grid-area: footer;
   padding: 0 24px;
 `

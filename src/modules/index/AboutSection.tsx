@@ -1,7 +1,7 @@
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import { FormattedMessage } from "react-intl"
-import styled from "../../utils/styled-components"
+import styled from "styled-components"
 
 import { Link } from "../../components/Link"
 import { Section } from "../../components/Section"

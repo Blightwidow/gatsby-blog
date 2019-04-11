@@ -1,5 +1,5 @@
 import * as React from "react"
-import { default as styled, ThemeProvider } from "../utils/styled-components"
+import styled from "styled-components"
 
 import { Background } from "../components/Background"
 import { Footer } from "../components/Footer"
@@ -9,25 +9,20 @@ import { StyleBase } from "../components/StyleBase"
 import { AboutSection } from "../modules/index/AboutSection"
 import { BlogSection } from "../modules/index/BlogSection"
 
-import { defaultTheme } from "../utils/theme"
-
 class IndexPage extends React.PureComponent {
-
   render(): React.ReactNode {
     return (
-      <ThemeProvider theme={defaultTheme}>
-        <Wrapper>
-          <StyleBase />
-          <Background />
-          <Head />
-          <Header />
-          <ContentWrapper role="main">
-            <BlogSection />
-            <AboutSection />
-          </ContentWrapper>
-          <Footer />
-        </Wrapper>
-      </ThemeProvider>
+      <Wrapper>
+        <StyleBase />
+        <Background />
+        <Head />
+        <Header />
+        <ContentWrapper role="main">
+          <BlogSection />
+          <AboutSection />
+        </ContentWrapper>
+        <Footer />
+      </Wrapper>
     )
   }
 }
@@ -40,15 +35,15 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr;
   grid-template-areas: "header" "content" "footer";
   -webkit-font-smoothing: antialiased;
-  
+
   @media (min-width: 1200px) {
-      grid-template-columns: auto 300px 900px auto;
-      grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    grid-template-columns: auto 300px 900px auto;
+    grid-template-areas: ". header header ." ". content content ." ". . footer .";
   }
 
   @media (min-width: 600px) and (max-width: 1199px) {
-      grid-template-columns: auto 150px 500px auto;
-      grid-template-areas: ". header header ." ". content content ." ". . footer .";
+    grid-template-columns: auto 150px 500px auto;
+    grid-template-areas: ". header header ." ". content content ." ". . footer .";
   }
 `
 

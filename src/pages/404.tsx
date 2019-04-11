@@ -1,16 +1,13 @@
 import * as React from "react"
 import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
-import { ThemeProvider } from "../utils/styled-components"
 
 import { Head } from "../components/Head"
 import { StyleBase } from "../components/StyleBase"
 
-import { defaultTheme } from "../utils/theme"
 class NotFoundPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
-      <ThemeProvider theme={defaultTheme}>
         <Wrapper>
           <StyleBase />
           <Head title="Page not found">
@@ -20,7 +17,6 @@ class NotFoundPage extends React.PureComponent {
           <FormattedMessage id="404.subtitle" tagName="p" />
           <Smiley>:(</Smiley>
         </Wrapper>
-      </ThemeProvider>
     )
   }
 }

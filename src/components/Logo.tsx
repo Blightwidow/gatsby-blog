@@ -1,5 +1,5 @@
 import * as React from "react"
-import styled from "../utils/styled-components"
+import styled from "styled-components"
 
 export class Logo extends React.PureComponent {
   render(): React.ReactChild {
