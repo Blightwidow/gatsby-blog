@@ -3,9 +3,9 @@ import React from "react"
 import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 
-import { Section } from "../../../components/Section"
-import { MediumPost } from "../../../types/MediumPost"
-import { StaticQueryResult } from "../../../types/StaticQuery"
+import { Section } from "../../components/Section"
+import { MediumPost } from "../../types/MediumPost"
+import { StaticQueryResult } from "../../types/StaticQuery"
 import { BlogPost } from "./BlogPost"
 
 export class BlogSection extends React.PureComponent {

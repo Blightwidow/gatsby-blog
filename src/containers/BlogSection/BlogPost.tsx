@@ -2,7 +2,7 @@ import React from "react"
 import { FormattedDate } from "react-intl"
 import styled from "styled-components"
 
-import { Link } from "../../../components/Link"
+import { Link } from "../../components/Link"
 
 export interface BlogPostProps {
   title: string

@@ -3,11 +3,11 @@ import * as React from "react"
 import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 
-import { Link } from "../../components/Link"
-import { Section } from "../../components/Section"
+import { Link } from "../components/Link"
+import { Section } from "../components/Section"
 
-import { Accent } from "../../components/Accent"
-import { StaticQueryResult } from "../../types/StaticQuery"
+import { Accent } from "../components/Accent"
+import { StaticQueryResult } from "../types/StaticQuery"
 
 export class AboutSection extends React.PureComponent {
   render(): React.ReactNode {
