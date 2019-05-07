@@ -26,11 +26,7 @@ export class AboutSection extends React.PureComponent {
             <List>
               {author.skills.map((skillKey, i) => (
                 <FormattedMessage id={`about.skills.${skillKey}`} key={i}>
-                  {skill => (
-                    <ListItem spaced={false}>
-                      {skill}
-                    </ListItem>
-                  )}
+                  {skill => <ListItem spaced={false}>{skill}</ListItem>}
                 </FormattedMessage>
               ))}
             </List>
@@ -51,15 +47,15 @@ export class AboutSection extends React.PureComponent {
           </div>
           <div>
             <FormattedMessage id="about.links">{title => <AboutTitle>{title}</AboutTitle>}</FormattedMessage>
-            {author.socialLinks.map((link, i) => (
-              <List key={i}>
-                <ListItem spaced={false}>
+            <List>
+              {author.socialLinks.map((link, i) => (
+                <ListItem key={i} spaced={false}>
                   <Link to={link.to} primary={true}>
                     {link.label}
                   </Link>
                 </ListItem>
-              </List>
-            ))}
+              ))}
+            </List>
           </div>
         </ColumnWrapper>
       </Wrapper>
@@ -92,11 +88,11 @@ const AboutTitle = styled.h3`
 `
 
 const List = styled.ul`
-  line-height: 26px;
 `
 
 const ListItem = styled.li<{ spaced: boolean }>`
-  margin-top: ${props => (props.spaced ? "16px" : 0)};
+  margin: 5px 0;
+  margin-top: ${props => (props.spaced ? "20px" : 0)};
 `
 
 const query = graphql`
