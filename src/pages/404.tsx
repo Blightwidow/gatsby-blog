@@ -13,7 +13,7 @@ class NotFoundPage extends React.PureComponent {
         </Head>
         <FormattedMessage id="404.title" tagName="h1" />
         <FormattedMessage id="404.subtitle" tagName="p" />
-        <Smiley>:(</Smiley>
+        <Smiley>{":("}</Smiley>
       </Wrapper>
     )
   }
