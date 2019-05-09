@@ -12,10 +12,10 @@ class IndexPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
       <React.Fragment>
-        <Background />
         <Head />
         <Header />
         <ContentWrapper role="main">
+          <Background />
           <BlogSection />
           <AboutSection />
         </ContentWrapper>

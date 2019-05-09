@@ -42,6 +42,15 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-react-axe",
+      options: {
+        showInProduction: false,
+        axeOptions: {
+          // Your axe-core options.
+        },
+      },
+    },
+    {
       resolve: "gatsby-plugin-offline",
       options: {},
     },
