@@ -21,13 +21,16 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-webpack-bundle-analyzer",
+      resolve: "gatsby-plugin-react-axe",
       options: {
-        production: true,
+        showInProduction: false,
+        axeOptions: {
+          // Your axe-core options.
+        },
       },
     },
     {
-      resolve: "gatsby-plugin-typescript",
+      resolve: "gatsby-plugin-webpack-bundle-analyzer",
       options: {
         production: true,
       },
@@ -42,17 +45,14 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-react-axe",
-      options: {
-        showInProduction: false,
-        axeOptions: {
-          // Your axe-core options.
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-offline",
       options: {},
+    },
+    {
+      resolve: "gatsby-plugin-typescript",
+      options: {
+        production: true,
+      },
     },
   ],
 }

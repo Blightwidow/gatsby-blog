@@ -7,7 +7,7 @@ import { Head } from "../components/Head"
 class NotFoundPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
-      <Wrapper>
+      <Wrapper role="main">
         <Head title="Page not found">
           <meta name="robots" content="noindex, nofolllow" />
         </Head>
@@ -23,6 +23,7 @@ export default NotFoundPage
 
 const Wrapper = styled.div`
   grid-area: content;
+  padding: 0 24px;
 `
 
 const Smiley = styled.p`
