@@ -15,12 +15,6 @@ module.exports = {
       options: {},
     },
     {
-      resolve: `gatsby-source-medium`,
-      options: {
-        username: `@theo.dammaretz`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-axe",
       options: {
         showInProduction: false,

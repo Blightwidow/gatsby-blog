@@ -23,9 +23,12 @@ context("SEO", () => {
     )
   })
 
-  it("Should have only one correct H1", () => {
+  it("Should have only one H1", () => {
     cy.get("h1").should("have.length", 1)
-    cy.get("h1").contains("Theo Dammaretz")
+  })
+
+  it("Should have only one H2", () => {
+    cy.get("h2").should("have.length.lessThan", 2)
   })
 
   it("Should have robots.txt", () => {

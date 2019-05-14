@@ -1,11 +1,21 @@
-import * as React from "react"
-import styled from "styled-components"
+import styled, { ColorKeys, WeightKeys } from "styled-components"
 
 export interface AccentProps {
   children: React.ReactChild
-  primary: boolean
+  variant?: "primary"
+}
+
+function getColor(variant: AccentProps["variant"] = "primary"): ColorKeys {
+  switch (variant) {
+    case "primary":
+      return "primary"
+  }
 }
 
 export const Accent = styled.span<AccentProps>`
-  color: ${props => (props.primary ? props.theme.primary : props.theme.base)};
+  color: ${props => props.theme.colors[getColor(props.variant)]};
 `
+
+Accent.defaultProps = {
+  variant: "primary",
+}

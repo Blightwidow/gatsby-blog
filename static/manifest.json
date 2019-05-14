@@ -4,7 +4,7 @@
     "description": "Online business card and resume homemade website",
     "display": "standalone",
     "orientation": "portrait",
-    "theme_color": "#EF476F",
+    "theme_color": "#282A36",
     "icons": [{
         "src": "/favicon.ico",
         "type": "image/x-icon",

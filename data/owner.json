@@ -1,11 +1,6 @@
 {
   "fullName": "Theo Dammaretz",
   "email": "theo@dammaretz.fr",
-  "skills": ["react", "seo", "frontEnd", "functionnalProgramming", "pwa", "conferences"],
-  "experiences": [
-    { "period": "2018 - 2019", "company": "TheFork", "title": "Front End Engineer" },
-    { "period": "2017 - 2018", "company": "Boston Consulting Group", "title": "Software Engineer" }
-  ],
   "socialLinks": [
     { "to": "https://github.com/Blightwidow", "label": "Github" },
     { "to": "https://www.linkedin.com/in/theodammaretz/", "label": "Linkedin" },

@@ -1,45 +1,39 @@
 import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
-import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 
 import { StaticQueryResult } from "../types/StaticQuery"
 import { Accent } from "./Accent"
 import { Link } from "./Link"
-import { Logo } from "./Logo"
-
-const links = [{ to: "/#blog", key: "blog" }, { to: "/#about", key: "about" }, { to: "/#contact", key: "contact" }]
+import { Text } from "./Text"
 
 export interface HeaderProps {
-  className?: string
+  title: string
 }
 
 export class Header extends React.PureComponent<HeaderProps> {
+  getLinks = (email: string): Array<{ to: string; label: string }> => {
+    return [{ to: "/", label: "is()" }, { to: "/about", label: "about()" }, { to: `mailto:${email}`, label: "contact()" }]
+  }
+
   renderChildren = (data: StaticQueryResult): React.ReactNode => {
-    const { className } = this.props
+    const { title } = this.props
     return (
-      <Wrapper id="header" className={className} role="banner">
+      <Wrapper id="header" role="banner">
         <Nav role="navigation">
-          <Logo />
+          <Text>
+            <Accent>{title}</Accent>
+          </Text>
           <LinkList>
-            {links.map((link, i) => (
-              <ListItem key={i} last={i + 1 === links.length}>
-                <Link to={link.to} primary={true}>
-                  <FormattedMessage id={link.key} />
-                </Link>
+            {this.getLinks(data.site.siteMetadata.author.email).map((link, i) => (
+              <ListItem key={i}>
+                <Text>
+                  <Link to={link.to}>{link.label}</Link>
+                </Text>
               </ListItem>
             ))}
           </LinkList>
         </Nav>
-        <hr />
-        <Intro className="header-intro">
-          <FormattedMessage 
-            id="header.intro"
-            values={{
-              name: <Accent primary={false}>{data.site.siteMetadata.author.fullName}</Accent>
-            }}
-          />
-        </Intro>
       </Wrapper>
     )
   }
@@ -50,40 +44,32 @@ export class Header extends React.PureComponent<HeaderProps> {
 }
 
 const Wrapper = styled.header`
-  color: ${props => props.theme.light};
+  color: ${props => props.theme.colors.light};
   grid-area: header;
-  padding: 40px 24px 0;
+  padding: ${props => props.theme.fontSizes.xs} ${props => props.theme.fontSizes.m};
+  background: linear-gradient(
+    180deg,
+    rgba(${props => props.theme.colors.backgroundRgb}, 0.3) 3rem,
+    rgba(${props => props.theme.colors.backgroundRgb}, 0)
+  );
 `
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  max-width: 80rem;
+  margin: 0 auto;
 `
 
 const LinkList = styled.ul`
-  display: none;
-
-  @media (min-width: 900px) {
-    display: flex;
-  }
+  display: flex;
 `
 
-const ListItem = styled.li<{ last: boolean }>`
-  text-transform: uppercase;
-  padding: 0 ${props => (props.last ? 0 : "40px")} 0 0;
+const ListItem = styled.li`
+  padding: 0 0 0 ${props => props.theme.spaces.m};
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-const Intro = styled.p`
-  line-height: 26px;
-  width: 75%;
-
-  @media (min-width: 500px) {
-    width: 25%;
-  }
 `
 
 const query = graphql`
