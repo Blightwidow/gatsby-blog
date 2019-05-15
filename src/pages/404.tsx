@@ -1,5 +1,4 @@
 import * as React from "react"
-import { FormattedMessage } from "react-intl"
 import styled from "styled-components"
 
 import { Head } from "../components/Head"
@@ -11,8 +10,6 @@ class NotFoundPage extends React.PureComponent {
         <Head title="Page not found">
           <meta name="robots" content="noindex, nofolllow" />
         </Head>
-        <FormattedMessage id="404.title" tagName="h1" />
-        <FormattedMessage id="404.subtitle" tagName="p" />
         <Smiley>{":("}</Smiley>
       </Wrapper>
     )

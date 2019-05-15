@@ -15,9 +15,11 @@ module.exports = {
       options: {},
     },
     {
-      resolve: `gatsby-source-medium`,
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        username: `@theo.dammaretz`,
+        rule: {
+          include: /\.inline\.svg$/,
+        },
       },
     },
     {

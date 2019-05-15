@@ -1,107 +1,57 @@
-import { TinyColor } from "@ctrl/tinycolor"
 import * as React from "react"
-import { default as Particles, ParticlesProps } from "react-particles-js"
-import { DefaultTheme, withTheme } from "styled-components"
+import styled from "styled-components"
 
-interface BackgroundContainerProps {
-  theme: DefaultTheme
+interface BackgroundProps {
+  image: string
 }
 
-class BackgroundContainer extends React.PureComponent<BackgroundContainerProps> {
-  private particlesStyle = {
-    left: "0",
-    position: "fixed",
-    top: "0",
-    width: "100%",
-    zIndex: "-1",
+interface BackgroundState {
+  isLoaded: boolean
+}
+
+export class Background extends React.PureComponent<BackgroundProps, BackgroundState> {
+  state = {
+    isLoaded: false,
+  }
+
+  componentDidMount() {
+    const { image } = this.props
+    const imageNode = new Image()
+
+    imageNode.onload = () => {
+      window.requestAnimationFrame(() => this.setState({ isLoaded: true }))
+    }
+    imageNode.src = image
   }
 
   render(): React.ReactNode {
-    const { theme } = this.props
-    const backgroundColor = new TinyColor(theme.primary).toHexString()
+    const { image } = this.props
+    const { isLoaded } = this.state
 
-    return <Particles params={this.particlesParams(backgroundColor)} style={this.particlesStyle} />
-  }
-
-  private particlesParams(backgroundColor: string): ParticlesProps["params"] {
-    return {
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onclick: {
-            enable: false,
-          },
-          onhover: {
-            enable: false,
-          },
-          resize: true,
-        },
-      },
-      particles: {
-        color: {
-          value: backgroundColor,
-        },
-        line_linked: {
-          enable: false,
-        },
-        move: {
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200,
-          },
-          bounce: false,
-          direction: "none",
-          enable: true,
-          out_mode: "out",
-          random: false,
-          speed: 2,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: false,
-          },
-          value: 4,
-        },
-        opacity: {
-          anim: {
-            enable: false,
-            opacity_min: 0.1,
-            speed: 1,
-            sync: false,
-          },
-          random: false,
-          value: 0.02,
-        },
-        shape: {
-          image: {
-            height: 1000,
-            src: "img/github.svg",
-            width: 1000,
-          },
-          polygon: {
-            nb_sides: 4,
-          },
-          stroke: {
-            color: "#ef476f",
-            width: 0,
-          },
-          type: "circle",
-        },
-        size: {
-          anim: {
-            enable: false,
-            size_min: 0.1,
-            speed: 40,
-            sync: false,
-          },
-          random: true,
-          value: 435,
-        },
-      },
-    }
+    return <Bg image={image} isLoaded={isLoaded} />
   }
 }
 
-export const Background = withTheme(BackgroundContainer)
+const Bg = styled.div<{ image: string; isLoaded: boolean }>`
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 80vh;
+  opacity: ${props => (props.isLoaded ? 1 : 0)};
+  transition: opacity 0.3s ease-out;
+  background-repeat: no-repeat;
+  background-position: 60%;
+  background-size: cover;
+  background-image: linear-gradient(
+      270deg,
+      ${props => props.theme.colors.background},
+      rgba(${props => props.theme.colors.backgroundRgb}, 0) 80%
+    ),
+    linear-gradient(0deg, ${props => props.theme.colors.background}, rgba(${props => props.theme.colors.backgroundRgb}, 0) 60%),
+    url(${props => props.image});
+
+  @media (min-width: 1060px) {
+    width: 40%;
+    height: 100%;
+  }
+`
