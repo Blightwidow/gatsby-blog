@@ -14,9 +14,9 @@ export class SocialIcon extends React.PureComponent<SocialIconProps> {
 
     switch (icon) {
       case "github":
-        return <GithubLogo className={className} />
+        return <GithubLogo className={className} alt="github"/>
       case "linkedin":
-        return <LinkedingLogo className={className} />
+        return <LinkedingLogo className={className} alt="linkedin"/>
     }
   }
 }
