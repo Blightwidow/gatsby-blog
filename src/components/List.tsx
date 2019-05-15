@@ -24,6 +24,7 @@ const Wrapper = styled.ul`
 `
 
 const ElementWrapper = styled.li`
+  width: 100%;
   margin-bottom: ${props => props.theme.spaces.m};
 
   @media (min-width: 600px) {
