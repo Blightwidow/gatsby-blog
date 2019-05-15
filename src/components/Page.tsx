@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   }
 
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1060px) {
     margin: 0 auto 0 25vw;
     max-width: 100rem;
   }
@@ -71,7 +71,7 @@ const Spine = styled.div`
   background: ${props => props.theme.colors.primary}
     linear-gradient(0deg, ${props => props.theme.colors.background} 1rem, rgba(0, 0, 0, 0) 20vh);
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1060px) {
     left: calc(25vw + 1rem);
   }
 `
@@ -84,7 +84,7 @@ const SpineHead = styled(Spine)`
   border-radius: 100%;
   background: ${props => props.theme.colors.primary};
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1060px) {
     left: calc(25vw + 1rem - 4px);
   }
 `

@@ -50,7 +50,7 @@ const Bg = styled.div<{ image: string; isLoaded: boolean }>`
     linear-gradient(0deg, ${props => props.theme.colors.background}, rgba(${props => props.theme.colors.backgroundRgb}, 0) 60%),
     url(${props => props.image});
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1060px) {
     width: 40%;
     height: 100%;
   }

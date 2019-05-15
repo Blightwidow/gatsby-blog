@@ -20,15 +20,17 @@ export class List extends React.PureComponent<ListProps> {
 const Wrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  padding-right: ${props => props.theme.spaces.l};
   margin-bottom: ${props => props.theme.spaces.xxxl};
 `
 
 const ElementWrapper = styled.li`
-  flex-grow: 1;
   margin-bottom: ${props => props.theme.spaces.m};
 
   @media (min-width: 600px) {
-    margin-bottom: ${props => props.theme.spaces.xl};
+    width: 50%;
+  }
+
+  @media (min-width: 1060px) {
+    width: 33%;
   }
 `

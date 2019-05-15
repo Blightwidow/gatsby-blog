@@ -42,7 +42,7 @@ const ContentWrapper = styled(Page)`
   padding-top: calc(50vh - 11.5rem);
 
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1060px) {
     margin: 0 25vw;
   }
 `
