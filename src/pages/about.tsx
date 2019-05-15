@@ -6,8 +6,10 @@ import { Background } from "../components/Background"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
 import { Heading } from "../components/Heading"
+import { Link } from "../components/Link"
 import { List } from "../components/List"
 import { Page } from "../components/Page"
+import { SocialIcon } from "../components/SocialIcon"
 import { Text } from "../components/Text"
 import { animated } from "../utils/animation"
 
@@ -23,7 +25,12 @@ class IndexPage extends React.PureComponent {
         <ContentWrapper>
           <PageHeading variant="primary">about()</PageHeading>
           <BodyWrapper>
-            <Text>Social Links</Text>
+            <Link to="https://www.linkedin.com/in/theodammaretz/">
+              <Icon icon="linkedin" />
+            </Link>
+            <Link to="https://github.com/Blightwidow">
+              <Icon icon="github" />
+            </Link>
             <Text as="h2">
               <Accent>I am a profesionnal Software and Frontend Engineer. Loves the Web and its capabilities.</Accent>
             </Text>
@@ -132,3 +139,19 @@ const ContentWrapper = styled(Page)`
 const PageHeading = animated(Heading, "slide-in-top")
 
 const BodyWrapper = animated("div", "slide-in-right")
+
+const Icon = styled(SocialIcon)`
+  fill: ${props => props.theme.colors.primary};
+  width: ${props => props.theme.spaces.l};
+  height: ${props => props.theme.spaces.l};
+  margin: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.xs} ${props => props.theme.spaces.l} 0;
+  transition: 0.3s opacity ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @media (min-width: 600px) {
+    margin-bottom: ${props => props.theme.spaces.xl};
+  }
+`
