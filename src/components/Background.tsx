@@ -40,7 +40,7 @@ const Bg = styled.div<{ image: string; isLoaded: boolean }>`
   opacity: ${props => (props.isLoaded ? 1 : 0)};
   transition: opacity 0.3s ease-out;
   background-repeat: no-repeat;
-  background-position: 50% 30%;
+  background-position: 60%;
   background-size: cover;
   background-image: linear-gradient(
       270deg,

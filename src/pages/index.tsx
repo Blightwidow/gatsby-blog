@@ -40,6 +40,11 @@ export default IndexPage
 const ContentWrapper = styled(Page)`
   grid-area: content;
   padding-top: calc(50vh - 11.5rem);
+
+
+  @media (min-width: 1024px) {
+    margin: 0 25vw;
+  }
 `
 
 const PageHeading = animated(Heading, "slide-in-top")
