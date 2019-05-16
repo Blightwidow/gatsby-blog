@@ -112,7 +112,7 @@ class IndexPage extends React.PureComponent {
                   <Accent>ru-RU</Accent> Russian
                 </Text>
                 <Text collapse={true}>
-                  <Accent>jp-JP</Accent> Japanese
+                  <Accent>ja-JP</Accent> Japanese
                 </Text>
               </React.Fragment>
             </List>
