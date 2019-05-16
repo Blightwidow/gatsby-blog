@@ -6,10 +6,10 @@ import { Background } from "../components/Background"
 import { Head } from "../components/Head"
 import { Header } from "../components/Header"
 import { Heading } from "../components/Heading"
+import { Icon } from "../components/Icon"
 import { Link } from "../components/Link"
 import { List } from "../components/List"
 import { Page } from "../components/Page"
-import { SocialIcon } from "../components/SocialIcon"
 import { Text } from "../components/Text"
 import { animated } from "../utils/animation"
 
@@ -25,12 +25,12 @@ class IndexPage extends React.PureComponent {
         <ContentWrapper>
           <PageHeading variant="primary">about()</PageHeading>
           <BodyWrapper>
-            <Link to="https://www.linkedin.com/in/theodammaretz/">
-              <Icon icon="linkedin" />
-            </Link>
-            <Link to="https://github.com/Blightwidow">
-              <Icon icon="github" />
-            </Link>
+            <SocialLink to="https://www.linkedin.com/in/theodammaretz/" aria-label="View my linkedin profile">
+              <SocialIcon icon="linkedin" />
+            </SocialLink>
+            <SocialLink to="https://github.com/Blightwidow" aria-label="View my github profile">
+              <SocialIcon icon="github" />
+            </SocialLink>
             <Text as="h2">
               <Accent>I am a profesionnal Software and Frontend Engineer. Loves the Web and its capabilities.</Accent>
             </Text>
@@ -140,7 +140,11 @@ const PageHeading = animated(Heading, "slide-in-top")
 
 const BodyWrapper = animated("div", "slide-in-right")
 
-const Icon = styled(SocialIcon)`
+const SocialLink = styled(Link)`
+  color: ${props => props.theme.colors.primary};
+`
+
+const SocialIcon = styled(Icon)`
   fill: ${props => props.theme.colors.primary};
   width: ${props => props.theme.spaces.l};
   height: ${props => props.theme.spaces.l};

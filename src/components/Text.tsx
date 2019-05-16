@@ -26,7 +26,7 @@ function getOpacity(variant: TextProps["variant"] = "primary"): string {
     case "primary":
       return "1"
     case "secondary":
-      return "0.6"
+      return "0.75"
   }
 }
 

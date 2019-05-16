@@ -3,12 +3,12 @@ import * as React from "react"
 import GithubLogo from "../medias/github.inline.svg"
 import LinkedingLogo from "../medias/linkedin.inline.svg"
 
-interface SocialIconProps {
+interface IconProps {
   icon: "github" | "linkedin"
   className?: string
 }
 
-export class SocialIcon extends React.PureComponent<SocialIconProps> {
+export class Icon extends React.PureComponent<IconProps> {
   render(): React.ReactNode {
     const { icon, className } = this.props
 
