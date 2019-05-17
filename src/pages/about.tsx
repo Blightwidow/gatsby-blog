@@ -141,21 +141,22 @@ const PageHeading = animated(Heading, "slide-in-top")
 const BodyWrapper = animated("div", "slide-in-right")
 
 const SocialLink = styled(Link)`
+  display: inline-block;
   color: ${props => props.theme.colors.primary};
+
+  @media (min-width: 600px) {
+    margin-bottom: ${props => props.theme.spaces.xl};
+  }
 `
 
 const SocialIcon = styled(Icon)`
   fill: ${props => props.theme.colors.primary};
-  width: ${props => props.theme.spaces.l};
-  height: ${props => props.theme.spaces.l};
-  margin: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.xs} ${props => props.theme.spaces.l} 0;
+  width: ${props => props.theme.spaces.xl};
+  height: ${props => props.theme.spaces.xl};
+  margin: ${props => props.theme.spaces.xs} ${props => props.theme.spaces.l} ${props => props.theme.spaces.l} 0;
   transition: 0.3s opacity ease-in-out;
 
   &:hover {
     opacity: 0.7;
-  }
-
-  @media (min-width: 600px) {
-    margin-bottom: ${props => props.theme.spaces.xl};
   }
 `
