@@ -33,7 +33,7 @@ export const StyleBase = createGlobalStyle`
 
   /* Fonts */
 
-  body {
+  html, body {
     width: 100%;
     font-family: ${props => props.theme.fontFamily};
     font-size: ${props => props.theme.fontSizes.m};
