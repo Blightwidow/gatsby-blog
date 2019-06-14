@@ -34,7 +34,6 @@ The setup is currently hosted and deployed through [Netlify](https://www.netlify
 * [React](https://reactjs.org/) - The web framework used
 * [Styled-components](https://www.styled-components.com/) - Atomic styling system
 * [Gatsby](https://www.gatsbyjs.org/) - Static HTML rendering of React content
-* [Medium](https://medium.com/) - Blogging platform
 * [Typescript](https://www.typescriptlang.org/) - Javascript compiling language with strong typings
 
 ## Contributing
