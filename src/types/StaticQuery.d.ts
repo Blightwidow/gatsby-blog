@@ -10,10 +10,4 @@ export interface SiteMeta {
 export interface Author {
   fullName: string
   email: string
-  socialLinks: SocialLink[]
-}
-
-export interface SocialLink {
-  to: string
-  label: string
 }

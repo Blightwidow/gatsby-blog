@@ -1,9 +1,4 @@
 {
   "fullName": "Theo Dammaretz",
   "email": "theo@dammaretz.fr",
-  "socialLinks": [
-    { "to": "https://github.com/Blightwidow", "label": "Github" },
-    { "to": "https://www.linkedin.com/in/theodammaretz/", "label": "Linkedin" },
-    { "to": "https://stackoverflow.com/users/story/8725059", "label": "Stack Overflow" }
-  ]
 }
