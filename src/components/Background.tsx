@@ -34,7 +34,6 @@ export class Background extends React.PureComponent<BackgroundProps, BackgroundS
 
 const Bg = styled.div<{ image: string; isLoaded: boolean }>`
   position: absolute;
-  z-index: -1;
   width: 100%;
   height: 80vh;
   opacity: ${props => (props.isLoaded ? 1 : 0)};
