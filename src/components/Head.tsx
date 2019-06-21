@@ -13,7 +13,7 @@ export class Head extends React.PureComponent<HeadProps> {
   renderChildren = (data: StaticQueryResult): React.ReactNode => {
     const { title, children } = this.props
     return (
-      <Helmet title={title || data.site.siteMetadata.title}>
+      <Helmet title={`${title ? `${title} | ` : ""}${data.site.siteMetadata.title}`}>
         <html lang="en" />
         <script type="application/ld+json" data-test="jsonld">
           {JSON.stringify({
@@ -40,7 +40,7 @@ export class Head extends React.PureComponent<HeadProps> {
         <meta property="og:type" content="profile" />
         <meta property="og:profile:first_name" content="Dammaretz" />
         <meta property="og:profile:last_name" content="Theo" />
-        <meta property="og:url" content="http:////dammaretz.fr" />
+        <meta property="og:url" content="https://dammaretz.fr" />
         <meta property="og:description" content="Theo Dammaretz online business card and resume" />
         <meta property="og:site_name" content="Theo Dammaretz, Full Stack Engineer" />
         <meta name="robots" content="index, follow" />

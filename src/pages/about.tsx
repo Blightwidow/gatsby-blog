@@ -19,7 +19,7 @@ class IndexPage extends React.PureComponent {
   render(): React.ReactNode {
     return (
       <React.Fragment>
-        <Head />
+        <Head title="about"/>
         <Background image={avatar} />
         <Header title=".about()" />
         <ContentWrapper>
