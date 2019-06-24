@@ -52,6 +52,7 @@ const Wrapper = styled.header`
     rgba(${props => props.theme.colors.backgroundRgb}, 0.3) 3rem,
     rgba(${props => props.theme.colors.backgroundRgb}, 0)
   );
+  z-index: 10;
 `
 
 const Nav = styled.nav`
