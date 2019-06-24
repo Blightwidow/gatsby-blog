@@ -80,7 +80,7 @@ class HolidayPage extends React.PureComponent<{}, HolidayPageState> {
             {nextHoliday !== null && (
               <HolidayWrapper>
                 <Heading variant="secondary" as="p">
-                  {nextHoliday.name} - {nextHoliday.date.toLocaleDateString()}
+                  {nextHoliday.name} - {nextHoliday.date.toDateString()}
                 </Heading>
                 <Text>{nextHoliday.description}</Text>
               </HolidayWrapper>
