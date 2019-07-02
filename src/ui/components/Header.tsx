@@ -6,42 +6,37 @@ import { Accent } from "./Accent"
 import { Link } from "./Link"
 import { Text } from "./Text"
 
-import { StaticQueryResult } from "../../types/StaticQuery"
+import { StaticQueryResult } from "../../data/models/StaticQuery"
 
 export interface HeaderProps {
   title: string
 }
 
-export class Header extends React.PureComponent<HeaderProps> {
-  getLinks = (email: string): Array<{ to: string; label: string }> => {
+export const Header: React.SFC<HeaderProps> = ({ title }) => {
+  const getLinks = (email: string): Array<{ to: string; label: string }> => {
     return [{ to: "/", label: "is()" }, { to: "/about", label: "about()" }, { to: `mailto:${email}`, label: "contact()" }]
   }
 
-  renderChildren = (data: StaticQueryResult): React.ReactNode => {
-    const { title } = this.props
-    return (
-      <Wrapper id="header" role="banner">
-        <Nav role="navigation">
-          <Text>
-            <Accent>{title}</Accent>
-          </Text>
-          <LinkList>
-            {this.getLinks(data.site.siteMetadata.author.email).map((link, i) => (
-              <ListItem key={i}>
-                <Text>
-                  <Link to={link.to}>{link.label}</Link>
-                </Text>
-              </ListItem>
-            ))}
-          </LinkList>
-        </Nav>
-      </Wrapper>
-    )
-  }
+  const renderChildren = (data: StaticQueryResult): React.ReactNode => (
+    <Wrapper id="header" role="banner">
+      <Nav role="navigation">
+        <Text>
+          <Accent>{title}</Accent>
+        </Text>
+        <LinkList>
+          {getLinks(data.site.siteMetadata.author.email).map((link, i) => (
+            <ListItem key={i}>
+              <Text>
+                <Link to={link.to}>{link.label}</Link>
+              </Text>
+            </ListItem>
+          ))}
+        </LinkList>
+      </Nav>
+    </Wrapper>
+  )
 
-  render(): React.ReactNode {
-    return <StaticQuery query={query} render={this.renderChildren} />
-  }
+  return <StaticQuery query={query} render={renderChildren} />
 }
 
 const Wrapper = styled.header`

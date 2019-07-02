@@ -8,26 +8,22 @@ export interface LinkProps {
   className?: string
 }
 
-export class Link extends React.PureComponent<LinkProps> {
-  private OUTSIDE_LINK_REGEX = /^[a-z]+:.+/
+export const Link: React.SFC<LinkProps> = ({ to, children, className, ...props }) => {
+  const OUTSIDE_LINK_REGEX = /^[a-z]+:.+/
 
-  render(): React.ReactChild {
-    const { to, children, className, ...props } = this.props
-
-    if (this.OUTSIDE_LINK_REGEX.test(to)) {
-      return (
-        <Anchor href={to} rel="nofollow noopener" className={className} {...props}>
-          {children}
-        </Anchor>
-      )
-    }
-
+  if (OUTSIDE_LINK_REGEX.test(to)) {
     return (
-      <InternalAnchor to={to} className={className} activeStyle={{ opacity: 0.5 }} {...props}>
+      <Anchor href={to} rel="nofollow noopener" className={className} {...props}>
         {children}
-      </InternalAnchor>
+      </Anchor>
     )
   }
+
+  return (
+    <InternalAnchor to={to} className={className} activeStyle={{ opacity: 0.5 }} {...props}>
+      {children}
+    </InternalAnchor>
+  )
 }
 
 const linkStyle = css`

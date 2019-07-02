@@ -10,37 +10,32 @@ import { Page } from "../../components/Page"
 import { Text } from "../../components/Text"
 import { animated } from "../../styles/animated"
 
-class IndexPage extends React.PureComponent {
-  render(): React.ReactNode {
-    return (
-      <React.Fragment>
-        <Head />
-        <Header title=".is()" />
-        <ContentWrapper>
-          <PageHeading variant="primary">
-            theo<Accent>.is()</Accent>
-          </PageHeading>
-          <BodyWrapper>
-            <Text as="h2">
-              <Accent>Theo Dammaretz</Accent>
-            </Text>
-            <Text>Frontend engineer, advocate and dreamer</Text>
-            <Text>
-              <Link to="/about">Learn more about me here</Link>
-            </Text>
-          </BodyWrapper>
-        </ContentWrapper>
-      </React.Fragment>
-    )
-  }
-}
+const IndexPage: React.SFC = () => (
+  <React.Fragment>
+    <Head />
+    <Header title=".is()" />
+    <ContentWrapper>
+      <PageHeading variant="primary">
+        theo<Accent>.is()</Accent>
+      </PageHeading>
+      <BodyWrapper>
+        <Text as="h2">
+          <Accent>Theo Dammaretz</Accent>
+        </Text>
+        <Text>Frontend engineer, advocate and dreamer</Text>
+        <Text>
+          <Link to="/about">Learn more about me here</Link>
+        </Text>
+      </BodyWrapper>
+    </ContentWrapper>
+  </React.Fragment>
+)
 
 export default IndexPage
 
 const ContentWrapper = styled(Page)`
   grid-area: content;
   padding-top: calc(50vh - 11.5rem);
-
 
   @media (min-width: 1060px) {
     margin: 0 25vw;

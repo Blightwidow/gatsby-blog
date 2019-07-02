@@ -9,20 +9,14 @@ export interface PageProps {
   id?: string
 }
 
-export class Page extends React.PureComponent<PageProps> {
-  render(): React.ReactChild {
-    const { children, id, className } = this.props
-
-    return (
-      <Wrapper id={id} className={className}>
-        <Content role="main">{children}</Content>
-        <Spine />
-        <SpineHead />
-        <SpineHeadRadiation />
-      </Wrapper>
-    )
-  }
-}
+export const Page: React.SFC<PageProps> = ({ children, id, className }) => (
+  <Wrapper id={id} className={className}>
+    <Content role="main">{children}</Content>
+    <Spine />
+    <SpineHead />
+    <SpineHeadRadiation />
+  </Wrapper>
+)
 
 const Wrapper = styled.div`
   position: relative;
@@ -44,7 +38,6 @@ const Wrapper = styled.div`
   @media (min-width: 600px) {
     padding-top: calc(50vh - 12rem);
   }
-
 
   @media (min-width: 1060px) {
     margin: 0 auto 0 25vw;

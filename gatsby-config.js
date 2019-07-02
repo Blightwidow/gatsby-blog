@@ -11,7 +11,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/ui/routes`,
         ignore: {
-          patterns: [`!(*/index.(tsx))`],
+          patterns: [`!(?(*/)index.tsx)`],
           options: { nocase: true },
         },
       },

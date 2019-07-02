@@ -8,15 +8,11 @@ interface IconProps {
   className?: string
 }
 
-export class Icon extends React.PureComponent<IconProps> {
-  render(): React.ReactNode {
-    const { icon, className } = this.props
-
-    switch (icon) {
-      case "github":
-        return <GithubLogo className={className} alt="github"/>
-      case "linkedin":
-        return <LinkedingLogo className={className} alt="linkedin"/>
-    }
+export const Icon: React.SFC<IconProps> = ({ icon, className }) => {
+  switch (icon) {
+    case "github":
+      return <GithubLogo className={className} alt="github" />
+    case "linkedin":
+      return <LinkedingLogo className={className} alt="linkedin" />
   }
 }

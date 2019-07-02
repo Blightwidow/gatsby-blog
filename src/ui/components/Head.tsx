@@ -2,16 +2,15 @@ import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
 
-import { StaticQueryResult } from "../../types/StaticQuery"
+import { StaticQueryResult } from "../../data/models/StaticQuery"
 
 export interface HeadProps {
   title?: string
   children?: React.ReactChild
 }
 
-export class Head extends React.PureComponent<HeadProps> {
-  renderChildren = (data: StaticQueryResult): React.ReactNode => {
-    const { title, children } = this.props
+export const Head: React.SFC<HeadProps> = ({ title, children }) => {
+  const renderChildren = (data: StaticQueryResult): React.ReactNode => {
     return (
       <Helmet title={`${title ? `${title} | ` : ""}${data.site.siteMetadata.title}`}>
         <html lang="en" />
@@ -52,9 +51,7 @@ export class Head extends React.PureComponent<HeadProps> {
     )
   }
 
-  render(): React.ReactNode {
-    return <StaticQuery query={query} render={this.renderChildren} />
-  }
+  return <StaticQuery query={query} render={renderChildren} />
 }
 
 const query = graphql`
