@@ -1,17 +1,17 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Accent } from "../components/Accent"
-import { Head } from "../components/Head"
-import { Header } from "../components/Header"
-import { Heading } from "../components/Heading"
-import { Page } from "../components/Page"
-import { Text } from "../components/Text"
-import { animated } from "../utils/animation"
+import { Accent } from "../../components/Accent"
+import { Head } from "../../components/Head"
+import { Header } from "../../components/Header"
+import { Heading } from "../../components/Heading"
+import { Page } from "../../components/Page"
+import { Text } from "../../components/Text"
+import { animated } from "../../styles/animated"
 
-import { GeolocationProvider } from "../providers/GeolocationProvider"
-import { HolidayProvider } from "../providers/HolidayProvider"
-import { Holiday } from "../types/geolocation"
+import { GeolocationProvider } from "../../../data/providers/GeolocationProvider"
+import { HolidayProvider } from "../../../data/providers/HolidayProvider"
+import { Holiday } from "../../../data/models/Holiday"
 
 interface HolidayPageState {
   isLoading: boolean

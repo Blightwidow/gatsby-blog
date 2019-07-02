@@ -2,7 +2,7 @@ import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import Helmet from "react-helmet"
 
-import { StaticQueryResult } from "../types/StaticQuery"
+import { StaticQueryResult } from "../../types/StaticQuery"
 
 export interface HeadProps {
   title?: string

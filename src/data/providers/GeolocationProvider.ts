@@ -1,4 +1,4 @@
-import { CountryCode } from "../types/geolocation"
+export type CountryCode = string
 
 export class GeolocationProvider {
   static API_KEY = "206b2773d00f481ca26bdbe716e20ee2"

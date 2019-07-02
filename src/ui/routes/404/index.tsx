@@ -1,8 +1,8 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Head } from "../components/Head"
-import { Text } from "../components/Text"
+import { Head } from "../../components/Head"
+import { Text } from "../../components/Text"
 
 class NotFoundPage extends React.PureComponent {
   render(): React.ReactNode {

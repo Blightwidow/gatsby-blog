@@ -1,4 +1,6 @@
-import { CountryCode, Holiday } from "../types/geolocation"
+import { CountryCode } from "./GeolocationProvider"
+
+import { Holiday } from "../models/Holiday"
 
 export class HolidayProvider {
   static API_KEY = "c6b2f24fde42dbb629c40ba30328ad4510734356"

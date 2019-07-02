@@ -1,5 +1,3 @@
-export type CountryCode = string
-
 export class Holiday {
   readonly date: Date
   readonly name: string

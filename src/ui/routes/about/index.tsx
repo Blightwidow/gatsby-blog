@@ -1,19 +1,19 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Accent } from "../components/Accent"
-import { Background } from "../components/Background"
-import { Head } from "../components/Head"
-import { Header } from "../components/Header"
-import { Heading } from "../components/Heading"
-import { Icon } from "../components/Icon"
-import { Link } from "../components/Link"
-import { List } from "../components/List"
-import { Page } from "../components/Page"
-import { Text } from "../components/Text"
-import { animated } from "../utils/animation"
+import { Accent } from "../../components/Accent"
+import { Background } from "../../components/Background"
+import { Head } from "../../components/Head"
+import { Header } from "../../components/Header"
+import { Heading } from "../../components/Heading"
+import { Icon } from "../../components/Icon"
+import { Link } from "../../components/Link"
+import { List } from "../../components/List"
+import { Page } from "../../components/Page"
+import { Text } from "../../components/Text"
+import { animated } from "../../styles/animated"
 
-import avatar from "../../data/avatar.jpg"
+import avatar from "../../medias/avatar.jpg"
 
 class IndexPage extends React.PureComponent {
   render(): React.ReactNode {

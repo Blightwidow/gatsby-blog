@@ -2,10 +2,11 @@ import { graphql, StaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
-import { StaticQueryResult } from "../types/StaticQuery"
 import { Accent } from "./Accent"
 import { Link } from "./Link"
 import { Text } from "./Text"
+
+import { StaticQueryResult } from "../../types/StaticQuery"
 
 export interface HeaderProps {
   title: string

@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { animated } from "../utils/animation"
+import { animated } from "../styles/animated"
 
 export interface PageProps {
   children?: React.ReactChild | React.ReactChild[]

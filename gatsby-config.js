@@ -1,4 +1,4 @@
-const author = require("./data/owner.json")
+const author = require("./src/data/raw/owner.json")
 
 module.exports = {
   siteMetadata: {
@@ -6,6 +6,16 @@ module.exports = {
     author,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/ui/routes`,
+        ignore: {
+          patterns: [`!(*/index.(tsx))`],
+          options: { nocase: true },
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-react-helmet",
       options: {},

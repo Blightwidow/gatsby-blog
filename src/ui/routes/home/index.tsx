@@ -1,14 +1,14 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Accent } from "../components/Accent"
-import { Head } from "../components/Head"
-import { Header } from "../components/Header"
-import { Heading } from "../components/Heading"
-import { Link } from "../components/Link"
-import { Page } from "../components/Page"
-import { Text } from "../components/Text"
-import { animated } from "../utils/animation"
+import { Accent } from "../../components/Accent"
+import { Head } from "../../components/Head"
+import { Header } from "../../components/Header"
+import { Heading } from "../../components/Heading"
+import { Link } from "../../components/Link"
+import { Page } from "../../components/Page"
+import { Text } from "../../components/Text"
+import { animated } from "../../styles/animated"
 
 class IndexPage extends React.PureComponent {
   render(): React.ReactNode {
