@@ -9,7 +9,7 @@ export interface PageProps {
   id?: string
 }
 
-export const Page: React.SFC<PageProps> = ({ children, id, className }) => (
+export const Page: React.FunctionComponent<PageProps> = ({ children, id, className }) => (
   <Wrapper id={id} className={className}>
     <Content role="main">{children}</Content>
     <Spine />

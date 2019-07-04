@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Head } from "../../components/Head"
 import { Text } from "../../components/Text"
 
-const NotFoundPage: React.SFC = () => (
+const NotFoundPage: React.FunctionComponent = () => (
   <Wrapper role="main">
     <Head title="Page not found">
       <meta name="robots" content="noindex, nofolllow" />

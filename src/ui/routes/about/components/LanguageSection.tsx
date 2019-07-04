@@ -5,7 +5,7 @@ import { Heading } from "../../../components/Heading"
 import { List } from "../../../components/List"
 import { Text } from "../../../components/Text"
 
-export const LanguageSection: React.SFC = () => (
+export const LanguageSection: React.FunctionComponent = () => (
   <React.Fragment>
     <Heading variant="secondary" as="h3">
       Languages

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { Icon } from "../../../components/Icon"
 import { Link } from "../../../components/Link"
 
-export const SocialLinks: React.SFC = () => (
+export const SocialLinks: React.FunctionComponent = () => (
   <React.Fragment>
     <SocialLink to="https://www.linkedin.com/in/theodammaretz/" aria-label="View my linkedin profile">
       <SocialIcon icon="linkedin" />

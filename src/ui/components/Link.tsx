@@ -8,7 +8,7 @@ export interface LinkProps {
   className?: string
 }
 
-export const Link: React.SFC<LinkProps> = ({ to, children, className, ...props }) => {
+export const Link: React.FunctionComponent<LinkProps> = ({ to, children, className, ...props }) => {
   const OUTSIDE_LINK_REGEX = /^[a-z]+:.+/
 
   if (OUTSIDE_LINK_REGEX.test(to)) {

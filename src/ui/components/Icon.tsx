@@ -8,7 +8,7 @@ interface IconProps {
   className?: string
 }
 
-export const Icon: React.SFC<IconProps> = ({ icon, className }) => {
+export const Icon: React.FunctionComponent<IconProps> = ({ icon, className }) => {
   switch (icon) {
     case "github":
       return <GithubLogo className={className} alt="github" />

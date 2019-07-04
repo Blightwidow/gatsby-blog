@@ -5,7 +5,7 @@ export interface ListProps {
   children: React.ReactChild[]
 }
 
-export const List: React.SFC<ListProps> = ({ children }) => {
+export const List: React.FunctionComponent<ListProps> = ({ children }) => {
   const renderChild = (element: React.ReactChild): React.ReactChild => {
     return <ElementWrapper>{element}</ElementWrapper>
   }

@@ -12,7 +12,7 @@ export interface HeaderProps {
   title: string
 }
 
-export const Header: React.SFC<HeaderProps> = ({ title }) => {
+export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
   const getLinks = (email: string): Array<{ to: string; label: string }> => {
     return [{ to: "/", label: "is()" }, { to: "/about", label: "about()" }, { to: `mailto:${email}`, label: "contact()" }]
   }

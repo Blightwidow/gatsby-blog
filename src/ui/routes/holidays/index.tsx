@@ -9,7 +9,7 @@ import { animated } from "../../styles/animated"
 
 import { HolidayView } from "./components/HolidayView"
 
-const HolidayPage: React.SFC = () => (
+const HolidayPage: React.FunctionComponent = () => (
   <React.Fragment>
     <Head title="holidays" />
     <Header title=".holiday()" />

@@ -17,7 +17,7 @@ import { LanguageSection } from "./components/LanguageSection"
 import { SkillsSection } from "./components/SkillsSection"
 import { SocialLinks } from "./components/SocialLinks"
 
-const IndexPage: React.SFC = () => (
+const IndexPage: React.FunctionComponent = () => (
   <React.Fragment>
     <Head title="about" />
     <Background image={avatar} />

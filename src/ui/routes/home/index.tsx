@@ -10,7 +10,7 @@ import { Page } from "../../components/Page"
 import { Text } from "../../components/Text"
 import { animated } from "../../styles/animated"
 
-const IndexPage: React.SFC = () => (
+const IndexPage: React.FunctionComponent = () => (
   <React.Fragment>
     <Head />
     <Header title=".is()" />

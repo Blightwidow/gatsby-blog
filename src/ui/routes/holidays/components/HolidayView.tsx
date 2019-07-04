@@ -9,7 +9,7 @@ import { Holiday } from "../../../../data/models/Holiday"
 import { GeolocationProvider } from "../../../../data/providers/GeolocationProvider"
 import { HolidayProvider } from "../../../../data/providers/HolidayProvider"
 
-export const HolidayView: React.SFC = () => {
+export const HolidayView: React.FunctionComponent = () => {
   const geoLocationProvider = new GeolocationProvider()
   const holidayProvider = new HolidayProvider()
 

@@ -9,7 +9,7 @@ export interface HeadProps {
   children?: React.ReactChild
 }
 
-export const Head: React.SFC<HeadProps> = ({ title, children }) => {
+export const Head: React.FunctionComponent<HeadProps> = ({ title, children }) => {
   const renderChildren = (data: StaticQueryResult): React.ReactNode => {
     return (
       <Helmet title={`${title ? `${title} | ` : ""}${data.site.siteMetadata.title}`}>
