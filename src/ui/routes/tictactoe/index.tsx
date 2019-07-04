@@ -73,7 +73,7 @@ export default TicTacToePage
 const Wrapper = styled.div`
   grid-area: content;
   margin: auto;
-  padding: 5rem 2rem;
+  padding: 0 2rem 5rem;
   text-align: center;
 `
 
