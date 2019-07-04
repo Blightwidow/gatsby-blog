@@ -1,5 +1,3 @@
-[Settings]
-
 [build]
   publish = "public/"
   command = "yarn run deploy"
@@ -8,3 +6,8 @@
   from = "https://dammaretz.netlify.com/*"
   to = "/:splat"
   status = 301
+
+[[headers]]
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  Content-Security-Policy =  "default-src 'self'"
+  Referrer-Policy = "no-referrer"
