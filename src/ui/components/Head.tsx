@@ -22,7 +22,7 @@ export const Head: React.FunctionComponent<HeadProps> = ({ title, children }) =>
             name: "Theo Dammaretz",
             sameAs: [
               "https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;theodammaretz&#x2F;",
-              "https:&#x2F;&#x2F;gitlab.com&#x2F;Blightwidow",
+              "https:&#x2F;&#x2F;github.com&#x2F;Blightwidow",
               "https:&#x2F;&#x2F;stackoverflow.com&#x2F;users&#x2F;story&#x2F;8725059",
             ],
           })}
