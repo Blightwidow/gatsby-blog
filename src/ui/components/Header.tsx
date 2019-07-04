@@ -42,7 +42,8 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
 const Wrapper = styled.header`
   color: ${props => props.theme.colors.light};
   grid-area: header;
-  padding: ${props => props.theme.fontSizes.xs} ${props => props.theme.fontSizes.m};
+  width: 100vw;
+  padding: ${props => props.theme.fontSizes.xs} 0;
   background: linear-gradient(
     180deg,
     rgba(${props => props.theme.colors.backgroundRgb}, 0.3) 3rem,
@@ -54,8 +55,12 @@ const Wrapper = styled.header`
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
-  max-width: 80rem;
+  max-width: 96%;
   margin: 0 auto;
+
+  @media (min-width: 80rem) {
+    max-width: 80rem;
+  }
 `
 
 const LinkList = styled.ul`
@@ -63,7 +68,7 @@ const LinkList = styled.ul`
 `
 
 const ListItem = styled.li`
-  padding: 0 0 0 ${props => props.theme.spaces.m};
+  padding: 0 ${props => props.theme.spaces.s};
   display: flex;
   align-items: center;
   justify-content: center;

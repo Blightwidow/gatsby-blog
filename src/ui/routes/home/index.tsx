@@ -23,8 +23,11 @@ const IndexPage: React.FunctionComponent = () => (
           <Accent>Theo Dammaretz</Accent>
         </Text>
         <Text>Frontend engineer, advocate and dreamer</Text>
+        <ProjectHeading variant="secondary" as="h3">
+          Fun projects
+        </ProjectHeading>
         <Text>
-          <Link to="/about">Learn more about me here</Link>
+          <Link to="/tictactoe">Play TicTacToe against an AI</Link>
         </Text>
       </BodyWrapper>
     </ContentWrapper>
@@ -39,6 +42,14 @@ const ContentWrapper = styled(Page)`
 
   @media (min-width: 1060px) {
     margin: 0 25vw;
+  }
+`
+
+const ProjectHeading = styled(Heading)`
+  padding-top: 2.5rem;
+
+  @media (min-width: 1060px) {
+    padding-top: 4rem;
   }
 `
 

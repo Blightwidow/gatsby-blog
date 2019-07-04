@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 import { Accent } from "../../components/Accent"
 import { Head } from "../../components/Head"
+import { Header } from "../../components/Header"
 import { Heading } from "../../components/Heading"
 import { Text } from "../../components/Text"
 
@@ -49,6 +50,7 @@ const TicTacToePage: React.FunctionComponent = () => {
   return (
     <React.Fragment>
       <Head />
+      <Header title=".tictactoe()" />
       <Wrapper>
         <Heading variant="secondary">{getEndingText(gameState)}</Heading>
         <Board>
@@ -73,7 +75,6 @@ export default TicTacToePage
 const Wrapper = styled.div`
   grid-area: content;
   margin: auto;
-  padding: 0 2rem 5rem;
   text-align: center;
 `
 
