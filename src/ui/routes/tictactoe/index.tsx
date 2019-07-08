@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 import { Accent } from "../../components/Accent"
+import { Button } from "../../components/Button"
 import { Head } from "../../components/Head"
 import { Header } from "../../components/Header"
 import { Heading } from "../../components/Heading"
@@ -59,12 +60,12 @@ const TicTacToePage: React.FunctionComponent = () => {
           ))}
         </Board>
         <Text variant="secondary">You play cross</Text>
-        <Text>
-          <Accent onClick={onModeToggle}>{`Switch to ${easyMode ? "hard" : "easy"} mode`}</Accent>
-        </Text>
-        <Text>
-          <Accent onClick={onReset}>Reset</Accent>
-        </Text>
+        <Button onClick={onModeToggle}>
+          <Accent>{`Switch to ${easyMode ? "hard" : "easy"} mode`}</Accent>
+        </Button>
+        <Button onClick={onReset}>
+          <Accent>Reset</Accent>
+        </Button>
       </Wrapper>
     </React.Fragment>
   )
@@ -83,4 +84,9 @@ const Board = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
+`
+
+const ResetButton = styled(Button)`
+  display: block;
+  margin: 0.5rem auto;
 `
