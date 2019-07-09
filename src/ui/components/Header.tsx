@@ -42,7 +42,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
 const Wrapper = styled.header`
   color: ${props => props.theme.colors.light};
   grid-area: header;
-  width: 100vw;
+  width: 100%;
   padding: ${props => props.theme.fontSizes.xs} 0;
   background: linear-gradient(
     180deg,
