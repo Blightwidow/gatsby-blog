@@ -65,9 +65,10 @@ module.exports = {
         mergeStyleHashes: false,
         directives: {
           "style-src": "'self' 'unsafe-inline'",
-          "font-src": "'self' data: *.cloudfront.net"
-        }
-      }
-    }
+          "font-src": "'self' data: *.cloudfront.net",
+          "img-src": "'self' data: *.cloudfront.net",
+        },
+      },
+    },
   ],
 }
