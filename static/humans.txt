@@ -5,19 +5,18 @@
  / / / / / /  __/ /_/ /  / /_/ / /_/ / / / / / / / / / / / /_/ / /  /  __/ /_  / /_
 /_/ /_/ /_/\___/\____/  /_____/\__,_/_/ /_/ /_/_/ /_/ /_/\__,_/_/   \___/\__/ /___/
 
-Your title: Theo Dammaretz
+Name: Theo Dammaretz
+Title: Frontend Engineer
 Site: dammaretz.fr                 
 Location: Paris, France
 
 
 /* THANKS */
-	
+
 Name: http://netlify.com for the free hosting
                             
 /* SITE */
 
 Standards: HTML5, CSS3, WCAG
-Components: React, Gatsby, Styled-Components
+Components: React, Gatsby, Styled-Components, Typescript
 Software: VS Code
-   
-                        
