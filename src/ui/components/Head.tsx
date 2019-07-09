@@ -33,7 +33,7 @@ export const Head: React.FunctionComponent<HeadProps> = ({ title, children }) =>
         <meta name="author" content="Theo Dammaretz" />
         <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="theme-color" content="#EF476F" />
+        <meta name="theme-color" content="#282A36" />
         <meta name="twitter:card" content="summary" />
         <meta property="og:title" content="Theo Dammaretz, Full Stack Engineer" />
         <meta property="og:type" content="profile" />
