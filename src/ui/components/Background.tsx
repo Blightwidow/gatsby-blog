@@ -5,31 +5,22 @@ interface BackgroundProps {
   image: string
 }
 
-interface BackgroundState {
-  isLoaded: boolean
-}
+export const Background: React.FunctionComponent<BackgroundProps> = ({ image }) => {
+  const [isLoaded, setIsLoaded] = React.useState(false)
 
-export class Background extends React.PureComponent<BackgroundProps, BackgroundState> {
-  state = {
-    isLoaded: false,
-  }
-
-  componentDidMount() {
-    const { image } = this.props
+  const loadImage = () => {
     const imageNode = new Image()
 
     imageNode.onload = () => {
-      window.requestAnimationFrame(() => this.setState({ isLoaded: true }))
+      window.requestAnimationFrame(() => setIsLoaded(true))
     }
+
     imageNode.src = image
   }
 
-  render(): React.ReactNode {
-    const { image } = this.props
-    const { isLoaded } = this.state
+  React.useEffect(loadImage)
 
-    return <Bg image={image} isLoaded={isLoaded} />
-  }
+  return <Bg image={image} isLoaded={isLoaded} />
 }
 
 const Bg = styled.div<{ image: string; isLoaded: boolean }>`
