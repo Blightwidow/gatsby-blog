@@ -29,6 +29,7 @@ const Bg = styled.div<{ image: string; isLoaded: boolean }>`
   height: 80vh;
   opacity: ${props => (props.isLoaded ? 1 : 0)};
   transition: opacity 0.3s ease-out;
+  will-change: opacity;
   background-repeat: no-repeat;
   background-position: 60%;
   background-size: cover;
