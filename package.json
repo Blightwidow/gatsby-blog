@@ -4,22 +4,23 @@
   "version": "2.0.0",
   "author": "Theo Dammaretz <theo@dammaretz.fr>",
   "dependencies": {
-    "babel-plugin-styled-components": "1.10.0",
-    "gatsby": "2.9.4",
-    "gatsby-plugin-csp": "^1.1.3",
-    "gatsby-plugin-offline": "2.1.3",
-    "gatsby-plugin-page-creator": "^2.1.2",
+    "babel-plugin-styled-components": "1.10.6",
+    "gatsby": "2.13.25",
+    "gatsby-plugin-csp": "1.1.3",
+    "gatsby-plugin-offline": "2.2.4",
+    "gatsby-plugin-page-creator": "2.1.5",
     "gatsby-plugin-react-axe": "0.2.2",
-    "gatsby-plugin-react-helmet": "3.0.12",
+    "gatsby-plugin-react-helmet": "3.1.2",
     "gatsby-plugin-react-svg": "2.1.1",
-    "gatsby-plugin-styled-components": "3.0.7",
-    "gatsby-plugin-typescript": "2.0.15",
+    "gatsby-plugin-styled-components": "3.1.2",
+    "gatsby-plugin-typescript": "2.1.2",
     "gatsby-plugin-webpack-bundle-analyzer": "1.0.5",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
-    "styled-components": "4.3.1",
-    "typeface-roboto-mono": "0.0.54"
+    "styled-components": "4.3.2",
+    "typeface-roboto-mono": "0.0.54",
+    "webassembly": "^0.11.0"
   },
   "keywords": [
     "gatsby"
@@ -27,9 +28,13 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "yarn run test",
-    "build": "gatsby build",
-    "start": "gatsby develop",
+    "build": "yarn run assembly:build && yarn run gatsby:build",
+    "start": "yarn run assembly:start && yarn run gatsby:start",
     "serve": "serve public",
+    "gatsby:build": "gatsby build",
+    "gatsby:start": "gatsby develop",
+    "assembly:build": "wa compile -O -q  -o static/binary.wasm assembly/index.c",
+    "assembly:start": "wa compile -q -o static/binary.wasm assembly/index.c",
     "format": "prettier --write 'src/**/*.tsx'",
     "test": "yarn run test:type && yarn run test:style && yarn run test:e2e",
     "test:ci": "yarn run test:style && yarn run test:e2e",
@@ -39,19 +44,19 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "predeploy": "CI=1; yarn add cypress; yarn run test:ci",
-    "deploy": "gatsby build"
+    "deploy": "yarn run assembly:build && yarn run gatsby:build"
   },
   "devDependencies": {
     "@types/react-helmet": "5.0.8",
-    "@types/styled-components": "4.1.16",
-    "cypress": "3.3.1",
+    "@types/styled-components": "4.1.18",
+    "cypress": "3.4.0",
     "prettier": "1.18.2",
-    "serve": "11.0.1",
+    "serve": "11.1.0",
     "start-server-and-test": "1.9.1",
-    "tslint": "5.17.0",
+    "tslint": "5.18.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "4.0.0",
-    "typescript": "3.5.2"
+    "typescript": "3.5.3"
   },
   "repository": {
     "type": "git",

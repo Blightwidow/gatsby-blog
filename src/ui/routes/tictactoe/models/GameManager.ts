@@ -41,7 +41,6 @@ export class GameManager {
     nextBoard = this.takeCell(this.getMinMax(Owner.Ai, nextBoard, state.maxDepth).id, Owner.Ai, nextBoard)
 
     if (this.getWinner(nextBoard) === Owner.Ai) {
-      console.log()
       return {
         ...state,
         board: nextBoard,
