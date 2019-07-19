@@ -118,30 +118,42 @@ export class GameManager {
   }
 
   private getWinner(board: BoardState): Owner | null {
+    let winner = null
+
     // Horizontal
     for (let i = 1; i < 9; i = i + 3) {
-      if (board[i] === board[i - 1] && board[i] === board[i + 1] && board[i] !== Owner.None) {
-        return board[i]
+      winner = this.getRowOwner(i, i - 1, i + 1, board)
+
+      if (winner) {
+        break
       }
     }
+
     // Vertical
     for (let i = 3; i < 6; i++) {
-      if (board[i] === board[i - 3] && board[i] === board[i + 3] && board[i] !== Owner.None) {
-        return board[i]
+      winner = this.getRowOwner(i, i - 3, i + 3, board)
+
+      if (winner) {
+        break
       }
     }
+
     // Diagonals
-    if (board[4] === board[0] && board[4] === board[8] && board[4] !== Owner.None) {
-      return board[4]
-    }
-    if (board[4] === board[2] && board[4] === board[6] && board[4] !== Owner.None) {
-      return board[4]
+    winner = this.getRowOwner(0, 4, 8, board)
+    winner = this.getRowOwner(2, 4, 6, board)
+
+    return winner
+  }
+
+  private getRowOwner(i: number, j: number, k: number, board: BoardState): Owner | null {
+    if (board[i] === board[j] && board[i] === board[k] && board[i] !== Owner.None) {
+      return board[i]
     }
 
     return null
   }
 
-  private isBoardFull(board: BoardState) {
+  private isBoardFull(board: BoardState): boolean {
     for (const cell of board) {
       if (cell === Owner.None) {
         return false

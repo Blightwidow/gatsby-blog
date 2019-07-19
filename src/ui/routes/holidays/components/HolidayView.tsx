@@ -27,12 +27,12 @@ export const HolidayView: React.FunctionComponent = () => {
       }
 
       setError(null)
-      setIsLoading(false)
       setNextHoliday(apiHoliday)
     } catch (e) {
       setError(e.toString())
-      setIsLoading(false)
       setNextHoliday(null)
+    } finally {
+      setIsLoading(false)
     }
   }
 

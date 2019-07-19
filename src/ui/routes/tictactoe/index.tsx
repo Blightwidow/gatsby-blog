@@ -63,9 +63,9 @@ const TicTacToePage: React.FunctionComponent = () => {
         <Button onClick={onModeToggle}>
           <Accent>{`Switch to ${easyMode ? "hard" : "easy"} mode`}</Accent>
         </Button>
-        <Button onClick={onReset}>
+        <ResetButton onClick={onReset}>
           <Accent>Reset</Accent>
-        </Button>
+        </ResetButton>
       </Wrapper>
     </React.Fragment>
   )
