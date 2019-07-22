@@ -53,7 +53,7 @@ const TicTacToePage: React.FunctionComponent = () => {
       <Head />
       <Header title=".tictactoe()" />
       <Wrapper>
-        <Heading variant="secondary">{getEndingText(gameState)}</Heading>
+        <Heading variant="primary">{getEndingText(gameState)}</Heading>
         <Board>
           {gameState.board.map((owner, id) => (
             <BoardCell key={id} owner={owner} onTake={() => onTakeCell(id)} />
@@ -80,7 +80,7 @@ const Wrapper = styled.div`
 `
 
 const Board = styled.div`
-  padding: 2rem;
+  padding: 4rem 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);

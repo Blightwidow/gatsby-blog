@@ -19,8 +19,7 @@
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
     "styled-components": "4.3.2",
-    "typeface-roboto-mono": "0.0.54",
-    "webassembly": "^0.11.0"
+    "typeface-roboto-mono": "0.0.54"
   },
   "keywords": [
     "gatsby"
@@ -28,13 +27,9 @@
   "license": "MIT",
   "scripts": {
     "prebuild": "yarn run test",
-    "build": "yarn run assembly:build && yarn run gatsby:build",
-    "start": "yarn run assembly:start && yarn run gatsby:start",
     "serve": "serve public",
-    "gatsby:build": "gatsby build",
-    "gatsby:start": "gatsby develop",
-    "assembly:build": "wa compile -O -q  -o static/binary.wasm assembly/index.c",
-    "assembly:start": "wa compile -q -o static/binary.wasm assembly/index.c",
+    "build": "gatsby build",
+    "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.tsx'",
     "test": "yarn run test:type && yarn run test:style && yarn run test:e2e",
     "test:ci": "yarn run test:style && yarn run test:e2e",
