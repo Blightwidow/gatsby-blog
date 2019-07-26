@@ -125,7 +125,7 @@ export class GameManager {
       winner = this.getRowOwner(i, i - 1, i + 1, board)
 
       if (winner) {
-        break
+        return winner
       }
     }
 
@@ -134,15 +134,22 @@ export class GameManager {
       winner = this.getRowOwner(i, i - 3, i + 3, board)
 
       if (winner) {
-        break
+        return winner
       }
     }
 
     // Diagonals
     winner = this.getRowOwner(0, 4, 8, board)
-    winner = this.getRowOwner(2, 4, 6, board)
+    if (winner) {
+      return winner
+    }
 
-    return winner
+    winner = this.getRowOwner(2, 4, 6, board)
+    if (winner) {
+      return winner
+    }
+
+    return null
   }
 
   private getRowOwner(i: number, j: number, k: number, board: BoardState): Owner | null {
