@@ -46,6 +46,7 @@ export const Head: React.FunctionComponent<HeadProps> = ({ title, children }) =>
         <meta name="humans" content="/humans.txt" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/xicon" href="/favicon.ico" />
+        <link rel="canonical" href="https://dammaretz.fr" />
         {children}
       </Helmet>
     )
