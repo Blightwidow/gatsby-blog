@@ -39,7 +39,7 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "predeploy": "CI=1; yarn add cypress; yarn run test:ci",
-    "deploy": "yarn run gatsby:build"
+    "deploy": "yarn run gatsby build"
   },
   "devDependencies": {
     "@types/react-helmet": "5.0.8",
