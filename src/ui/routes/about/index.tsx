@@ -32,9 +32,6 @@ const IndexPage: React.FunctionComponent = () => (
         <Text>// +4 years of experience</Text>
         <SkillsSection />
         <ExperienceSection />
-        <Heading variant="secondary" as="h3">
-          Languages
-        </Heading>
         <LanguageSection />
         <Heading variant="secondary" as="h3">
           Hobbies
