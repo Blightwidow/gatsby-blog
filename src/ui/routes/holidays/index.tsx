@@ -1,4 +1,3 @@
-import { navigate } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
@@ -10,25 +9,18 @@ import { animated } from "../../styles/animated"
 
 import { HolidayView } from "./components/HolidayView"
 
-const HolidayPage: React.FunctionComponent = () => {
-  const redirectToHome = () => navigate("/")
-
-  // Disable page and redirect to Home
-  React.useEffect(redirectToHome)
-
-  return (
-    <React.Fragment>
-      <Head title="holidays" />
-      <Header title=".holiday()" />
-      <ContentWrapper>
-        <PageHeading variant="primary">holiday()</PageHeading>
-        <BodyWrapper>
-          <HolidayView />
-        </BodyWrapper>
-      </ContentWrapper>
-    </React.Fragment>
-  )
-}
+const HolidayPage: React.FunctionComponent = () => (
+  <React.Fragment>
+    <Head title="holidays" />
+    <Header title=".holiday()" />
+    <ContentWrapper>
+      <PageHeading variant="primary">holiday()</PageHeading>
+      <BodyWrapper>
+        <HolidayView />
+      </BodyWrapper>
+    </ContentWrapper>
+  </React.Fragment>
+)
 
 export default HolidayPage
 
