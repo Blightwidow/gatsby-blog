@@ -38,7 +38,7 @@ export const HolidayView: React.FunctionComponent = () => {
 
   React.useEffect(() => {
     fetchNextHoliday()
-  })
+  }, [])
 
   if (isLoading) {
     return <Text>Loading</Text>
