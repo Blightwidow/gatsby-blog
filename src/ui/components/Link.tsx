@@ -9,20 +9,20 @@ export interface LinkProps {
 }
 
 export const Link: React.FunctionComponent<LinkProps> = ({ to, children, className, ...props }) => {
-  const OUTSIDE_LINK_REGEX = /^[a-z]+:.+/
+  const INTERNAL_LINK_REGEX = /^\/\/?.*/
 
-  if (OUTSIDE_LINK_REGEX.test(to)) {
+  if (INTERNAL_LINK_REGEX.test(to)) {
     return (
-      <Anchor href={to} rel="nofollow noopener" className={className} {...props}>
+      <InternalAnchor to={to} className={className} activeStyle={{ opacity: 0.5 }} {...props}>
         {children}
-      </Anchor>
+      </InternalAnchor>
     )
   }
 
   return (
-    <InternalAnchor to={to} className={className} activeStyle={{ opacity: 0.5 }} {...props}>
+    <Anchor href={to} rel="nofollow noopener" className={className} {...props}>
       {children}
-    </InternalAnchor>
+    </Anchor>
   )
 }
 
