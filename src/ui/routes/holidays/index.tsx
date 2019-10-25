@@ -9,9 +9,11 @@ import { animated } from "../../styles/animated"
 
 import { HolidayView } from "./components/HolidayView"
 
-const HolidayPage: React.FunctionComponent = () => (
+import { PageProps } from "../../../data/models/PageProps"
+
+const HolidayPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <React.Fragment>
-    <Head title="holidays" />
+    <Head location={location.href} title="holidays" />
     <Header title=".holiday()" />
     <ContentWrapper>
       <PageHeading variant="primary">holiday()</PageHeading>

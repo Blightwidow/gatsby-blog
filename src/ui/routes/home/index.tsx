@@ -10,9 +10,11 @@ import { Page } from "../../components/Page"
 import { Text } from "../../components/Text"
 import { animated } from "../../styles/animated"
 
-const IndexPage: React.FunctionComponent = () => (
+import { PageProps } from "../../../data/models/PageProps"
+
+const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <React.Fragment>
-    <Head />
+    <Head location={location.href} />
     <Header title=".is()" />
     <ContentWrapper>
       <PageHeading variant="primary">

@@ -4,9 +4,11 @@ import styled from "styled-components"
 import { Head } from "../../components/Head"
 import { Text } from "../../components/Text"
 
-const NotFoundPage: React.FunctionComponent = () => (
+import { PageProps } from "../../../data/models/PageProps"
+
+const NotFoundPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <Wrapper role="main">
-    <Head title="Page not found">
+    <Head location={location.href} title="Page not found">
       <meta name="robots" content="noindex, nofolllow" />
     </Head>
     <Smiley>{":("}</Smiley>

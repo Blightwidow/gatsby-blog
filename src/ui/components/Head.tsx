@@ -6,10 +6,11 @@ import { StaticQueryResult } from "../../data/models/StaticQuery"
 
 export interface HeadProps {
   title?: string
+  location: string
   children?: React.ReactChild
 }
 
-export const Head: React.FunctionComponent<HeadProps> = ({ title, children }) => {
+export const Head: React.FunctionComponent<HeadProps> = ({ title, location, children }) => {
   const renderChildren = (data: StaticQueryResult): React.ReactNode => {
     return (
       <Helmet title={`${title ? `${title} | ` : ""}${data.site.siteMetadata.title}`}>
@@ -46,7 +47,7 @@ export const Head: React.FunctionComponent<HeadProps> = ({ title, children }) =>
         <meta name="humans" content="/humans.txt" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/xicon" href="/favicon.ico" />
-        <link rel="canonical" href="https://dammaretz.fr" />
+        <link rel="canonical" href={location} />
         {children}
       </Helmet>
     )

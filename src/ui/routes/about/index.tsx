@@ -17,9 +17,11 @@ import { LanguageSection } from "./components/LanguageSection"
 import { SkillsSection } from "./components/SkillsSection"
 import { SocialLinks } from "./components/SocialLinks"
 
-const IndexPage: React.FunctionComponent = () => (
+import { PageProps } from "../../../data/models/PageProps"
+
+const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <React.Fragment>
-    <Head title="about" />
+    <Head location={location.href} title="about" />
     <Background image={avatar} />
     <Header title=".about()" />
     <ContentWrapper>

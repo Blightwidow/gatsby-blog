@@ -12,7 +12,9 @@ import { BoardCell } from "./components/BoardCell"
 import { GameManager } from "./models/GameManager"
 import { CellId, GameState, Owner } from "./models/GameState"
 
-const TicTacToePage: React.FunctionComponent = () => {
+import { PageProps } from "../../../data/models/PageProps"
+
+const TicTacToePage: React.FunctionComponent<PageProps> = ({ location }) => {
   const [easyMode, updateEasyMode] = React.useState(false)
   const [gameState, updateGameState] = React.useState(GameManager.newGame(easyMode))
 
@@ -50,7 +52,7 @@ const TicTacToePage: React.FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <Head />
+      <Head location={location.href} title="tictactoe" />
       <Header title=".tictactoe()" />
       <Wrapper>
         <Heading variant="primary">{getEndingText(gameState)}</Heading>
