@@ -22,6 +22,7 @@ const Wrapper = styled.div`
   position: relative;
   padding-top: calc(65vh - 8rem);
   padding-bottom: 10vh;
+  overflow: hidden;
 
   &:after {
     content: "";
