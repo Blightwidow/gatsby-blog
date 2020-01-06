@@ -48,6 +48,7 @@ export const Head: React.FunctionComponent<HeadProps> = ({ title, location, chil
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/xicon" href="/favicon.ico" />
         <link rel="canonical" href={location} />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
         {children}
       </Helmet>
     )
