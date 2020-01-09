@@ -21,7 +21,7 @@ import { PageProps } from "../../../data/models/PageProps"
 import { useLite } from "../../../utils/useLite"
 
 const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => {
-  const hasBg = !useLite()
+  const hasBg = !useLite([])
 
   return (
     <React.Fragment>
