@@ -13,7 +13,7 @@ export interface HeaderProps {
 }
 
 export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
-  const getLinks = (email: string): { to: string; label: string }[] => {
+  const getLinks = (email: string): Array<{ to: string; label: string }> => {
     return [{ to: "/", label: "is()" }, { to: "/about", label: "about()" }, { to: `mailto:${email}`, label: "contact()" }]
   }
 
