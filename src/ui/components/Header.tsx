@@ -13,9 +13,14 @@ export interface HeaderProps {
 }
 
 export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
-  const getLinks = (email: string): Array<{ to: string; label: string }> => {
-    return [{ to: "/", label: "is()" }, { to: "/about", label: "about()" }, { to: `mailto:${email}`, label: "contact()" }]
-  }
+  const getLinks = React.useCallback(
+    (email: string): Array<{ to: string; label: string }> => [
+      { to: "/", label: "is()" },
+      { to: "/about", label: "about()" },
+      { to: `mailto:${email}`, label: "contact()" },
+    ],
+    []
+  )
 
   const renderChildren = (data: StaticQueryResult): React.ReactNode => (
     <Wrapper id="header" role="banner">

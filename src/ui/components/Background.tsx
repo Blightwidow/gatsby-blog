@@ -8,7 +8,7 @@ interface BackgroundProps {
 export const Background: React.FunctionComponent<BackgroundProps> = ({ image }) => {
   const [isLoaded, setIsLoaded] = React.useState(false)
 
-  const loadImage = () => {
+  React.useEffect(() => {
     const imageNode = new Image()
 
     imageNode.onload = () => {
@@ -16,9 +16,7 @@ export const Background: React.FunctionComponent<BackgroundProps> = ({ image }) 
     }
 
     imageNode.src = image
-  }
-
-  React.useEffect(loadImage)
+  }, [])
 
   return <Bg image={image} isLoaded={isLoaded} />
 }
