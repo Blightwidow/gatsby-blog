@@ -9,7 +9,7 @@ export interface LinkProps {
 }
 
 export const Link: React.FunctionComponent<LinkProps> = ({ to, children, className, ...props }) => {
-  const INTERNAL_LINK_REGEX = /^\/\/?.*/
+  const INTERNAL_LINK_REGEX = /^\/\/?[^\.]*$/
 
   if (INTERNAL_LINK_REGEX.test(to)) {
     return (
