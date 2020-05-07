@@ -20,18 +20,16 @@ const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
       <PageHeading variant="primary">
         theo<Accent>.is()</Accent>
       </PageHeading>
-      <BodyWrapper>
-        <Text as="h2">
-          <Accent>Theo Dammaretz</Accent>
-        </Text>
-        <Text>Frontend engineer, advocate and dreamer</Text>
-        <ProjectHeading variant="secondary" as="h3">
-          Fun projects
-        </ProjectHeading>
-        <Text>
-          <Link to="/tictactoe">Play TicTacToe against an AI</Link>
-        </Text>
-      </BodyWrapper>
+      <Text as="h2">
+        <Accent>Theo Dammaretz</Accent>
+      </Text>
+      <Text>Frontend engineer, advocate and dreamer</Text>
+      <ProjectHeading variant="secondary" as="h3">
+        Fun projects
+      </ProjectHeading>
+      <Text>
+        <Link to="/tictactoe">Play TicTacToe against an AI</Link>
+      </Text>
     </ContentWrapper>
   </React.Fragment>
 )
@@ -56,5 +54,3 @@ const ProjectHeading = styled(Heading)`
 `
 
 const PageHeading = animated(Heading, "slide-in-top")
-
-const BodyWrapper = animated("div", "slide-in-right")

@@ -30,23 +30,21 @@ const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => {
       <Header title=".about()" />
       <ContentWrapper>
         <PageHeading variant="primary">about()</PageHeading>
-        <BodyWrapper>
-          <SocialLinks />
-          <Text as="h2">
-            <Accent>I am a profesionnal Software and Frontend Engineer. Loves the Web and its capabilities.</Accent>
-          </Text>
-          <Text>// +4 years of experience</Text>
-          <SkillsSection />
-          <ExperienceSection />
-          <LanguageSection />
-          <Heading variant="secondary" as="h3">
-            Hobbies
-          </Heading>
-          <Text>Video games</Text>
-          <Text>Mountain hiking</Text>
-          <Text>Keyboards</Text>
-          <Text>Skiing</Text>
-        </BodyWrapper>
+        <SocialLinks />
+        <Text as="h2">
+          <Accent>I am a profesionnal Software and Frontend Engineer. Loves the Web and its capabilities.</Accent>
+        </Text>
+        <Text>// +4 years of experience</Text>
+        <SkillsSection />
+        <ExperienceSection />
+        <LanguageSection />
+        <Heading variant="secondary" as="h3">
+          Hobbies
+        </Heading>
+        <Text>Video games</Text>
+        <Text>Mountain hiking</Text>
+        <Text>Keyboards</Text>
+        <Text>Skiing</Text>
       </ContentWrapper>
     </React.Fragment>
   )
@@ -59,5 +57,3 @@ const ContentWrapper = styled(Page)`
 `
 
 const PageHeading = animated(Heading, "slide-in-top")
-
-const BodyWrapper = animated("div", "slide-in-right")

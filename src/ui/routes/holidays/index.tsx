@@ -17,9 +17,7 @@ const HolidayPage: React.FunctionComponent<PageProps> = ({ location }) => (
     <Header title=".holiday()" />
     <ContentWrapper>
       <PageHeading variant="primary">holiday()</PageHeading>
-      <BodyWrapper>
-        <HolidayView />
-      </BodyWrapper>
+      <HolidayView />
     </ContentWrapper>
   </React.Fragment>
 )
@@ -31,5 +29,3 @@ const ContentWrapper = styled(Page)`
 `
 
 const PageHeading = animated(Heading, "slide-in-top")
-
-const BodyWrapper = animated("div", "slide-in-right")
