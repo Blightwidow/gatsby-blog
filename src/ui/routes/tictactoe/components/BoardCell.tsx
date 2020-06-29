@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { Owner } from "../models/GameState"
 
-import { Heading } from "../../../components/Heading"
+import { Heading } from "@components/Heading"
 
 export interface CellProps {
   owner: Owner

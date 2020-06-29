@@ -1,15 +1,15 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Head } from "../../components/Head"
-import { Header } from "../../components/Header"
-import { Heading } from "../../components/Heading"
-import { Page } from "../../components/Page"
-import { animated } from "../../styles/animated"
+import { Head } from "@components/Head"
+import { Header } from "@components/Header"
+import { Heading } from "@components/Heading"
+import { Page } from "@components/Page"
+import { animated } from "@styles/animated"
 
-import { HolidayView } from "./components/HolidayView"
+import { HolidayView } from "@routes/holidays/components/HolidayView"
 
-import { PageProps } from "../../../data/models/PageProps"
+import { PageProps } from "@data/models/PageProps"
 
 const HolidayPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <React.Fragment>

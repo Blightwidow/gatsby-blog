@@ -1,24 +1,24 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Accent } from "../../components/Accent"
-import { Background } from "../../components/Background"
-import { Head } from "../../components/Head"
-import { Header } from "../../components/Header"
-import { Heading } from "../../components/Heading"
-import { Page } from "../../components/Page"
-import { Text } from "../../components/Text"
-import { animated } from "../../styles/animated"
+import { Accent } from "@components/Accent"
+import { Background } from "@components/Background"
+import { Head } from "@components/Head"
+import { Header } from "@components/Header"
+import { Heading } from "@components/Heading"
+import { Page } from "@components/Page"
+import { Text } from "@components/Text"
+import { animated } from "@styles/animated"
 
-import avatar from "../../medias/avatar.jpg"
+import { ExperienceSection } from "@routes/about/components/ExperienceSection"
+import { LanguageSection } from "@routes/about/components/LanguageSection"
+import { SkillsSection } from "@routes/about/components/SkillsSection"
+import { SocialLinks } from "@routes/about/components/SocialLinks"
+import avatar from "@routes/about/medias/avatar.jpg"
 
-import { ExperienceSection } from "./components/ExperienceSection"
-import { LanguageSection } from "./components/LanguageSection"
-import { SkillsSection } from "./components/SkillsSection"
-import { SocialLinks } from "./components/SocialLinks"
+import { PageProps } from "@data/models/PageProps"
 
-import { PageProps } from "../../../data/models/PageProps"
-import { useLite } from "../../../utils/useLite"
+import { useLite } from "../utils/useLite"
 
 const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => {
   const hasBg = !useLite()

@@ -1,3 +1,4 @@
+const path = require('path')
 const author = require("./src/data/raw/owner.json")
 
 module.exports = {
@@ -7,12 +8,14 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-page-creator`,
+      resolve: `gatsby-plugin-alias-imports`,
       options: {
-        path: `${__dirname}/src/ui/routes`,
-        ignore: {
-          patterns: [`!(?(*/)index.tsx)`],
-          options: { nocase: true },
+        alias: {
+          "@routes": path.resolve(__dirname, "src/ui/routes"),
+          "@medias": path.resolve(__dirname, "src/ui/medias"),
+          "@components": path.resolve(__dirname, "src/ui/components"),
+          "@styles": path.resolve(__dirname, "src/ui/styles"),
+          "@data": path.resolve(__dirname, "src/data"),
         },
       },
     },
@@ -36,9 +39,6 @@ module.exports = {
       resolve: "gatsby-plugin-react-axe",
       options: {
         showInProduction: false,
-        axeOptions: {
-          // Your axe-core options.
-        },
       },
     },
     {

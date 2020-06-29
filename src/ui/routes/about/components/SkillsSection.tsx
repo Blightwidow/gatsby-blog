@@ -1,8 +1,8 @@
 import * as React from "react"
 
-import { Heading } from "../../../components/Heading"
-import { List } from "../../../components/List"
-import { Text } from "../../../components/Text"
+import { Heading } from "@components/Heading"
+import { List } from "@components/List"
+import { Text } from "@components/Text"
 
 export const SkillsSection: React.FunctionComponent = () => (
   <React.Fragment>
