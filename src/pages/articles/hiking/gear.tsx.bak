@@ -1,0 +1,54 @@
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import * as React from "react"
+import styled from "styled-components"
+
+import { Accent } from "@components/Accent"
+import { Head } from "@components/Head"
+import { Header } from "@components/Header"
+import { Heading } from "@components/Heading"
+import { Page } from "@components/Page"
+import { Text } from "@components/Text"
+import { animated } from "@styles/animated"
+
+import { PageProps } from "@data/models/PageProps"
+
+const HikingGearArticle: React.FunctionComponent<PageProps> = ({ location }) => {
+  const { avatar } = useStaticQuery(graphql`
+    query {
+      avatar: file(relativePath: { eq: "articles/tech/homelab/avatar.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1060, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <React.Fragment>
+      <Head location={location.href} />
+      <Header title=".is()" />
+      <ContentWrapper>
+        <PageHeading variant="primary">My Homelab and its future</PageHeading>
+        <Text>
+          <Accent>This is a simple introduction</Accent>
+        </Text>
+        <Img fluid={avatar.childImageSharp.fluid} />
+        <Heading as="h3" variant="secondary">
+          Subcategory
+        </Heading>
+        <Text>Content goes here</Text>
+      </ContentWrapper>
+    </React.Fragment>
+  )
+}
+
+export default HikingGearArticle
+
+const ContentWrapper = styled(Page)`
+  grid-area: content;
+`
+
+const PageHeading = animated(Heading, "slide-in-top")

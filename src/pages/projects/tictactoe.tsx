@@ -1,18 +1,18 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Accent } from "../../components/Accent"
-import { Button } from "../../components/Button"
-import { Head } from "../../components/Head"
-import { Header } from "../../components/Header"
-import { Heading } from "../../components/Heading"
-import { Text } from "../../components/Text"
+import { Accent } from "@components/Accent"
+import { Button } from "@components/Button"
+import { Head } from "@components/Head"
+import { Header } from "@components/Header"
+import { Heading } from "@components/Heading"
+import { Text } from "@components/Text"
 
-import { BoardCell } from "./components/BoardCell"
-import { GameManager } from "./models/GameManager"
-import { CellId, GameState, Owner } from "./models/GameState"
+import { BoardCell } from "@routes/tictactoe/components/BoardCell"
+import { GameManager } from "@routes/tictactoe/models/GameManager"
+import { CellId, GameState, Owner } from "@routes/tictactoe/models/GameState"
 
-import { PageProps } from "../../../data/models/PageProps"
+import { PageProps } from "@data/models/PageProps"
 
 const TicTacToePage: React.FunctionComponent<PageProps> = ({ location }) => {
   const [easyMode, updateEasyMode] = React.useState(false)

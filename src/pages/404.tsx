@@ -1,10 +1,10 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Head } from "../../components/Head"
-import { Text } from "../../components/Text"
+import { Head } from "@components/Head"
+import { Text } from "@components/Text"
 
-import { PageProps } from "../../../data/models/PageProps"
+import { PageProps } from "@data/models/PageProps"
 
 const NotFoundPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <Wrapper role="main">

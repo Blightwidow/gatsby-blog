@@ -1,8 +1,8 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Icon } from "../../../components/Icon"
-import { Link } from "../../../components/Link"
+import { Icon } from "@components/Icon"
+import { Link } from "@components/Link"
 
 export const SocialLinks: React.FunctionComponent = () => (
   <React.Fragment>

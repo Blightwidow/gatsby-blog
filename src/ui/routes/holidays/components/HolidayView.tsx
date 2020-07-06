@@ -1,13 +1,13 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import { Accent } from "../../../components/Accent"
-import { Heading } from "../../../components/Heading"
-import { Text } from "../../../components/Text"
+import { Accent } from "@components/Accent"
+import { Heading } from "@components/Heading"
+import { Text } from "@components/Text"
 
-import { Holiday } from "../../../../data/models/Holiday"
-import { GeolocationProvider } from "../../../../data/providers/GeolocationProvider"
-import { HolidayProvider } from "../../../../data/providers/HolidayProvider"
+import { Holiday } from "@data/models/Holiday"
+import { GeolocationProvider } from "@data/providers/GeolocationProvider"
+import { HolidayProvider } from "@data/providers/HolidayProvider"
 
 export const HolidayView: React.FunctionComponent = () => {
   const geoLocationProvider = new GeolocationProvider()

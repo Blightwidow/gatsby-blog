@@ -1,9 +1,9 @@
 import * as React from "react"
 
-import { Accent } from "../../../components/Accent"
-import { Heading } from "../../../components/Heading"
-import { List } from "../../../components/List"
-import { Text } from "../../../components/Text"
+import { Accent } from "@components/Accent"
+import { Heading } from "@components/Heading"
+import { List } from "@components/List"
+import { Text } from "@components/Text"
 
 export const ExperienceSection: React.FunctionComponent = () => (
   <React.Fragment>
