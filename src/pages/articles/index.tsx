@@ -12,38 +12,37 @@ import { animated } from "@styles/animated"
 
 import { PageProps } from "@data/models/PageProps"
 
-const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
+const ArticlesPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <React.Fragment>
-    <Head location={location.href} />
-    <Header title=".is()" />
+    <Head location={location.href} title="articles" />
+    <Header title=".articles()" />
     <ContentWrapper>
-      <PageHeading variant="primary">
-        theo<Accent>.is()</Accent>
-      </PageHeading>
+      <PageHeading variant="primary">articles()</PageHeading>
       <Text as="h2">
-        <Accent>Theo Dammaretz</Accent>
+        <Accent>
+          A random list of thoughts and articles I wrote for everyone to see.
+        </Accent>
       </Text>
-      <Text>Frontend engineer, advocate and dreamer</Text>
       <ProjectHeading variant="secondary" as="h3">
-        Fun projects
+        Last articles
       </ProjectHeading>
-      <Text>
-        <Link to="/tictactoe">Play TicTacToe against an AI</Link>
-      </Text>
+      {/* <Text>
+        <Link to="/articles/tech/homelab">My Homelab and its future</Link>
+      </Text> */}
+      {/* <Text>
+        <Link to="/articles/hiking/gear">My Hiking gear for Solo hiking and travel</Link>
+      </Text> */}
     </ContentWrapper>
   </React.Fragment>
 )
 
-export default IndexPage
+export default ArticlesPage
 
 const ContentWrapper = styled(Page)`
   grid-area: content;
-  padding-top: calc(50vh - 11.5rem);
-
-  @media (min-width: 1060px) {
-    margin: 0 25vw;
-  }
 `
+
+const PageHeading = animated(Heading, "slide-in-top")
 
 const ProjectHeading = styled(Heading)`
   padding-top: 2.5rem;
@@ -52,5 +51,3 @@ const ProjectHeading = styled(Heading)`
     padding-top: 4rem;
   }
 `
-
-const PageHeading = animated(Heading, "slide-in-top")

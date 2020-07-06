@@ -23,12 +23,15 @@ const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
       <Text as="h2">
         <Accent>Theo Dammaretz</Accent>
       </Text>
-      <Text>Frontend engineer, advocate and dreamer</Text>
-      <ProjectHeading variant="secondary" as="h3">
-        Fun projects
-      </ProjectHeading>
+      <Caption>Frontend engineer, advocate and dreamer</Caption>
       <Text>
-        <Link to="/tictactoe">Play TicTacToe against an AI</Link>
+        <Link to="/about">About me</Link>
+      </Text>
+      <Text>
+        <Link to="/projects">My Projects</Link>
+      </Text>
+      <Text>
+        <Link to="/articles">Articles and thoughts</Link>
       </Text>
     </ContentWrapper>
   </React.Fragment>
@@ -45,12 +48,8 @@ const ContentWrapper = styled(Page)`
   }
 `
 
-const ProjectHeading = styled(Heading)`
-  padding-top: 2.5rem;
-
-  @media (min-width: 1060px) {
-    padding-top: 4rem;
-  }
+const Caption = styled(Text)`
+  margin-bottom: 3rem;
 `
 
 const PageHeading = animated(Heading, "slide-in-top")

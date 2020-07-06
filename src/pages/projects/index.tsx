@@ -12,10 +12,10 @@ import { animated } from "@styles/animated"
 
 import { PageProps } from "@data/models/PageProps"
 
-const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
+const ProjectsPage: React.FunctionComponent<PageProps> = ({ location }) => (
   <React.Fragment>
     <Head location={location.href} title="projects" />
-    <Header title=".about()" />
+    <Header title=".projects()" />
     <ContentWrapper>
       <PageHeading variant="primary">projects()</PageHeading>
       <Text as="h2">
@@ -27,16 +27,16 @@ const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
         Web projects
       </ProjectHeading>
       <Text>
-        <Link to="/tictactoe">TicTacToe against AI</Link>
+        <Link to="/projects/tictactoe">TicTacToe against AI</Link>
       </Text>
       <Text>
-        <Link to="/holidays">Next holiday for France</Link>
+        <Link to="/projects/holidays">Next holiday for France</Link>
       </Text>
     </ContentWrapper>
   </React.Fragment>
 )
 
-export default IndexPage
+export default ProjectsPage
 
 const ContentWrapper = styled(Page)`
   grid-area: content;

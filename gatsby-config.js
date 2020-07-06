@@ -8,6 +8,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `ui`, `medias`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {
@@ -18,6 +25,12 @@ module.exports = {
           "@data": path.resolve(__dirname, "src/data"),
         },
       },
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
     },
     {
       resolve: "gatsby-plugin-react-helmet",
