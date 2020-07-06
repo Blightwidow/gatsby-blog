@@ -46,16 +46,16 @@
     "deploy": "yarn run gatsby build"
   },
   "devDependencies": {
-    "@types/react-helmet": "5.0.15",
-    "@types/styled-components": "4.4.2",
-    "cypress": "3.8.1",
-    "prettier": "1.19.1",
-    "serve": "11.3.0",
-    "start-server-and-test": "1.10.6",
-    "tslint": "5.20.1",
+    "@types/react-helmet": "6.0.0",
+    "@types/styled-components": "5.1.0",
+    "cypress": "4.9.0",
+    "prettier": "2.0.5",
+    "serve": "11.3.2",
+    "start-server-and-test": "1.11.0",
+    "tslint": "6.1.2",
     "tslint-config-prettier": "1.18.0",
-    "tslint-react": "4.1.0",
-    "typescript": "3.7.4"
+    "tslint-react": "5.0.0",
+    "typescript": "3.9.6"
   },
   "repository": {
     "type": "git",
