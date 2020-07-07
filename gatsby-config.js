@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path")
 const author = require("./src/data/raw/owner.json")
 
 module.exports = {
@@ -55,7 +55,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-webpack-bundle-analyzer",
+      resolve: "gatsby-plugin-typescript",
       options: {
         production: true,
       },
@@ -65,10 +65,8 @@ module.exports = {
       options: {},
     },
     {
-      resolve: "gatsby-plugin-typescript",
-      options: {
-        production: true,
-      },
+      resolve: `gatsby-plugin-netlify`,
+      options: {},
     },
     {
       resolve: `gatsby-plugin-csp`,
