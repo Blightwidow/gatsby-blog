@@ -1,12 +1,10 @@
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import * as React from "react"
 import styled from "styled-components"
 
 import { Accent } from "./Accent"
 import { Link } from "./Link"
 import { Text } from "./Text"
-
-import { StaticQueryResult } from "../../data/models/StaticQuery"
 
 export interface HeaderProps {
   title: string
@@ -22,14 +20,27 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
     []
   )
 
-  const renderChildren = (data: StaticQueryResult): React.ReactNode => (
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author {
+            fullName
+            email
+          }
+        }
+      }
+    }
+  `)
+
+  return (
     <Wrapper id="header" role="banner">
       <Nav role="navigation">
         <Text>
           <Accent>{title}</Accent>
         </Text>
         <LinkList>
-          {getLinks(data.site.siteMetadata.author.email).map((link, i) => (
+          {getLinks(site.siteMetadata.author.email).map((link, i) => (
             <ListItem key={i}>
               <Text>
                 <Link to={link.to}>{link.label}</Link>
@@ -40,19 +51,17 @@ export const Header: React.FunctionComponent<HeaderProps> = ({ title }) => {
       </Nav>
     </Wrapper>
   )
-
-  return <StaticQuery query={query} render={renderChildren} />
 }
 
 const Wrapper = styled.header`
-  color: ${props => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.light};
   grid-area: header;
   width: 100%;
-  padding: ${props => props.theme.fontSizes.xs} 0;
+  padding: ${(props) => props.theme.fontSizes.xs} 0;
   background: linear-gradient(
     180deg,
-    rgba(${props => props.theme.colors.backgroundRgb}, 0.3) 3rem,
-    rgba(${props => props.theme.colors.backgroundRgb}, 0)
+    rgba(${(props) => props.theme.colors.backgroundRgb}, 0.3) 3rem,
+    rgba(${(props) => props.theme.colors.backgroundRgb}, 0)
   );
   z-index: 10;
 `
@@ -73,21 +82,8 @@ const LinkList = styled.ul`
 `
 
 const ListItem = styled.li`
-  padding: 0 ${props => props.theme.spaces.s};
+  padding: 0 ${(props) => props.theme.spaces.s};
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-const query = graphql`
-  query headerQuery {
-    site {
-      siteMetadata {
-        author {
-          fullName
-          email
-        }
-      }
-    }
-  }
 `
