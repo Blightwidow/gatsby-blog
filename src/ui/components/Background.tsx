@@ -1,3 +1,5 @@
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 import * as React from "react"
 import styled from "styled-components"
 
@@ -6,38 +8,52 @@ interface BackgroundProps {
 }
 
 export const Background: React.FunctionComponent<BackgroundProps> = ({ image }) => {
-  const [isLoaded, setIsLoaded] = React.useState(false)
-
-  React.useEffect(() => {
-    const imageNode = new Image()
-
-    imageNode.onload = () => {
-      window.requestAnimationFrame(() => setIsLoaded(true))
+  const { avatar } = useStaticQuery(graphql`
+    query {
+      avatar: file(relativePath: { eq: "avatar.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 1060, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
     }
+  `)
 
-    imageNode.src = image
-  }, [])
-
-  return <Bg image={image} isLoaded={isLoaded} />
+  return (
+    <Bg>
+      <Gradiant />
+      <StyledImg fluid={avatar.childImageSharp.fluid} />
+    </Bg>
+  )
+  // return <Bg image={image} />
 }
 
-const Bg = styled.div<{ image: string; isLoaded: boolean }>`
+const StyledImg = styled(Img)`
+  width: 100%;
+  height: 100%;
+`
+
+const Gradiant = styled.div`
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 60% center;
+  background-image: linear-gradient(
+      270deg,
+      ${(props) => props.theme.colors.background},
+      rgba(${(props) => props.theme.colors.backgroundRgb}, 0) 80%
+    ),
+    linear-gradient(0deg, ${(props) => props.theme.colors.background}, rgba(${(props) => props.theme.colors.backgroundRgb}, 0) 60%);
+`
+
+const Bg = styled.div`
   position: absolute;
   width: 100%;
   height: 80vh;
-  opacity: ${props => (props.isLoaded ? 1 : 0)};
-  transition: opacity 0.3s ease-out;
-  will-change: opacity;
-  background-repeat: no-repeat;
-  background-position: 60%;
-  background-size: cover;
-  background-image: linear-gradient(
-      270deg,
-      ${props => props.theme.colors.background},
-      rgba(${props => props.theme.colors.backgroundRgb}, 0) 80%
-    ),
-    linear-gradient(0deg, ${props => props.theme.colors.background}, rgba(${props => props.theme.colors.backgroundRgb}, 0) 60%),
-    url(${props => props.image});
 
   @media (min-width: 1060px) {
     width: 40%;
