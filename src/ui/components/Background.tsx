@@ -3,11 +3,7 @@ import Img from "gatsby-image"
 import * as React from "react"
 import styled from "styled-components"
 
-interface BackgroundProps {
-  image: string
-}
-
-export const Background: React.FunctionComponent<BackgroundProps> = ({ image }) => {
+export const Background: React.FunctionComponent<BackgroundProps> = () => {
   const { avatar } = useStaticQuery(graphql`
     query {
       avatar: file(relativePath: { eq: "avatar.jpg" }) {
@@ -22,7 +18,7 @@ export const Background: React.FunctionComponent<BackgroundProps> = ({ image }) 
 
   return (
     <Bg>
-      <Gradiant />
+      <Gradient />
       <StyledImg fluid={avatar.childImageSharp.fluid} />
     </Bg>
   )
@@ -34,7 +30,7 @@ const StyledImg = styled(Img)`
   height: 100%;
 `
 
-const Gradiant = styled.div`
+const Gradient = styled.div`
   position: absolute;
   z-index: 1;
   width: 100%;

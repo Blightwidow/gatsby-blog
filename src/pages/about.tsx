@@ -14,7 +14,6 @@ import { ExperienceSection } from "@routes/about/components/ExperienceSection"
 import { LanguageSection } from "@routes/about/components/LanguageSection"
 import { SkillsSection } from "@routes/about/components/SkillsSection"
 import { SocialLinks } from "@routes/about/components/SocialLinks"
-import avatar from "@routes/about/medias/avatar.jpg"
 
 import { PageProps } from "@data/models/PageProps"
 
@@ -26,7 +25,7 @@ const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => {
   return (
     <React.Fragment>
       <Head location={location.href} title="about" />
-      {hasBg && <Background image={avatar} />}
+      {hasBg && <Background />}
       <Header title=".about()" />
       <ContentWrapper>
         <PageHeading variant="primary">about()</PageHeading>
