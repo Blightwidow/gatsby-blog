@@ -47,15 +47,15 @@
   },
   "devDependencies": {
     "@types/react-helmet": "6.0.0",
-    "@types/styled-components": "5.1.0",
-    "cypress": "4.9.0",
+    "@types/styled-components": "5.1.1",
+    "cypress": "4.10.0",
     "prettier": "2.0.5",
     "serve": "11.3.2",
-    "start-server-and-test": "1.11.0",
+    "start-server-and-test": "1.11.2",
     "tslint": "6.1.2",
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "5.0.0",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   },
   "repository": {
     "type": "git",
