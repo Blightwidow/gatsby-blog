@@ -1,3 +1,4 @@
-import { wrapWithLocaleProvider, wrapContent } from "./gatsby-utils"
-export const wrapRootElement = wrapWithLocaleProvider
+import { wrapWithProviders, wrapContent } from "./gatsby-utils"
+
+export const wrapRootElement = wrapWithProviders
 export const wrapPageElement = wrapContent

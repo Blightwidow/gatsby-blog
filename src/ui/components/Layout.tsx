@@ -1,6 +1,7 @@
+import React from "react"
 import { createGlobalStyle } from "styled-components"
 
-export const StyleBase = createGlobalStyle`
+const StyleBase = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -35,11 +36,11 @@ export const StyleBase = createGlobalStyle`
 
   html, body {
     width: 100%;
-    font-family: ${props => props.theme.fontFamily};
-    font-size: ${props => props.theme.fontSizes.m};
+    font-family: ${(props) => props.theme.fontFamily};
+    font-size: ${(props) => props.theme.fontSizes.m};
     font-weight: normal;
-    color: ${props => props.theme.colors.base};
-    background: ${props => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.base};
+    background: ${(props) => props.theme.colors.background};
   }
 
   /* Defaults */
@@ -48,3 +49,10 @@ export const StyleBase = createGlobalStyle`
     list-style-type: none;
   }
 `
+
+export const Layout: React.FC = ({ children }) => (
+  <div id="root">
+    <StyleBase />
+    {children}
+  </div>
+)

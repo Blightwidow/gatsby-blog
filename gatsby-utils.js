@@ -1,16 +1,9 @@
 import React from "react"
 import { ThemeProvider } from "styled-components"
 
-import { StyleBase } from "./src/ui/components/StyleBase"
+import { Layout } from "./src/ui/components/Layout"
 import { defaultTheme } from "./src/ui/styles/theme"
 
-export const wrapWithLocaleProvider = ({ element }) => (
-  <ThemeProvider theme={defaultTheme}>
-    <React.Fragment>
-      <StyleBase />
-      {element}
-    </React.Fragment>
-  </ThemeProvider>
-)
+export const wrapWithProviders = ({ element }) => <ThemeProvider theme={defaultTheme}>{element}</ThemeProvider>
 
-export const wrapContent = ({ element }) => <div id="root">{element}</div>
+export const wrapContent = ({ element }) => <Layout>{element}</Layout>

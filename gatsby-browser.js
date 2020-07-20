@@ -1,5 +1,5 @@
-import { wrapWithLocaleProvider, wrapContent } from "./gatsby-utils"
+import { wrapWithProviders, wrapContent } from "./gatsby-utils"
 import "typeface-roboto-mono"
 
-export const wrapRootElement = wrapWithLocaleProvider
+export const wrapRootElement = wrapWithProviders
 export const wrapPageElement = wrapContent

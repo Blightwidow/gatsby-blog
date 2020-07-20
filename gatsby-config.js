@@ -8,6 +8,10 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-styled-components",
+      options: {},
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -37,21 +41,11 @@ module.exports = {
       options: {},
     },
     {
-      resolve: "gatsby-plugin-styled-components",
-      options: {},
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
           include: /\.inline\.svg$/,
         },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-react-axe",
-      options: {
-        showInProduction: false,
       },
     },
     {
