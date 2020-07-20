@@ -3,13 +3,13 @@ import Img from "gatsby-image"
 import * as React from "react"
 import styled from "styled-components"
 
-export const Background: React.FunctionComponent<BackgroundProps> = () => {
+export const Background: React.FunctionComponent = () => {
   const { avatar } = useStaticQuery(graphql`
     query {
       avatar: file(relativePath: { eq: "avatar.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1060, quality: 100) {
-            ...GatsbyImageSharpFluid_tracedSVG
+          fluid(maxWidth: 1060, quality: 90) {
+            ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
       }
@@ -19,10 +19,9 @@ export const Background: React.FunctionComponent<BackgroundProps> = () => {
   return (
     <Bg>
       <Gradient />
-      <StyledImg fluid={avatar.childImageSharp.fluid} />
+      <StyledImg fluid={{ ...avatar.childImageSharp.fluid }} alt="" />
     </Bg>
   )
-  // return <Bg image={image} />
 }
 
 const StyledImg = styled(Img)`
