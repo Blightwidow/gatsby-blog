@@ -9,7 +9,7 @@ export const Background: React.FunctionComponent = () => {
       avatar: file(relativePath: { eq: "avatar.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1060, quality: 90) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
