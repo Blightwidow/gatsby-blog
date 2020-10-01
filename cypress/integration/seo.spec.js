@@ -34,7 +34,7 @@ context("SEO", () => {
   it("Should have robots.txt", () => {
     cy.request("/robots.txt")
       .its("body")
-      .should("be", "User-agent : *")
+      .should("equal", "User-agent : *")
   })
 
   it("Should have no follow on external links", () => {
