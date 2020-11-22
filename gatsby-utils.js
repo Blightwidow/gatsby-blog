@@ -12,7 +12,7 @@ export const wrapContent = ({ element, props }) => {
     DEFAULT: defaultTheme,
   }
 
-  const [folder] = props.uri.match(/([^/]+)/)
+  const [folder] = props.uri.match(/([^/]+)/) || []
 
   return (
     <ThemeProvider theme={THEME[folder] || THEME.DEFAULT}>
