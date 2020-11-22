@@ -26,3 +26,20 @@ export const defaultTheme: DefaultTheme = {
   },
   spaces: scale,
 }
+
+export const futureSpaceTheme: DefaultTheme = {
+  colors: {
+    background: "black",
+    backgroundRgb: "40, 42, 54",
+    base: "#C8C8C2",
+    light: "#F8F8F2",
+    primary: "#BD93F9",
+  },
+  fontFamily:  "\"Roboto Mono\", monospace",
+  fontSizes: scale,
+  fontWeights: {
+    base: "400",
+    bold: "700",
+  },
+  spaces: scale,
+}

@@ -1,0 +1,37 @@
+import * as React from "react"
+import styled from "styled-components"
+
+import { Accent } from "@components/Accent"
+import { Head } from "@components/Head"
+import { Header } from "@components/Header"
+import { Heading } from "@components/Heading"
+import { Link } from "@components/Link"
+import { Page } from "@components/Page"
+import { Text } from "@components/Text"
+import { animated } from "@styles/animated"
+
+import { PageProps } from "@data/models/PageProps"
+
+const FutureSpacePage: React.FunctionComponent<PageProps> = ({ location }) => (
+  <React.Fragment>
+    <Head location={location.href} title="projects" />
+    <Header title=".projects()" />
+    <ContentWrapper>
+      <PageHeading variant="primary">projects()</PageHeading>
+      <Text as="h2">
+        <Accent>
+          Here is a list of side projects I made for fun. They are tiny experiments aimed at improving my skills and testing stuff.
+        </Accent>
+      </Text>
+    </ContentWrapper>
+  </React.Fragment>
+)
+
+export default FutureSpacePage
+
+const ContentWrapper = styled(Page)`
+  grid-area: content;
+`
+
+const PageHeading = animated(Heading, "slide-in-top")
+
