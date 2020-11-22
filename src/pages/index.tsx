@@ -30,9 +30,6 @@ const IndexPage: React.FunctionComponent<PageProps> = ({ location }) => (
       <Text>
         <Link to="/projects">My Projects</Link>
       </Text>
-      {/* <Text>
-        <Link to="/articles">Articles and thoughts</Link>
-      </Text> */}
     </ContentWrapper>
   </React.Fragment>
 )

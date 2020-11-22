@@ -29,9 +29,6 @@ const ProjectsPage: React.FunctionComponent<PageProps> = ({ location }) => (
       <Text>
         <Link to="/projects/tictactoe">TicTacToe against AI</Link>
       </Text>
-      <Text>
-        <Link to="/projects/holidays">Next holiday for France</Link>
-      </Text>
     </ContentWrapper>
   </React.Fragment>
 )
